@@ -32,15 +32,19 @@ export function Skills() {
                     {skillCategories.map((cat) => (
                         <div
                             key={cat.category}
-                            className="flex flex-col gap-4 p-6 rounded-lg border border-border hover:border-accent/40 transition-colors"
+                            className="flex flex-col gap-4 p-6 border border-border bg-card/50 hover:bg-card glow-hover relative overflow-hidden group"
                         >
-                            <h3 className="text-sm font-mono text-accent tracking-wide">{cat.category}</h3>
-                            <div className="flex flex-col gap-2">
+                            <div className="absolute top-0 left-0 w-1 h-full bg-accent transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
+                            <h3 className="text-xs font-black font-mono text-accent tracking-widest uppercase mb-2">
+                                {cat.category}
+                            </h3>
+                            <div className="flex flex-col gap-3">
                                 {cat.skills.map((skill) => (
                                     <span
                                         key={skill}
-                                        className="text-sm text-muted-foreground"
+                                        className="text-sm text-foreground font-medium flex items-center gap-3"
                                     >
+                                        <span className="w-1.5 h-1.5 bg-accent/30 group-hover:bg-accent transition-colors shadow-[0_0_5px_var(--color-accent)]"></span>
                                         {skill}
                                     </span>
                                 ))}

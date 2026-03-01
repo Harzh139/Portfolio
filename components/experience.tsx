@@ -39,34 +39,35 @@ export function Experience() {
           <div className="flex-1 h-px bg-border" />
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           {experiences.map((exp) => (
             <div
               key={exp.role + exp.company}
-              className="group grid md:grid-cols-[200px_1fr] gap-4 md:gap-8 p-6 rounded-lg hover:bg-secondary/50 transition-colors"
+              className="group grid md:grid-cols-[200px_1fr] gap-4 md:gap-8 p-6 border-l-4 border-transparent hover:border-accent bg-background hover:bg-secondary/20 transition-all duration-300 relative overflow-hidden"
             >
-              <span className="text-sm font-mono text-muted-foreground pt-1 whitespace-nowrap">
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <span className="text-sm font-bold font-mono text-accent pt-1 whitespace-nowrap uppercase tracking-widest relative z-10">
                 {exp.period}
               </span>
 
-              <div className="flex flex-col gap-3">
-                <h3 className="text-foreground font-medium flex items-center gap-2 flex-wrap">
+              <div className="flex flex-col gap-3 relative z-10">
+                <h3 className="text-xl text-foreground font-black flex items-center gap-2 flex-wrap uppercase tracking-tight">
                   {exp.role}
-                  <span className="text-muted-foreground">{"·"}</span>
-                  <span className="text-accent">
+                  <span className="text-muted-foreground">{"//"}</span>
+                  <span className="text-foreground border-b-2 border-accent/30 group-hover:border-accent transition-colors">
                     {exp.company}
                   </span>
                 </h3>
 
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed font-medium">
                   {exp.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 pt-1">
+                <div className="flex flex-wrap gap-2 pt-3 mt-auto">
                   {exp.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs font-mono text-accent bg-accent/10 rounded-full"
+                      className="px-2 py-1 text-[10px] font-mono text-background bg-accent font-bold uppercase tracking-widest"
                     >
                       {tag}
                     </span>
@@ -85,16 +86,18 @@ export function Experience() {
           <div className="flex-1 h-px bg-border" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-lg border border-border hover:border-accent/40 transition-colors">
-            <p className="text-sm font-mono text-muted-foreground mb-1">2023 — 2025</p>
-            <h3 className="font-semibold text-foreground mb-1">MSc. Data Science</h3>
-            <p className="text-sm text-accent">Alliance University, Bengaluru</p>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="p-8 border-t-4 border-t-accent bg-card hover:bg-secondary/20 transition-colors shadow-sm relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-16 h-16 bg-accent/5 rounded-bl-full group-hover:scale-150 transition-transform"></div>
+            <p className="text-xs font-mono font-bold text-accent mb-2 tracking-widest uppercase">2023 — 2025</p>
+            <h3 className="text-xl font-black text-foreground mb-1 uppercase tracking-tight">MSc. Data Science</h3>
+            <p className="text-sm text-muted-foreground font-medium">Alliance University, Bengaluru</p>
           </div>
-          <div className="p-6 rounded-lg border border-border hover:border-accent/40 transition-colors">
-            <p className="text-sm font-mono text-muted-foreground mb-1">2020 — 2023</p>
-            <h3 className="font-semibold text-foreground mb-1">Bachelor{"'"}s in Computer Applications</h3>
-            <p className="text-sm text-accent">LJ University, Ahmedabad</p>
+          <div className="p-8 border-t-4 border-t-accent bg-card hover:bg-secondary/20 transition-colors shadow-sm relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-16 h-16 bg-accent/5 rounded-bl-full group-hover:scale-150 transition-transform"></div>
+            <p className="text-xs font-mono font-bold text-accent mb-2 tracking-widest uppercase">2020 — 2023</p>
+            <h3 className="text-xl font-black text-foreground mb-1 uppercase tracking-tight">Bachelor{"'"}s in Computer Applications</h3>
+            <p className="text-sm text-muted-foreground font-medium">LJ University, Ahmedabad</p>
           </div>
         </div>
       </div>

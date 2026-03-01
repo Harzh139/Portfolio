@@ -18,8 +18,8 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
-        <a href="#" className="text-lg font-semibold tracking-tight text-foreground">
-          HS
+        <a href="#" className="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-accent to-foreground uppercase">
+          HS.
         </a>
 
         <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
@@ -27,9 +27,10 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+              className="text-xs font-mono font-bold tracking-widest uppercase text-muted-foreground hover:text-accent transition-colors relative group"
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
             </a>
           ))}
         </nav>

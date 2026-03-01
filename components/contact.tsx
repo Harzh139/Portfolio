@@ -24,26 +24,32 @@ export function Contact() {
           <div className="flex flex-col gap-6">
             <a
               href="mailto:sharmaharshu385@gmail.com"
-              className="group flex items-center justify-between p-4 rounded-lg border border-border hover:border-accent/40 transition-colors"
+              className="group flex items-center justify-between p-4 border border-border bg-card/50 hover:bg-background glow-hover transition-all duration-300 relative overflow-hidden"
             >
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-accent" />
-                <span className="text-sm text-foreground">sharmaharshu385@gmail.com</span>
+              <div className="absolute top-0 left-0 w-1 h-full bg-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="p-2 bg-accent/10 group-hover:bg-accent/20 transition-colors rounded-none">
+                  <Mail size={18} className="text-accent" />
+                </div>
+                <span className="text-sm font-bold text-foreground tracking-tight group-hover:translate-x-1 transition-transform">sharmaharshu385@gmail.com</span>
               </div>
-              <span className="text-xs text-muted-foreground group-hover:text-accent transition-colors">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-muted-foreground group-hover:text-accent transition-colors relative z-10 hidden sm:block">
                 Email
               </span>
             </a>
 
             <a
               href="tel:+919016752230"
-              className="group flex items-center justify-between p-4 rounded-lg border border-border hover:border-accent/40 transition-colors"
+              className="group flex items-center justify-between p-4 border border-border bg-card/50 hover:bg-background glow-hover transition-all duration-300 relative overflow-hidden"
             >
-              <div className="flex items-center gap-3">
-                <Phone size={18} className="text-accent" />
-                <span className="text-sm text-foreground">+91-9016752230</span>
+              <div className="absolute top-0 left-0 w-1 h-full bg-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="p-2 bg-accent/10 group-hover:bg-accent/20 transition-colors rounded-none">
+                  <Phone size={18} className="text-accent" />
+                </div>
+                <span className="text-sm font-bold text-foreground tracking-tight group-hover:translate-x-1 transition-transform">+91-9016752230</span>
               </div>
-              <span className="text-xs text-muted-foreground group-hover:text-accent transition-colors">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-muted-foreground group-hover:text-accent transition-colors relative z-10 hidden sm:block">
                 Phone
               </span>
             </a>
@@ -52,13 +58,16 @@ export function Contact() {
               href="https://github.com/Harzh139"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between p-4 rounded-lg border border-border hover:border-accent/40 transition-colors"
+              className="group flex items-center justify-between p-4 border border-border bg-card/50 hover:bg-background glow-hover transition-all duration-300 relative overflow-hidden"
             >
-              <div className="flex items-center gap-3">
-                <Github size={18} className="text-accent" />
-                <span className="text-sm text-foreground">github.com/Harzh139</span>
+              <div className="absolute top-0 left-0 w-1 h-full bg-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="p-2 bg-accent/10 group-hover:bg-accent/20 transition-colors rounded-none">
+                  <Github size={18} className="text-accent" />
+                </div>
+                <span className="text-sm font-bold text-foreground tracking-tight group-hover:translate-x-1 transition-transform">github.com/Harzh139</span>
               </div>
-              <span className="text-xs text-muted-foreground group-hover:text-accent transition-colors">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-muted-foreground group-hover:text-accent transition-colors relative z-10 hidden sm:block">
                 GitHub
               </span>
             </a>
@@ -67,13 +76,16 @@ export function Contact() {
               href="https://www.linkedin.com/in/harsh-sharma"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between p-4 rounded-lg border border-border hover:border-accent/40 transition-colors"
+              className="group flex items-center justify-between p-4 border border-border bg-card/50 hover:bg-background glow-hover transition-all duration-300 relative overflow-hidden"
             >
-              <div className="flex items-center gap-3">
-                <Linkedin size={18} className="text-accent" />
-                <span className="text-sm text-foreground">Harsh Sharma</span>
+              <div className="absolute top-0 left-0 w-1 h-full bg-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="p-2 bg-accent/10 group-hover:bg-accent/20 transition-colors rounded-none">
+                  <Linkedin size={18} className="text-accent" />
+                </div>
+                <span className="text-sm font-bold text-foreground tracking-tight group-hover:translate-x-1 transition-transform">Harsh Sharma</span>
               </div>
-              <span className="text-xs text-muted-foreground group-hover:text-accent transition-colors">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-muted-foreground group-hover:text-accent transition-colors relative z-10 hidden sm:block">
                 LinkedIn
               </span>
             </a>
