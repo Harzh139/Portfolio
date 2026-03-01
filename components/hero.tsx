@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Phone } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail, Phone, FileText } from "lucide-react"
 
 export function Hero() {
   return (
@@ -32,7 +32,7 @@ export function Hero() {
               <Github size={20} />
             </a>
             <a
-              href="https://www.linkedin.com/in/harsh-sharma-linkedIn"
+              href="https://www.linkedin.com/in/harsh-sharma-406044299/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-muted-foreground hover:text-background hover:bg-accent border border-muted-foreground/30 hover:border-accent transition-all duration-300 transform hover:-translate-y-1"
@@ -53,6 +53,15 @@ export function Hero() {
               aria-label="Phone"
             >
               <Phone size={20} />
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1EH9fK33xhuB7yyttPkB7KDMxwHTcIIqf/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 text-muted-foreground hover:text-background hover:bg-accent border border-muted-foreground/30 hover:border-accent transition-all duration-300 transform hover:-translate-y-1"
+              aria-label="Resume"
+            >
+              <FileText size={20} />
             </a>
           </div>
         </div>

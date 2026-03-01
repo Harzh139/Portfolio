@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone } from "lucide-react"
+import { Github, Linkedin, Mail, Phone, FileText } from "lucide-react"
 
 export function Contact() {
   return (
@@ -73,7 +73,7 @@ export function Contact() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/harsh-sharma"
+              href="https://www.linkedin.com/in/harsh-sharma-406044299/"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-between p-4 border border-border bg-card/50 hover:bg-background glow-hover transition-all duration-300 relative overflow-hidden"
@@ -87,6 +87,24 @@ export function Contact() {
               </div>
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-muted-foreground group-hover:text-accent transition-colors relative z-10 hidden sm:block">
                 LinkedIn
+              </span>
+            </a>
+
+            <a
+              href="https://drive.google.com/file/d/1EH9fK33xhuB7yyttPkB7KDMxwHTcIIqf/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between p-4 border border-border bg-card/50 hover:bg-background glow-hover transition-all duration-300 relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-1 h-full bg-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="p-2 bg-accent/10 group-hover:bg-accent/20 transition-colors rounded-none">
+                  <FileText size={18} className="text-accent" />
+                </div>
+                <span className="text-sm font-bold text-foreground tracking-tight group-hover:translate-x-1 transition-transform">View Resume</span>
+              </div>
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-muted-foreground group-hover:text-accent transition-colors relative z-10 hidden sm:block">
+                Resume
               </span>
             </a>
           </div>
