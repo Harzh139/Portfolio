@@ -55,7 +55,7 @@ export function Hero() {
               <Phone size={20} />
             </a>
             <a
-              href="https://drive.google.com/file/d/1EH9fK33xhuB7yyttPkB7KDMxwHTcIIqf/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1vlrFHKuvonDu6cXGPzH-9HJid2YKcH1b/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-muted-foreground hover:text-background hover:bg-accent border border-muted-foreground/30 hover:border-accent transition-all duration-300 transform hover:-translate-y-1"
