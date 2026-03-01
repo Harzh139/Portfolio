@@ -63,18 +63,16 @@ export function Hero() {
             <div className="relative w-80 h-96 border-2 border-accent flex flex-col items-center justify-center bg-background transform transition-all duration-700 group-hover:scale-105 group-hover:-rotate-3 group-hover:bg-accent/5 overflow-hidden shadow-[0_0_40px_-10px_var(--color-accent)]">
               {/* Animated scanline effect */}
               <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] opacity-20 pointer-events-none z-10"></div>
-              <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-color-burn"></div>
+              <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               {/* HS Initial Block */}
               <div className="relative z-20 flex flex-col items-center justify-center -mt-8">
                 <span
-                  className="text-[120px] font-black text-transparent bg-clip-text bg-gradient-to-b from-foreground to-foreground/50 tracking-tighter uppercase relative select-none glitch-text group-hover:from-accent group-hover:to-accent/50 transition-colors duration-500"
+                  className="text-[120px] font-black text-transparent bg-clip-text bg-gradient-to-b from-foreground to-foreground/50 tracking-tighter uppercase relative select-none glitch-text transition-all duration-500 group-hover:scale-110 group-hover:to-foreground"
                   data-text="HS"
                 >
                   HS
                 </span>
-                <span className="absolute text-[120px] font-black text-accent opacity-0 group-hover:opacity-50 blur-sm transform translate-x-1 translate-y-1 transition-all duration-300">HS</span>
-                <span className="absolute text-[120px] font-black text-destructive opacity-0 group-hover:opacity-50 blur-sm transform -translate-x-1 -translate-y-1 transition-all duration-300">HS</span>
               </div>
 
               {/* Decorative elements */}
