@@ -91,7 +91,7 @@ export function Contact() {
             </a>
 
             <a
-              href="https://drive.google.com/file/d/1EH9fK33xhuB7yyttPkB7KDMxwHTcIIqf/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1vlrFHKuvonDu6cXGPzH-9HJid2YKcH1b/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-between p-4 border border-border bg-card/50 hover:bg-background glow-hover transition-all duration-300 relative overflow-hidden"
