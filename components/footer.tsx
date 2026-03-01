@@ -13,3 +13,5 @@ export function Footer() {
     </footer>
   )
 }
+
+// Stay ambitious and never settle.
