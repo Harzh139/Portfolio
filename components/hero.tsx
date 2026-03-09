@@ -8,7 +8,7 @@ export function Hero() {
           <div className="flex items-center gap-3 animate-pulse text-accent">
             <span className="w-2 h-2 bg-accent rounded-full animate-ping"></span>
             <p className="text-sm font-mono tracking-widest uppercase font-bold">
-              AI Product Manager
+              AI Product & Data Analytics
             </p>
           </div>
           <h1
@@ -18,7 +18,9 @@ export function Hero() {
             Harsh Sharma
           </h1>
           <p className="text-lg leading-relaxed text-muted-foreground max-w-lg font-medium border-l-2 border-accent pl-4">
-            Zero complacency. Pure momentum. I am an <strong className="text-foreground">AI Product Manager</strong> bridging the gap between ruthless business requirements and cutting-edge AI/ML solutions. I build, I measure, and I relentlessly iterate.
+            Zero complacency. Pure momentum. I am an{" "}
+            <strong className="text-foreground">AI Product & Data Analytics</strong>{" "}
+            professional bridging the gap between ruthless business requirements and cutting-edge AI/ML solutions. I build, I measure, and I relentlessly iterate.
           </p>
 
           <div className="flex items-center gap-4 pt-4">

@@ -8,8 +8,9 @@ const _geist = Geist({ subsets: ['latin'], variable: '--font-sans' })
 const _geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-mono' })
 
 export const metadata: Metadata = {
-  title: 'Harsh Sharma — AI Product Manager',
-  description: 'Personal portfolio of Harsh Sharma, an AI Product Manager bridging the gap between business requirements and AI/ML solutions.',
+  title: 'Harsh Sharma — AI Product & Data Analytics',
+  description:
+    'Personal portfolio of Harsh Sharma, an AI Product & Data Analytics professional bridging the gap between business requirements and AI/ML solutions.',
   icons: {
     icon: [
       {

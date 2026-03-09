@@ -17,7 +17,7 @@ export function Contact() {
               {"Let's work together"}
             </h3>
             <p className="text-muted-foreground leading-relaxed max-w-md">
-              {"I'm always open to discussing new opportunities, AI product roles, or interesting projects. Feel free to reach out!"}
+              {"I'm always open to discussing new opportunities in AI product & data analytics, or interesting projects. Feel free to reach out!"}
             </p>
           </div>
 
