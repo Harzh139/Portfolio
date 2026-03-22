@@ -1,7 +1,7 @@
 const experiences = [
   {
     period: "Feb 2026 — Present",
-    role: "Associate Product Manager",
+    role: "Product and AI Associate",
     company: "Dharmshil Group of Companies",
     companyUrl: "#",
     description:
