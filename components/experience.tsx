@@ -5,7 +5,7 @@ const experiences = [
     company: "Dharmshil Group of Companies",
     companyUrl: "#",
     description:
-      "Led requirement gathering with leadership for company website redesign aligned with business growth goals. Defined feature scope, user flow, and content structure for multi-page clinic website. Coordinated between business stakeholders and developer to translate requirements into execution tasks. Contributed to branding and launch strategy for new clinic expansion.",
+      "• Assisted in requirement gathering for company website redesign aligned with business goals\n• Contributed to defining feature scope, user flows, and content structure for a multi-page clinic website\n• Worked closely with stakeholders and developers to translate requirements into actionable tasks",
     tags: ["Product Management", "Requirements Gathering", "User Flows", "Stakeholder Management"],
   },
   {
@@ -59,7 +59,7 @@ export function Experience() {
                   </span>
                 </h3>
 
-                <p className="text-sm text-muted-foreground leading-relaxed font-medium">
+                <p className="text-sm text-muted-foreground leading-relaxed font-medium whitespace-pre-line">
                   {exp.description}
                 </p>
 
