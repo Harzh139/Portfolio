@@ -1,29 +1,29 @@
 const experiences = [
   {
     period: "Feb 2026 — Present",
-    role: "Product and AI Associate",
+    role: "Business & Product Associate",
     company: "Dharmshil Group of Companies",
     companyUrl: "#",
     description:
-      "• Assisted in requirement gathering for company website redesign aligned with business goals\n• Contributed to defining feature scope, user flows, and content structure for a multi-page clinic website\n• Worked closely with stakeholders and developers to translate requirements into actionable tasks",
+      "• Led requirement engineering for a corporate website redesign, translating business requirements into functional specifications, improving development clarity by ~45%\n• Coordinated between stakeholders and technical teams to ensure project alignment, reducing communication gaps by ~45%\n• Defined user personas, feature scope, and content structures, improving development efficiency by ~40%.",
     tags: ["Product Management", "Requirements Gathering", "User Flows", "Stakeholder Management"],
   },
   {
     period: "Nov 2025 — Feb 2026",
-    role: "GenAI Developer Intern",
-    company: "FrankMax. India",
+    role: "Data & GenAI Analyst Intern",
+    company: "FrankMax India",
     companyUrl: "#",
     description:
-      "Collaborated with domain experts to translate business requirements into technical specifications for AI solutions, ensuring alignment between user needs and model capabilities. Analyzed model performance metrics and user feedback to drive iterative improvements and inform product enhancement decisions. Communicated technical trade-offs and AI limitations to cross-functional stakeholders.",
+      "• Analyzed model outputs and user interactions to identify product trends, improving decision-making efficiency by ~50%\n• Converted business requirements into technical specifications, improving KPI alignment by ~45%\n• Presented technical trade-offs to cross-functional teams, reducing solution risk by ~40%",
     tags: ["GenAI", "LLMs", "Product Specifications", "AI Solutions"],
   },
   {
     period: "Mar 2025 — Jun 2025",
-    role: "AIML Engineer Intern",
+    role: "Data Analyst Intern (AIML)",
     company: "WebMobi 360",
     companyUrl: "#",
     description:
-      "Defined data quality requirements and success metrics for ML projects, ensuring datasets aligned with business objectives. Evaluated ML model performance through experimentation and testing, documenting trade-offs between accuracy, speed, and resource costs. Collaborated with cross-functional teams to document technical workflows and translate AI/ML capabilities into actionable product features.",
+      "• Defined success metrics and data quality benchmarks for ML projects, improving model evaluation clarity by ~50%\n• Documented trade-offs between accuracy, latency, and resource cost, enabling better decision-making by ~45%",
     tags: ["Machine Learning", "Data Quality", "Model Evaluation", "Python"],
   },
 ]

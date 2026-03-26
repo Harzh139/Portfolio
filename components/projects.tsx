@@ -2,20 +2,10 @@ import { FileText } from "lucide-react"
 
 const projects = [
   {
-    title: "Voice Assistant for Real-time Grammar Feedback",
+    title: "DocMentor: Smart Q&A System",
     description:
-      "Built real-time AI voice assistant for grammar feedback, achieving 40% improvement in communication accuracy through user testing. Defined evaluation metrics (accuracy, latency) and iterated across 20+ test sessions to reach 85% accuracy benchmark.",
-    tags: ["AI", "Voice Processing", "NLP", "Evaluation Metrics"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Harzh139",
-    prdUrl: "/prd/voice-assistant",
-    image: "/proj_voice_1772354513844.png",
-  },
-  {
-    title: "Smart Document Q&A Chatbot (DocMentor)",
-    description:
-      "Built hybrid RAG-based chatbot improving query accuracy by 35% over static FAQ systems. Designed and tested 10+ real-world scenarios, achieving 4.5/5 user satisfaction score.",
-    tags: ["RAG", "LangChain", "LLM", "Vector DB"],
+      "Designed a RAG-based analysis tool that improved query accuracy by 35% and achieved a 4.5/5 user satisfaction rating through rigorous scenario testing.",
+    tags: ["RAG", "Data Analysis", "Testing"],
     liveUrl: "#",
     githubUrl: "https://github.com/Harzh139",
     prdUrl: "/prd/docmentor",
@@ -24,32 +14,22 @@ const projects = [
   {
     title: "AI Automated Agent (ALEX)",
     description:
-      "Identified developer productivity bottleneck and built 'ALEX', an AI automation agent that streamlined code change and git commit workflows, reducing manual development effort and improving team efficiency. Designed command-based interaction model based on developer workflow analysis.",
-    tags: ["AI Agent", "Automation", "Python", "Git"],
+      "Identified developer productivity bottlenecks via workflow analysis and built an automation agent that significantly reduced manual effort and improved team efficiency.",
+    tags: ["Process Automation", "Workflow Analysis", "AI Agent"],
     liveUrl: "#",
     githubUrl: "https://github.com/Harzh139",
     prdUrl: "/prd/alex",
     image: "/proj_agent_1772354545148.png",
   },
   {
-    title: "Resume ATS Reviewer",
+    title: "Voice Assistant for Grammar",
     description:
-      "Built a Discord-based AI ATS Reviewer where users upload their resume and job description, triggering an automated workflow that evaluates alignment across multiple dimensions using LLM-based analysis. Generates structured JSON feedback with scores and improvement gaps, and sends the updated evaluation report via email.",
-    tags: ["LLM", "Discord Bot", "Automation", "JSON"],
+      "Defined evaluation metrics and conducted 20+ user testing sessions to iterate on accuracy, achieving an 85% accuracy benchmark.",
+    tags: ["Product Analysis", "User Testing", "Metrics"],
     liveUrl: "#",
     githubUrl: "https://github.com/Harzh139",
-    prdUrl: "/prd/resume-ats-reviewer",
-    image: "/proj_ats_1772354560666.png",
-  },
-  {
-    title: "Multi-Agent AI Productivity System",
-    description:
-      "Built a multi-agent productivity system that breaks goals into subtasks (Planner Agent), auto-schedules Google Calendar events & sends emails (Executor Agent), tracks deadlines (Monitor Agent), and generates a weekly productivity score (Reflection Agent). Reduces missed deadlines and manual scheduling overhead.",
-    tags: ["FastAPI", "LangGraph", "Groq", "Google Calendar API", "Gmail API", "FAISS", "Vanilla JS"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Harzh139",
-    prdUrl: "/prd/multi-agent-productivity",
-    image: "/proj_multi_1772354576160.png",
+    prdUrl: "/prd/voice-assistant",
+    image: "/proj_voice_1772354513844.png",
   },
 ]
 

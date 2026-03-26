@@ -17,7 +17,7 @@ export function Contact() {
               {"Let's work together"}
             </h3>
             <p className="text-muted-foreground leading-relaxed max-w-md">
-              {"I'm always open to discussing new opportunities in AI product & data analytics, or interesting projects. Feel free to reach out!"}
+              {"I'm always open to discussing new opportunities in product & data analysis, or interesting projects. Feel free to reach out!"}
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export function Contact() {
             </a>
 
             <a
-              href="https://drive.google.com/file/d/1EH9fK33xhuB7yyttPkB7KDMxwHTcIIqf/view?usp=sharing"
+              href="https://drive.google.com/file/d/1w1DGr_LYVOYWq_jls05ZKXf4xE5beDCX/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-between p-4 border border-border bg-card/50 hover:bg-background glow-hover transition-all duration-300 relative overflow-hidden"

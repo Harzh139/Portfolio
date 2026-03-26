@@ -1,19 +1,15 @@
 const skillCategories = [
     {
-        category: "Languages & Databases",
-        skills: ["Python", "SQL"],
+        category: "Analysis",
+        skills: ["Business Requirement Documentation (BRD/FRD)", "Product Analytics", "Market Research", "User Flow Mapping"],
     },
     {
-        category: "AI / ML Frameworks",
-        skills: ["XGBoost", "T5", "LLaMA", "RAG", "LangChain", "PyTorch"],
+        category: "Data Tech Stack",
+        skills: ["Python", "SQL", "Power BI", "Excel", "Data Visualization", "Predictive Modelling (XGBoost, LLaMA)"],
     },
     {
-        category: "Tools & Platforms",
-        skills: ["Docker", "GitHub", "Power BI"],
-    },
-    {
-        category: "Product",
-        skills: ["Product Metrics", "Requirements Gathering", "User Flows", "Stakeholder Management", "Data-Driven Decisions"],
+        category: "Process",
+        skills: ["Agile/Scrum", "Stakeholder Management", "GAP Analysis", "User Acceptance Testing (UAT)"],
     },
 ]
 
@@ -28,7 +24,7 @@ export function Skills() {
                     <div className="flex-1 h-px bg-border" />
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {skillCategories.map((cat) => (
                         <div
                             key={cat.category}

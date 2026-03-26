@@ -10,13 +10,13 @@ import type { Metadata } from "next"
 const prdFiles: Record<string, { file: string; title: string; project: string }> = {
     "alex": {
         file: "alex-prd.md",
-        title: "ALEX – AI Developer Workflow Agent",
+        title: "ALEX – Business Process Automation",
         project: "AI Automated Agent (ALEX)",
     },
     "docmentor": {
         file: "docmentor-prd.md",
-        title: "DocMentor – Smart Document Q&A Chatbot",
-        project: "Smart Document Q&A Chatbot (DocMentor)",
+        title: "DocMentor – Smart Q&A System",
+        project: "DocMentor: Smart Q&A System",
     },
     "resume-ats-reviewer": {
         file: "resume-ats-reviewer-prd.md",
@@ -25,8 +25,8 @@ const prdFiles: Record<string, { file: string; title: string; project: string }>
     },
     "voice-assistant": {
         file: "voice-assistant-prd.md",
-        title: "AI Communication Skill Enhancer",
-        project: "Voice Assistant for Real-time Grammar Feedback",
+        title: "Voice Assistant for Grammar",
+        project: "Voice Assistant for Grammar",
     },
     "multi-agent-productivity": {
         file: "Multi-Agent AI Productivity System _ PRD _V1_.md",

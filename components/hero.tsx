@@ -8,7 +8,7 @@ export function Hero() {
           <div className="flex items-center gap-3 animate-pulse text-accent">
             <span className="w-2 h-2 bg-accent rounded-full animate-ping"></span>
             <p className="text-sm font-mono tracking-widest uppercase font-bold">
-              AI Product & Data Analytics
+              Product & Data Analyst
             </p>
           </div>
           <h1
@@ -18,9 +18,9 @@ export function Hero() {
             Harsh Sharma
           </h1>
           <p className="text-lg leading-relaxed text-muted-foreground max-w-lg font-medium border-l-2 border-accent pl-4">
-            Zero complacency. Pure momentum. I am an{" "}
-            <strong className="text-foreground">AI Product & Data Analytics</strong>{" "}
-            professional bridging the gap between ruthless business requirements and cutting-edge AI/ML solutions. I build, I measure, and I relentlessly iterate.
+            Analytical and detail-oriented {" "}
+            <strong className="text-foreground">Data Science postgraduate</strong>{" "}
+            with a strong foundation in Business Analysis and Product Strategy. Skilled at translating complex data into actionable insights and aligning technical solutions with business objectives. Experienced in requirement gathering, KPI definition, and process optimization, contributing to a ~35% improvement in system accuracy and user satisfaction.
           </p>
 
           <div className="flex items-center gap-4 pt-4">
@@ -57,7 +57,7 @@ export function Hero() {
               <Phone size={20} />
             </a>
             <a
-              href="https://drive.google.com/file/d/1EH9fK33xhuB7yyttPkB7KDMxwHTcIIqf/view?usp=sharing"
+              href="https://drive.google.com/file/d/1w1DGr_LYVOYWq_jls05ZKXf4xE5beDCX/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-muted-foreground hover:text-background hover:bg-accent border border-muted-foreground/30 hover:border-accent transition-all duration-300 transform hover:-translate-y-1"
