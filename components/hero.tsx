@@ -8,7 +8,7 @@ export function Hero() {
           <div className="flex items-center gap-3 animate-pulse text-accent">
             <span className="w-2 h-2 bg-accent rounded-full animate-ping"></span>
             <p className="text-sm font-mono tracking-widest uppercase font-bold">
-              Product Manager
+              Associate Product Manager
             </p>
           </div>
           <h1
@@ -19,7 +19,7 @@ export function Hero() {
           </h1>
           <p className="text-lg leading-relaxed text-muted-foreground max-w-lg font-medium border-l-2 border-accent pl-4">
             Results-driven {" "}
-            <strong className="text-foreground">Product Manager</strong>{" "}
+            <strong className="text-foreground">Associate Product Manager</strong>{" "}
             at the intersection of AI/ML and product development, with hands-on experience translating complex AI capabilities into user-centric features. Background in Data Science enables deeper collaboration with engineering and data teams to build intelligent, data-driven products. Seeking an APM role to drive intelligent product experiences from discovery to delivery.
           </p>
 
@@ -57,7 +57,7 @@ export function Hero() {
               <Phone size={20} />
             </a>
             <a
-              href="https://drive.google.com/file/d/1w1DGr_LYVOYWq_jls05ZKXf4xE5beDCX/view?usp=sharing"
+              href="https://drive.google.com/file/d/1rTUnDzjiR8TmNRuvuC9OSPHQh40Sov3x/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-muted-foreground hover:text-background hover:bg-accent border border-muted-foreground/30 hover:border-accent transition-all duration-300 transform hover:-translate-y-1"
