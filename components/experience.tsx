@@ -1,30 +1,30 @@
 const experiences = [
   {
     period: "Feb 2026 — Present",
-    role: "Business & Product Associate",
-    company: "Dharmshil Group of Companies",
+    role: "Product & AI Associate",
+    company: "Dharmshil",
     companyUrl: "#",
     description:
-      "• Led requirement engineering for a corporate website redesign, translating business requirements into functional specifications, improving development clarity by ~45%\n• Coordinated between stakeholders and technical teams to ensure project alignment, reducing communication gaps by ~45%\n• Defined user personas, feature scope, and content structures, improving development efficiency by ~40%.",
-    tags: ["Product Management", "Requirements Gathering", "User Flows", "Stakeholder Management"],
+      "• Built a real-time AI voice assistant for grammar feedback achieving 91% accuracy, driving a 20% improvement in communication accuracy across 15 beta users.\n• Led requirement gathering sessions, authoring PRDs and 3 EPICs broken into 12 features and 40+ user stories for a clinic website redesign.\n• Translated business requirements into clear feature definitions and tasks, reducing back-and-forth and improving execution.\n• Maintained a sprint backlog of 20+ items in JIRA, grooming tickets weekly cross-functionally.",
+    tags: ["Product Management", "AI Assitant", "PRDs", "JIRA", "Agile"],
   },
   {
     period: "Nov 2025 — Feb 2026",
-    role: "Data & GenAI Analyst Intern",
-    company: "FrankMax India",
+    role: "Gen AI Developer Intern",
+    company: "FrankMax",
     companyUrl: "#",
     description:
-      "• Analyzed model outputs and user interactions to identify product trends, improving decision-making efficiency by ~50%\n• Converted business requirements into technical specifications, improving KPI alignment by ~45%\n• Presented technical trade-offs to cross-functional teams, reducing solution risk by ~40%",
-    tags: ["GenAI", "LLMs", "Product Specifications", "AI Solutions"],
+      "• Identified workflow inefficiencies and defined requirements for ALEX, an agentic automation system, improving efficiency by 25%.\n• Partnered with stakeholders to translate business needs into scalable AI-driven solutions, documenting acceptance criteria.\n• Tracked model performance metrics and synthesized user feedback to support backlog refinement.\n• Communicated AI trade-offs and limitations to business and engineering stakeholders.",
+    tags: ["GenAI", "LLMs", "Requirements definition", "Cross-Functional"],
   },
   {
     period: "Mar 2025 — Jun 2025",
-    role: "Data Analyst Intern (AIML)",
+    role: "AI ML Engineer Intern",
     company: "WebMobi 360",
     companyUrl: "#",
     description:
-      "• Defined success metrics and data quality benchmarks for ML projects, improving model evaluation clarity by ~50%\n• Documented trade-offs between accuracy, latency, and resource cost, enabling better decision-making by ~45%",
-    tags: ["Machine Learning", "Data Quality", "Model Evaluation", "Python"],
+      "• Defined data quality standards and success metrics to ensure alignment with ML model outputs.\n• Evaluated ML model performance documenting accuracy-speed-cost trade-offs for product decisions.\n• Collaborated closely with cross-functional teams to translate AI/ML capabilities into user-facing solutions.",
+    tags: ["Machine Learning", "Success Metrics", "Python", "Trade-offs"],
   },
 ]
 
@@ -89,15 +89,15 @@ export function Experience() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="p-8 border-t-4 border-t-accent bg-card hover:bg-secondary/20 transition-colors shadow-sm relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-16 h-16 bg-accent/5 rounded-bl-full group-hover:scale-150 transition-transform"></div>
-            <p className="text-xs font-mono font-bold text-accent mb-2 tracking-widest uppercase">2023 — 2025</p>
-            <h3 className="text-xl font-black text-foreground mb-1 uppercase tracking-tight">MSc. Data Science</h3>
+            <p className="text-xs font-mono font-bold text-accent mb-2 tracking-widest uppercase">Sept 2023 — Dec 2025</p>
+            <h3 className="text-xl font-black text-foreground mb-1 uppercase tracking-tight">M.Sc. in Data Science</h3>
             <p className="text-sm text-muted-foreground font-medium">Alliance University, Bengaluru</p>
           </div>
           <div className="p-8 border-t-4 border-t-accent bg-card hover:bg-secondary/20 transition-colors shadow-sm relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-16 h-16 bg-accent/5 rounded-bl-full group-hover:scale-150 transition-transform"></div>
-            <p className="text-xs font-mono font-bold text-accent mb-2 tracking-widest uppercase">2020 — 2023</p>
+            <p className="text-xs font-mono font-bold text-accent mb-2 tracking-widest uppercase">March 2020 — April 2023</p>
             <h3 className="text-xl font-black text-foreground mb-1 uppercase tracking-tight">Bachelor{"'"}s in Computer Applications</h3>
-            <p className="text-sm text-muted-foreground font-medium">LJ University, Ahmedabad</p>
+            <p className="text-sm text-muted-foreground font-medium">Lok Jagruti Kendra University</p>
           </div>
         </div>
       </div>

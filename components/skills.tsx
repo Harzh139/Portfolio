@@ -1,15 +1,15 @@
 const skillCategories = [
     {
-        category: "Analysis",
-        skills: ["Business Requirement Documentation (BRD/FRD)", "Product Analytics", "Market Research", "User Flow Mapping"],
+        category: "Product & Process",
+        skills: ["Product Requirements & Scoping", "User Stories & Wireframing", "Success Metrics & KPIs", "Agile & Scrum", "User Research & Testing", "Competitive Analysis", "Product Documentation"],
     },
     {
-        category: "Data Tech Stack",
-        skills: ["Python", "SQL", "Power BI", "Excel", "Data Visualization", "Predictive Modelling (XGBoost, LLaMA)"],
+        category: "AI & Tech",
+        skills: ["AI/ML Product Development", "Generative AI (LLMs)", "RAG", "Model Performance Analysis", "Prompt Design & Eval", "Python", "SQL", "Power BI"],
     },
     {
-        category: "Process",
-        skills: ["Agile/Scrum", "Stakeholder Management", "GAP Analysis", "User Acceptance Testing (UAT)"],
+        category: "Tools & Soft Skills",
+        skills: ["JIRA", "Figma", "Notion", "Trello", "Cross-Functional Collaboration", "Stakeholder Management", "AI Trade-off Assessment"],
     },
 ]
 

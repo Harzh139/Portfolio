@@ -2,34 +2,24 @@ import { FileText } from "lucide-react"
 
 const projects = [
   {
-    title: "DocMentor: Smart Q&A System",
+    title: "Smart Document Q&A Chatbot (DocMentor)",
     description:
-      "Designed a RAG-based analysis tool that improved query accuracy by 35% and achieved a 4.5/5 user satisfaction rating through rigorous scenario testing.",
-    tags: ["RAG", "Data Analysis", "Testing"],
+      "Identified user pain points around information retrieval and built a hybrid RAG-based chatbot, improving query accuracy by 35% over static systems.",
+    tags: ["RAG", "Product Scope", "Success Metrics", "MVP"],
     liveUrl: "#",
     githubUrl: "https://github.com/Harzh139",
     prdUrl: "/prd/docmentor",
     image: "/proj_doc_1772354529508.png",
   },
   {
-    title: "AI Automated Agent (ALEX)",
+    title: "Resume ATS Reviewer",
     description:
-      "Identified developer productivity bottlenecks via workflow analysis and built an automation agent that significantly reduced manual effort and improved team efficiency.",
-    tags: ["Process Automation", "Workflow Analysis", "AI Agent"],
+      "Scoped and built a Discord-based AI tool automating resume review, prioritizing structured JSON output to deliver actionable resume insights and ending manual review effort.",
+    tags: ["User Flow", "AI Tool", "Discord", "Product Need"],
     liveUrl: "#",
     githubUrl: "https://github.com/Harzh139",
-    prdUrl: "/prd/alex",
+    prdUrl: "/prd/resume-ats-reviewer-prd",
     image: "/proj_agent_1772354545148.png",
-  },
-  {
-    title: "Voice Assistant for Grammar",
-    description:
-      "Defined evaluation metrics and conducted 20+ user testing sessions to iterate on accuracy, achieving an 85% accuracy benchmark.",
-    tags: ["Product Analysis", "User Testing", "Metrics"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Harzh139",
-    prdUrl: "/prd/voice-assistant",
-    image: "/proj_voice_1772354513844.png",
   },
 ]
 

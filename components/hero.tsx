@@ -8,7 +8,7 @@ export function Hero() {
           <div className="flex items-center gap-3 animate-pulse text-accent">
             <span className="w-2 h-2 bg-accent rounded-full animate-ping"></span>
             <p className="text-sm font-mono tracking-widest uppercase font-bold">
-              Product & Data Analyst
+              Product Manager
             </p>
           </div>
           <h1
@@ -18,9 +18,9 @@ export function Hero() {
             Harsh Sharma
           </h1>
           <p className="text-lg leading-relaxed text-muted-foreground max-w-lg font-medium border-l-2 border-accent pl-4">
-            Analytical and detail-oriented {" "}
-            <strong className="text-foreground">Data Science postgraduate</strong>{" "}
-            with a strong foundation in Business Analysis and Product Strategy. Skilled at translating complex data into actionable insights and aligning technical solutions with business objectives. Experienced in requirement gathering, KPI definition, and process optimization, contributing to a ~35% improvement in system accuracy and user satisfaction.
+            Results-driven {" "}
+            <strong className="text-foreground">Product Manager</strong>{" "}
+            at the intersection of AI/ML and product development, with hands-on experience translating complex AI capabilities into user-centric features. Background in Data Science enables deeper collaboration with engineering and data teams to build intelligent, data-driven products. Seeking an APM role to drive intelligent product experiences from discovery to delivery.
           </p>
 
           <div className="flex items-center gap-4 pt-4">
