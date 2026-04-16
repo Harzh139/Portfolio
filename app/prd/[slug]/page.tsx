@@ -33,6 +33,16 @@ const prdFiles: Record<string, { file: string; title: string; project: string }>
         title: "Multi-Agent AI Productivity System",
         project: "Multi-Agent AI Productivity System",
     },
+    "swiggy-case-study": {
+        file: "swiggy-case-study.md",
+        title: "Swiggy Instamart — Competitive Analysis",
+        project: "Swiggy Instamart Case Study",
+    },
+    "kuvera-case-study": {
+        file: "kuvera-case-study.md",
+        title: "Kuvera x CRED — Conversion Problem",
+        project: "Kuvera x CRED Case Study",
+    },
 }
 
 export async function generateStaticParams() {

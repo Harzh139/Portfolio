@@ -1,23 +1,46 @@
-import { FileText } from "lucide-react"
+import Link from "next/link"
 
-const projects = [
+const caseStudies = [
   {
-    title: "Smart Document Q&A Chatbot (DocMentor)",
-    description:
-      "Identified user pain points around information retrieval and built a hybrid RAG-based chatbot, improving query accuracy by 35% over static systems.",
-    tags: ["RAG", "Product Scope", "Success Metrics", "MVP"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Harzh139",
+    title: "🍃 Swiggy Instamart — Competitive Analysis",
+    tags: [
+      { name: "Competitor Analysis", color: "bg-amber-500/10 text-amber-500 border-amber-500/20" },
+      { name: "Secondary research", color: "bg-pink-500/10 text-pink-500 border-pink-500/20" },
+      { name: "Product Analysis", color: "bg-orange-500/10 text-orange-500 border-orange-500/20" },
+    ],
+    prdUrl: "/prd/swiggy-case-study",
+    image: "/swiggy_blinkit_case.png",
+  },
+  {
+    title: "💳 Kuvera x CRED — Conversion Problem",
+    tags: [
+      { name: "Product Strategy", color: "bg-purple-500/10 text-purple-500 border-purple-500/20" },
+      { name: "Fintech", color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20" },
+      { name: "Growth", color: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" },
+    ],
+    prdUrl: "/prd/kuvera-case-study",
+    image: "/kuvera_case.png",
+  },
+]
+
+const technicalProjects = [
+  {
+    title: "🤖 DocMentor: Smart Q&A System",
+    tags: [
+      { name: "RAG", color: "bg-blue-500/10 text-blue-500 border-blue-500/20" },
+      { name: "Product Scope", color: "bg-green-500/10 text-green-500 border-green-500/20" },
+      { name: "MVP", color: "bg-orange-500/10 text-orange-500 border-orange-500/20" },
+    ],
     prdUrl: "/prd/docmentor",
     image: "/proj_doc_1772354529508.png",
   },
   {
-    title: "Resume ATS Reviewer",
-    description:
-      "Scoped and built a Discord-based AI tool automating resume review, prioritizing structured JSON output to deliver actionable resume insights and ending manual review effort.",
-    tags: ["User Flow", "AI Tool", "Discord", "Product Need"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Harzh139",
+    title: "📄 Resume ATS Reviewer",
+    tags: [
+      { name: "AI Tool", color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20" },
+      { name: "User Flow", color: "bg-amber-500/10 text-amber-500 border-amber-500/20" },
+      { name: "Discord", color: "bg-indigo-500/10 text-indigo-500 border-indigo-500/20" },
+    ],
     prdUrl: "/prd/resume-ats-reviewer-prd",
     image: "/proj_agent_1772354545148.png",
   },
@@ -25,68 +48,77 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="mx-auto max-w-6xl">
-        <div className="flex items-center gap-4 mb-16">
-          <h2 className="text-sm font-mono text-accent tracking-wider uppercase">
-            Projects
-          </h2>
-          <div className="flex-1 h-px bg-border" />
-        </div>
+    <section id="projects" className="py-24 px-6 bg-background">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-16">
+          
+          {/* Case Studies Column */}
+          <div className="flex flex-col gap-10">
+            <div className="flex items-center gap-4">
+              <h2 className="text-sm font-mono text-accent tracking-wider uppercase whitespace-nowrap">
+                Case Studies
+              </h2>
+              <div className="flex-1 h-px bg-border/40" />
+            </div>
+            <div className="flex flex-col gap-6">
+              {caseStudies.map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
+            </div>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <article
-              key={project.title}
-              className="group relative flex flex-col border border-border bg-card overflow-hidden glow-hover"
-            >
-              <div className="absolute top-0 left-0 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-20"></div>
+          {/* Technical Projects Column */}
+          <div className="flex flex-col gap-10">
+            <div className="flex items-center gap-4">
+              <h2 className="text-sm font-mono text-accent tracking-wider uppercase whitespace-nowrap">
+                Technical Projects
+              </h2>
+              <div className="flex-1 h-px bg-border/40" />
+            </div>
+            <div className="flex flex-col gap-6">
+              {technicalProjects.map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
+            </div>
+          </div>
 
-              <div className="relative h-48 w-full border-b border-border overflow-hidden">
-                <div className="absolute inset-0 bg-accent/20 mix-blend-multiply z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300"></div>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover filter grayscale contrast-125 brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500"
-                />
-              </div>
-
-              <div className="flex flex-col gap-4 p-8 flex-1 relative z-10 bg-card">
-                <h3 className="text-xl font-bold text-foreground leading-snug tracking-tight">
-                  {project.title}
-                </h3>
-
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1 font-medium">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 text-[10px] font-mono text-background bg-accent font-bold uppercase tracking-widest"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* PRD Link */}
-                <div className="pt-4 mt-2 border-t border-border/50">
-                  <a
-                    href={project.prdUrl}
-                    className="inline-flex items-center gap-2 text-xs font-mono text-accent/80 hover:text-accent transition-colors group/prd font-bold uppercase tracking-wider"
-                    aria-label={`Read PRD for ${project.title}`}
-                  >
-                    <FileText size={14} />
-                    <span className="group-hover/prd:translate-x-1 transition-transform">Read PRD ↗</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-          ))}
         </div>
       </div>
     </section>
+  )
+}
+
+function ProjectCard({ project }: { project: any }) {
+  return (
+    <Link
+      href={project.prdUrl}
+      className="group relative flex flex-col bg-[#111111] border border-white/5 rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:-translate-y-1"
+    >
+      <div className="relative aspect-[16/9] w-full overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+
+      <div className="flex flex-col gap-4 p-5 flex-1 bg-[#161616]">
+        <h3 className="text-sm font-semibold text-white/90 leading-snug group-hover:text-accent transition-colors">
+          {project.title}
+        </h3>
+
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {project.tags.map((tag: any) => (
+            <span
+              key={tag.name}
+              className={`px-2.5 py-0.5 text-[10px] font-medium border rounded-full ${tag.color}`}
+            >
+              {tag.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </Link>
   )
 }
