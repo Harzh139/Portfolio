@@ -92,7 +92,7 @@ function ProjectCard({ project }: { project: any }) {
   return (
     <Link
       href={project.prdUrl}
-      className="group relative flex flex-col bg-[#111111] border border-white/5 rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:-translate-y-1"
+      className="group relative flex flex-col bg-card border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 shadow-sm"
     >
       <div className="relative aspect-[16/9] w-full overflow-hidden">
         <img
@@ -103,8 +103,8 @@ function ProjectCard({ project }: { project: any }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      <div className="flex flex-col gap-4 p-5 flex-1 bg-[#161616]">
-        <h3 className="text-sm font-semibold text-white/90 leading-snug group-hover:text-accent transition-colors">
+      <div className="flex flex-col gap-4 p-5 flex-1 bg-card">
+        <h3 className="text-sm font-semibold text-foreground leading-snug group-hover:text-accent transition-colors">
           {project.title}
         </h3>
 

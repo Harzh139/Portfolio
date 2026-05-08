@@ -346,6 +346,16 @@ const posts: Post[] = [
     reactions: 2,
     comments: 0
   },
+  {
+    title: "Banned Twice. Back Twice. Krafton's Crisis PM Playbook",
+    date: "2026-05-08",
+    category: "PM Teardown",
+    brand: "PUBG / BGMI",
+    url: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7458398990699479040",
+    reactions: 0,
+    comments: 0,
+    hook: "When India banned PUBG, 50M users vanished overnight. Krafton didn't just rebrand; they executed a surgical product strategy: cutting Tencent, localizing data to Azure India, and addressing root-cause security concerns to become the government's preferred solution."
+  },
   // SNAPCHAT TEARDOWN
   {
     title: "The duopoly is dead. India's ride-hailing market now has three serious players — and Snapchat is the wildcard.",
@@ -647,11 +657,6 @@ export function PMTeardowns() {
                   key={category}
                   variant={selectedCategory === category ? "default" : "outline"}
                   onClick={() => setSelectedCategory(category)}
-                  className={`${
-                    selectedCategory === category 
-                      ? 'bg-white text-black' 
-                      : 'bg-transparent border-white/20 text-white hover:bg-white/10'
-                  }`}
                 >
                   {category}
                 </Button>
@@ -663,14 +668,14 @@ export function PMTeardowns() {
               {brandCards.map((brand, index) => (
                 <Card 
                   key={index} 
-                  className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer flex flex-col p-2 group relative overflow-hidden"
+                  className="bg-card/50 border-border backdrop-blur-sm hover:bg-accent/50 transition-colors cursor-pointer flex flex-col p-2 group relative overflow-hidden"
                   onClick={() => setSelectedBrand(brand.name)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-colors" />
                   <CardHeader className="pb-3 relative z-10">
                     <div className="flex items-center gap-4">
                       {brandDomains[brand.name] ? (
-                        <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-white/20 shrink-0">
+                        <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-border shrink-0">
                           <img 
                             src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name]}&sz=128`} 
                             alt={`${brand.name} logo`}
@@ -681,11 +686,11 @@ export function PMTeardowns() {
                           />
                         </div>
                       ) : (
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl border border-white/20 shrink-0">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl border border-border shrink-0">
                           {brand.name.charAt(0)}
                         </div>
                       )}
-                      <h3 className="text-white font-semibold text-2xl leading-tight group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-foreground font-semibold text-2xl leading-tight group-hover:text-primary transition-colors">
                         {brand.name}
                       </h3>
                     </div>
@@ -693,16 +698,16 @@ export function PMTeardowns() {
                   <CardContent className="pt-0 flex flex-col flex-grow justify-end">
                     <div className="mt-auto">
                       <div className="flex items-center justify-between mb-4">
-                        <div className="flex gap-4 text-sm text-gray-400">
+                        <div className="flex gap-4 text-sm text-muted-foreground">
                           <span>📝 {brand.posts.length} Posts</span>
-                          <span className="text-yellow-400">👍 {brand.totalReactions}</span>
-                          <span className="text-blue-400">💬 {brand.totalComments}</span>
+                          <span className="text-yellow-500 dark:text-yellow-400">👍 {brand.totalReactions}</span>
+                          <span className="text-blue-500 dark:text-blue-400">💬 {brand.totalComments}</span>
                         </div>
                       </div>
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="w-full bg-transparent border-white/20 text-white group-hover:bg-white/10 pointer-events-none"
+                        className="w-full pointer-events-none"
                       >
                         View Teardowns →
                       </Button>
@@ -718,17 +723,16 @@ export function PMTeardowns() {
               <Button 
                 onClick={() => setSelectedBrand(null)}
                 variant="outline"
-                className="bg-transparent border-white/20 text-white hover:bg-white/10"
               >
                 ← Back to Brands
               </Button>
-              <h3 className="text-2xl font-bold text-white">{selectedBrand}</h3>
+              <h3 className="text-2xl font-bold text-foreground">{selectedBrand}</h3>
             </div>
 
             {/* Posts Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
               {displayedPosts.map((post, index) => (
-                <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col p-2">
+                <Card key={index} className="bg-card/50 border-border backdrop-blur-sm hover:bg-accent/50 transition-colors flex flex-col p-2">
                   <CardHeader className="pb-3">
                     <div className="flex items-start justify-between mb-2">
                       <Badge 
@@ -742,31 +746,31 @@ export function PMTeardowns() {
                         </Badge>
                       )}
                     </div>
-                    <h3 className="text-white font-semibold text-lg leading-tight">
+                    <h3 className="text-foreground font-semibold text-lg leading-tight">
                       {post.title}
                     </h3>
                     {post.hook && (
-                      <p className="text-gray-400 text-sm mt-2 line-clamp-2">
+                      <p className="text-muted-foreground text-sm mt-2 line-clamp-2">
                         {post.hook}
                       </p>
                     )}
                   </CardHeader>
                   <CardContent className="pt-0 flex flex-col flex-grow justify-end">
                     <div className="mt-auto">
-                      <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                      <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
                         <span>{formatDate(post.date)}</span>
                       </div>
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex gap-4 text-sm">
-                          <span className="text-yellow-400">👍 {post.reactions}</span>
-                          <span className="text-blue-400">💬 {post.comments}</span>
+                          <span className="text-yellow-500 dark:text-yellow-400">👍 {post.reactions}</span>
+                          <span className="text-blue-500 dark:text-blue-400">💬 {post.comments}</span>
                         </div>
                       </div>
                       <Button 
                         asChild 
                         variant="outline" 
                         size="sm" 
-                        className="w-full bg-transparent border-white/20 text-white hover:bg-white/10"
+                        className="w-full"
                       >
                         <a href={post.url} target="_blank" rel="noopener noreferrer">
                           View on LinkedIn →
@@ -782,7 +786,7 @@ export function PMTeardowns() {
 
         {/* Footer */}
         <div className="text-center">
-          <p className="text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             New teardown every week · 58 posts published
           </p>
           <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
