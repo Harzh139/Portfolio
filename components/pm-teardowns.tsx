@@ -556,10 +556,14 @@ const categoryColors = {
 
 export function PMTeardowns() {
   const [selectedCategory, setSelectedCategory] = useState('All')
+  const [visibleCount, setVisibleCount] = useState(9)
 
-  const filteredPosts = selectedCategory === 'All' 
-    ? posts 
-    : posts.filter(post => post.category === selectedCategory)
+  const filteredPosts = (selectedCategory === 'All' 
+    ? [...posts] 
+    : posts.filter(post => post.category === selectedCategory))
+    .sort((a, b) => b.reactions - a.reactions)
+
+  const displayedPosts = filteredPosts.slice(0, visibleCount)
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -594,12 +598,15 @@ export function PMTeardowns() {
         </div>
 
         {/* Filter Bar */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-16">
           {categories.map(category => (
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => {
+                setSelectedCategory(category)
+                setVisibleCount(9)
+              }}
               className={`${
                 selectedCategory === category 
                   ? 'bg-white text-black' 
@@ -612,9 +619,9 @@ export function PMTeardowns() {
         </div>
 
         {/* Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {filteredPosts.map((post, index) => (
-            <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
+          {displayedPosts.map((post, index) => (
+            <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col p-2">
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between mb-2">
                   <Badge 
@@ -637,31 +644,46 @@ export function PMTeardowns() {
                   </p>
                 )}
               </CardHeader>
-              <CardContent className="pt-0">
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                  {post.brand && <span>{post.brand}</span>}
-                  <span>{formatDate(post.date)}</span>
-                </div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex gap-4 text-sm">
-                    <span className="text-yellow-400">👍 {post.reactions}</span>
-                    <span className="text-blue-400">💬 {post.comments}</span>
+              <CardContent className="pt-0 flex flex-col flex-grow justify-end">
+                <div className="mt-auto">
+                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                    {post.brand && <span>{post.brand}</span>}
+                    <span>{formatDate(post.date)}</span>
                   </div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex gap-4 text-sm">
+                      <span className="text-yellow-400">👍 {post.reactions}</span>
+                      <span className="text-blue-400">💬 {post.comments}</span>
+                    </div>
+                  </div>
+                  <Button 
+                    asChild 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full bg-transparent border-white/20 text-white hover:bg-white/10"
+                  >
+                    <a href={post.url} target="_blank" rel="noopener noreferrer">
+                      View on LinkedIn →
+                    </a>
+                  </Button>
                 </div>
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full bg-transparent border-white/20 text-white hover:bg-white/10"
-                >
-                  <a href={post.url} target="_blank" rel="noopener noreferrer">
-                    View on LinkedIn →
-                  </a>
-                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        {visibleCount < filteredPosts.length && (
+          <div className="flex justify-center mb-16">
+            <Button 
+              onClick={() => setVisibleCount(prev => prev + 9)}
+              variant="outline"
+              size="lg"
+              className="bg-transparent border-white/20 text-white hover:bg-white/10"
+            >
+              Load More Teardowns
+            </Button>
+          </div>
+        )}
 
         {/* Footer */}
         <div className="text-center">
