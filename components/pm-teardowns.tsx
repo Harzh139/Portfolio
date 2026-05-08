@@ -554,16 +554,57 @@ const categoryColors = {
   'Learning': 'bg-violet-500'
 }
 
+const brandDomains: Record<string, string> = {
+  'Zomato': 'zomato.com',
+  'Zomato / Zepto': 'zeptonow.com',
+  'Blinkit / Zomato': 'blinkit.com',
+  'UPI / NPCI': 'npci.org.in',
+  'UPI / Google Pay': 'pay.google.com',
+  'UPI / PhonePe': 'phonepe.com',
+  'Netflix': 'netflix.com',
+  'CRED': 'cred.club',
+  'Snapdeal': 'snapdeal.com',
+  'Meesho / Flipkart': 'meesho.com',
+  'Meesho': 'meesho.com',
+  'Spotify': 'spotify.com',
+  'Red Bull': 'redbull.com',
+  'PUBG / BGMI': 'krafton.com',
+  'Snapchat': 'snapchat.com',
+  'Meta': 'meta.com',
+  'Instagram': 'instagram.com',
+  'LinkedIn': 'linkedin.com',
+  'GitHub': 'github.com',
+}
+
 export function PMTeardowns() {
   const [selectedCategory, setSelectedCategory] = useState('All')
-  const [visibleCount, setVisibleCount] = useState(9)
+  const [selectedBrand, setSelectedBrand] = useState<string | null>(null)
 
-  const filteredPosts = (selectedCategory === 'All' 
-    ? [...posts] 
-    : posts.filter(post => post.category === selectedCategory))
-    .sort((a, b) => b.reactions - a.reactions)
+  const filteredPostsByCategory = selectedCategory === 'All' 
+    ? posts 
+    : posts.filter(post => post.category === selectedCategory)
 
-  const displayedPosts = filteredPosts.slice(0, visibleCount)
+  const groupedPosts = filteredPostsByCategory.reduce((acc, post) => {
+    const brand = post.brand || 'General Insights'
+    if (!acc[brand]) {
+      acc[brand] = {
+        name: brand,
+        posts: [],
+        totalReactions: 0,
+        totalComments: 0,
+      }
+    }
+    acc[brand].posts.push(post)
+    acc[brand].totalReactions += post.reactions
+    acc[brand].totalComments += post.comments
+    return acc
+  }, {} as Record<string, { name: string, posts: Post[], totalReactions: number, totalComments: number }>)
+
+  const brandCards = Object.values(groupedPosts).sort((a, b) => b.totalReactions - a.totalReactions)
+
+  const displayedPosts = selectedBrand 
+    ? groupedPosts[selectedBrand]?.posts.sort((a, b) => b.reactions - a.reactions) || []
+    : []
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -584,12 +625,12 @@ export function PMTeardowns() {
         {/* Stats Bar */}
         <div className="flex justify-center items-center gap-8 mb-12 text-white">
           <div className="text-center">
-            <div className="text-2xl font-bold">58</div>
+            <div className="text-2xl font-bold">{posts.length}</div>
             <div className="text-sm text-gray-400">Posts</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold">8</div>
-            <div className="text-sm text-gray-400">Brands Covered</div>
+            <div className="text-2xl font-bold">{Object.keys(groupedPosts).length}</div>
+            <div className="text-sm text-gray-400">Brands & Series</div>
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold">89</div>
@@ -597,92 +638,146 @@ export function PMTeardowns() {
           </div>
         </div>
 
-        {/* Filter Bar */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {categories.map(category => (
-            <Button
-              key={category}
-              variant={selectedCategory === category ? "default" : "outline"}
-              onClick={() => {
-                setSelectedCategory(category)
-                setVisibleCount(9)
-              }}
-              className={`${
-                selectedCategory === category 
-                  ? 'bg-white text-black' 
-                  : 'bg-transparent border-white/20 text-white hover:bg-white/10'
-              }`}
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
+        {!selectedBrand ? (
+          <>
+            {/* Filter Bar */}
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
+              {categories.map(category => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`${
+                    selectedCategory === category 
+                      ? 'bg-white text-black' 
+                      : 'bg-transparent border-white/20 text-white hover:bg-white/10'
+                  }`}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
 
-        {/* Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
-          {displayedPosts.map((post, index) => (
-            <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col p-2">
-              <CardHeader className="pb-3">
-                <div className="flex items-start justify-between mb-2">
-                  <Badge 
-                    className={`${categoryColors[post.category as keyof typeof categoryColors]} text-white text-xs`}
-                  >
-                    {post.category}
-                  </Badge>
-                  {post.isTopPost && (
-                    <Badge className="bg-red-500 text-white text-xs">
-                      🔥 Top Post
-                    </Badge>
-                  )}
-                </div>
-                <h3 className="text-white font-semibold text-lg leading-tight">
-                  {post.title}
-                </h3>
-                {post.hook && (
-                  <p className="text-gray-400 text-sm mt-2 line-clamp-2">
-                    {post.hook}
-                  </p>
-                )}
-              </CardHeader>
-              <CardContent className="pt-0 flex flex-col flex-grow justify-end">
-                <div className="mt-auto">
-                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                    {post.brand && <span>{post.brand}</span>}
-                    <span>{formatDate(post.date)}</span>
-                  </div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex gap-4 text-sm">
-                      <span className="text-yellow-400">👍 {post.reactions}</span>
-                      <span className="text-blue-400">💬 {post.comments}</span>
+            {/* Brands Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+              {brandCards.map((brand, index) => (
+                <Card 
+                  key={index} 
+                  className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer flex flex-col p-2 group relative overflow-hidden"
+                  onClick={() => setSelectedBrand(brand.name)}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-colors" />
+                  <CardHeader className="pb-3 relative z-10">
+                    <div className="flex items-center gap-4">
+                      {brandDomains[brand.name] ? (
+                        <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-white/20 shrink-0">
+                          <img 
+                            src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name]}&sz=128`} 
+                            alt={`${brand.name} logo`}
+                            className="w-full h-full object-contain rounded-full bg-white"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl border border-white/20 shrink-0">
+                          {brand.name.charAt(0)}
+                        </div>
+                      )}
+                      <h3 className="text-white font-semibold text-2xl leading-tight group-hover:text-blue-400 transition-colors">
+                        {brand.name}
+                      </h3>
                     </div>
-                  </div>
-                  <Button 
-                    asChild 
-                    variant="outline" 
-                    size="sm" 
-                    className="w-full bg-transparent border-white/20 text-white hover:bg-white/10"
-                  >
-                    <a href={post.url} target="_blank" rel="noopener noreferrer">
-                      View on LinkedIn →
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  </CardHeader>
+                  <CardContent className="pt-0 flex flex-col flex-grow justify-end">
+                    <div className="mt-auto">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex gap-4 text-sm text-gray-400">
+                          <span>📝 {brand.posts.length} Posts</span>
+                          <span className="text-yellow-400">👍 {brand.totalReactions}</span>
+                          <span className="text-blue-400">💬 {brand.totalComments}</span>
+                        </div>
+                      </div>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full bg-transparent border-white/20 text-white group-hover:bg-white/10 pointer-events-none"
+                      >
+                        View Teardowns →
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="mb-8 flex items-center justify-between">
+              <Button 
+                onClick={() => setSelectedBrand(null)}
+                variant="outline"
+                className="bg-transparent border-white/20 text-white hover:bg-white/10"
+              >
+                ← Back to Brands
+              </Button>
+              <h3 className="text-2xl font-bold text-white">{selectedBrand}</h3>
+            </div>
 
-        {visibleCount < filteredPosts.length && (
-          <div className="flex justify-center mb-16">
-            <Button 
-              onClick={() => setVisibleCount(prev => prev + 9)}
-              variant="outline"
-              size="lg"
-              className="bg-transparent border-white/20 text-white hover:bg-white/10"
-            >
-              Load More Teardowns
-            </Button>
-          </div>
+            {/* Posts Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
+              {displayedPosts.map((post, index) => (
+                <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col p-2">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between mb-2">
+                      <Badge 
+                        className={`${categoryColors[post.category as keyof typeof categoryColors] || 'bg-gray-500'} text-white text-xs`}
+                      >
+                        {post.category}
+                      </Badge>
+                      {post.isTopPost && (
+                        <Badge className="bg-red-500 text-white text-xs">
+                          🔥 Top Post
+                        </Badge>
+                      )}
+                    </div>
+                    <h3 className="text-white font-semibold text-lg leading-tight">
+                      {post.title}
+                    </h3>
+                    {post.hook && (
+                      <p className="text-gray-400 text-sm mt-2 line-clamp-2">
+                        {post.hook}
+                      </p>
+                    )}
+                  </CardHeader>
+                  <CardContent className="pt-0 flex flex-col flex-grow justify-end">
+                    <div className="mt-auto">
+                      <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                        <span>{formatDate(post.date)}</span>
+                      </div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex gap-4 text-sm">
+                          <span className="text-yellow-400">👍 {post.reactions}</span>
+                          <span className="text-blue-400">💬 {post.comments}</span>
+                        </div>
+                      </div>
+                      <Button 
+                        asChild 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full bg-transparent border-white/20 text-white hover:bg-white/10"
+                      >
+                        <a href={post.url} target="_blank" rel="noopener noreferrer">
+                          View on LinkedIn →
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </>
         )}
 
         {/* Footer */}
