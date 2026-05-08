@@ -351,7 +351,7 @@ const posts: Post[] = [
     date: "2026-05-08",
     category: "PM Teardown",
     brand: "PUBG / BGMI",
-    url: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7458398990699479040",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_banned-twice-back-twice-kraftons-crisis-ugcPost-7458400482026328064-JsrR",
     reactions: 0,
     comments: 0,
     hook: "When India banned PUBG, 50M users vanished overnight. Krafton didn't just rebrand; they executed a surgical product strategy: cutting Tencent, localizing data to Azure India, and addressing root-cause security concerns to become the government's preferred solution."
