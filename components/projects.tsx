@@ -25,6 +25,16 @@ const caseStudies = [
 
 const technicalProjects = [
   {
+    title: "⚡ CodeMiles: AI-Native Agentic Coding",
+    tags: [
+      { name: "AI Agent", color: "bg-blue-500/10 text-blue-500 border-blue-500/20" },
+      { name: "Dev Tools", color: "bg-purple-500/10 text-purple-500 border-purple-500/20" },
+      { name: "GitHub API", color: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" },
+    ],
+    prdUrl: "https://lnkd.in/dc_hhqMR",
+    image: "/codemiles_preview.png",
+  },
+  {
     title: "🤖 DocMentor: Smart Q&A System",
     tags: [
       { name: "RAG", color: "bg-blue-500/10 text-blue-500 border-blue-500/20" },
@@ -89,11 +99,10 @@ export function Projects() {
 }
 
 function ProjectCard({ project }: { project: any }) {
-  return (
-    <Link
-      href={project.prdUrl}
-      className="group relative flex flex-col bg-card border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 shadow-sm"
-    >
+  const isExternal = project.prdUrl.startsWith('http')
+  
+  const CardContent = (
+    <>
       <div className="relative aspect-[16/9] w-full overflow-hidden">
         <img
           src={project.image}
@@ -119,6 +128,28 @@ function ProjectCard({ project }: { project: any }) {
           ))}
         </div>
       </div>
+    </>
+  )
+
+  if (isExternal) {
+    return (
+      <a
+        href={project.prdUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative flex flex-col bg-card border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 shadow-sm"
+      >
+        {CardContent}
+      </a>
+    )
+  }
+
+  return (
+    <Link
+      href={project.prdUrl}
+      className="group relative flex flex-col bg-card border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 shadow-sm"
+    >
+      {CardContent}
     </Link>
   )
 }
