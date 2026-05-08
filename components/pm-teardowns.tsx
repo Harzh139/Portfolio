@@ -612,29 +612,29 @@ export function PMTeardowns() {
   }
 
   return (
-    <section id="pm-teardowns" className="bg-[#0a0a0f] py-20 px-4">
+    <section id="pm-teardowns" className="bg-background py-16 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">PM Teardowns & Insights</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-foreground mb-4">PM Teardowns & Insights</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Breaking down real product decisions — what worked, what failed, and what every PM should steal.
           </p>
         </div>
 
         {/* Stats Bar */}
-        <div className="flex justify-center items-center gap-8 mb-12 text-white">
+        <div className="flex justify-center items-center gap-8 mb-12 text-foreground">
           <div className="text-center">
             <div className="text-2xl font-bold">{posts.length}</div>
-            <div className="text-sm text-gray-400">Posts</div>
+            <div className="text-sm text-muted-foreground">Posts</div>
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold">{Object.keys(groupedPosts).length}</div>
-            <div className="text-sm text-gray-400">Brands & Series</div>
+            <div className="text-sm text-muted-foreground">Brands & Series</div>
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold">89</div>
-            <div className="text-sm text-gray-400">Top Post Reactions</div>
+            <div className="text-sm text-muted-foreground">Top Post Reactions</div>
           </div>
         </div>
 

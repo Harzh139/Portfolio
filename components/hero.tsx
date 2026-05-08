@@ -2,8 +2,10 @@ import { ArrowDown, Github, Linkedin, Mail, Phone, FileText } from "lucide-react
 
 export function Hero() {
   return (
-    <section id="about" className="min-h-screen flex items-center pt-20 pb-16 px-6">
-      <div className="mx-auto max-w-6xl w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <section id="about" className="min-h-screen flex items-center pt-20 pb-16 px-6 relative bg-noise overflow-hidden">
+      {/* Dynamic gradient background */}
+      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-accent/10 to-transparent pointer-events-none" />
+      <div className="mx-auto max-w-6xl w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center relative z-10">
         <div className="flex flex-col gap-6 relative z-10">
           <div className="flex items-center gap-3 animate-pulse text-accent">
             <span className="w-2 h-2 bg-accent rounded-full animate-ping"></span>

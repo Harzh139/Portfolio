@@ -18,13 +18,13 @@
   --secondary-foreground: oklch(0.2 0 0);
   --muted: oklch(0.95 0 0);
   --muted-foreground: oklch(0.4 0 0);
-  --accent: oklch(0.62 0.25 25);
-  --accent-foreground: oklch(0.1 0 0);
+  --accent: oklch(0.6 0.15 220);
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.62 0.25 25);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0 0);
   --input: oklch(0.9 0 0);
-  --ring: oklch(0.62 0.25 25);
+  --ring: oklch(0.6 0.15 220);
   --chart-1: oklch(0.62 0.25 25);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -55,13 +55,13 @@
   --secondary-foreground: oklch(0.9 0 0);
   --muted: oklch(0.15 0 0);
   --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.62 0.25 25);
-  --accent-foreground: oklch(0.98 0 0);
+  --accent: oklch(0.7 0.15 220);
+  --accent-foreground: oklch(0.05 0 0);
   --destructive: oklch(0.62 0.25 25);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.2 0 0);
   --input: oklch(0.2 0 0);
-  --ring: oklch(0.62 0.25 25);
+  --ring: oklch(0.7 0.15 220);
   --chart-1: oklch(0.62 0.25 25);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -120,6 +120,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   * {
     @apply border-border outline-ring/50;
   }
@@ -134,6 +138,24 @@
 }
 
 @layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
   .glow-hover {
     @apply transition-all duration-300;
   }
@@ -162,14 +184,14 @@
 
   .glitch-text::before {
     left: 2px;
-    text-shadow: -2px 0 red;
+    text-shadow: -2px 0 var(--color-accent);
     clip: rect(24px, 550px, 90px, 0);
     animation: glitch-anim 3s infinite linear alternate-reverse;
   }
 
   .glitch-text::after {
     left: -2px;
-    text-shadow: -2px 0 blue;
+    text-shadow: -2px 0 oklch(0.6 0.2 300); /* Purple matching accent */
     clip: rect(85px, 550px, 140px, 0);
     animation: glitch-anim 2.5s infinite linear alternate-reverse;
   }

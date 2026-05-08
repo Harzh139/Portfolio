@@ -79,7 +79,7 @@ export function Experience() {
         </div>
 
         {/* Education */}
-        <div className="flex items-center gap-4 mb-12 mt-20">
+        <div className="flex items-center gap-4 mb-12 mt-12">
           <h2 className="text-sm font-mono text-accent tracking-wider uppercase">
             Education
           </h2>
