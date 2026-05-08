@@ -58,19 +58,25 @@ const technicalProjects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 bg-background">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-16">
+    <section id="projects" className="py-32 px-6 bg-background relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-accent/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-blue-500/5 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="mx-auto max-w-7xl relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20">
           
           {/* Case Studies Column */}
-          <div className="flex flex-col gap-10">
-            <div className="flex items-center gap-4">
-              <h2 className="text-sm font-mono text-accent tracking-wider uppercase whitespace-nowrap">
+          <div className="flex flex-col gap-12">
+            <div className="flex items-center gap-6">
+              <h2 className="text-xs font-mono text-accent tracking-[0.3em] uppercase whitespace-nowrap">
                 Case Studies
               </h2>
-              <div className="flex-1 h-px bg-border/40" />
+              <div className="flex-1 h-px bg-gradient-to-r from-border/60 to-transparent" />
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-8">
               {caseStudies.map((project) => (
                 <ProjectCard key={project.title} project={project} />
               ))}
@@ -78,14 +84,14 @@ export function Projects() {
           </div>
 
           {/* Technical Projects Column */}
-          <div className="flex flex-col gap-10">
-            <div className="flex items-center gap-4">
-              <h2 className="text-sm font-mono text-accent tracking-wider uppercase whitespace-nowrap">
+          <div className="flex flex-col gap-12">
+            <div className="flex items-center gap-6">
+              <h2 className="text-xs font-mono text-accent tracking-[0.3em] uppercase whitespace-nowrap">
                 Technical Projects
               </h2>
-              <div className="flex-1 h-px bg-border/40" />
+              <div className="flex-1 h-px bg-gradient-to-r from-border/60 to-transparent" />
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-8">
               {technicalProjects.map((project) => (
                 <ProjectCard key={project.title} project={project} />
               ))}
@@ -102,34 +108,51 @@ function ProjectCard({ project }: { project: any }) {
   const isExternal = project.prdUrl.startsWith('http')
   
   const CardContent = (
-    <>
-      <div className="relative aspect-[16/9] w-full overflow-hidden">
+    <div className="relative h-full flex flex-col">
+      {/* Image Container */}
+      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-xl">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        
+        {/* Floating Arrow */}
+        <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-background/80 backdrop-blur-md border border-white/10 flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </div>
       </div>
 
-      <div className="flex flex-col gap-4 p-5 flex-1 bg-card">
-        <h3 className="text-sm font-semibold text-foreground leading-snug group-hover:text-accent transition-colors">
+      {/* Content */}
+      <div className="flex flex-col gap-5 p-7 flex-1 bg-card/30 backdrop-blur-sm group-hover:bg-card/50 transition-colors duration-500 rounded-b-xl border-t border-white/5">
+        <h3 className="text-lg font-bold text-foreground leading-tight tracking-tight group-hover:text-accent transition-colors duration-300">
           {project.title}
         </h3>
 
-        <div className="flex flex-wrap gap-2 mt-auto">
+        <div className="flex flex-wrap gap-2.5">
           {project.tags.map((tag: any) => (
             <span
               key={tag.name}
-              className={`px-2.5 py-0.5 text-[10px] font-medium border rounded-full ${tag.color}`}
+              className={`px-3 py-1 text-[10px] font-bold uppercase tracking-wider border rounded-full backdrop-blur-md ${tag.color} border-white/5 shadow-sm`}
             >
               {tag.name}
             </span>
           ))}
         </div>
       </div>
-    </>
+      
+      {/* Bottom Glow */}
+      <div className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    </div>
   )
+
+  const commonClasses = "group relative flex flex-col bg-card/20 border border-white/10 rounded-xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_50px_rgba(var(--color-accent),0.1)]"
 
   if (isExternal) {
     return (
@@ -137,7 +160,7 @@ function ProjectCard({ project }: { project: any }) {
         href={project.prdUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex flex-col bg-card border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 shadow-sm"
+        className={commonClasses}
       >
         {CardContent}
       </a>
@@ -147,7 +170,7 @@ function ProjectCard({ project }: { project: any }) {
   return (
     <Link
       href={project.prdUrl}
-      className="group relative flex flex-col bg-card border border-border rounded-xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 shadow-sm"
+      className={commonClasses}
     >
       {CardContent}
     </Link>
