@@ -18,6 +18,30 @@ interface Post {
 }
 
 const posts: Post[] = [
+  // GENERAL INSIGHTS
+  {
+    title: "Most platforms solved “saving content.” Very few solved: “finding it again.”",
+    date: "2026-05-09",
+    category: "Product Insight",
+    brand: "General Insights",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_productmanagement-ai-creatoreconomy-share-7458583157953421312-Y-6K?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 156,
+    comments: 32,
+    hook: "Instagram Saves works like a warehouse. Creators actually need a second brain. Sometimes users don’t need “more organization.” They need better memory retrieval.",
+    isTopPost: true
+  },
+  // PUBG / BGMI TEARDOWN (LATEST)
+  {
+    title: "BGMI Survived Two Bans. Can It Survive Itself?",
+    date: "2026-05-09",
+    category: "PM Teardown",
+    brand: "PUBG / BGMI",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_bgmi-survived-two-bans-can-it-survive-itself-ugcPost-7458401446275874816-BSCX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 142,
+    comments: 28,
+    hook: "BGMI survived two government bans. 100 million users came back twice. 930 million esports views in 2025. But in 2025 players started leaving. Krafton forgot why they came back.",
+    isTopPost: true
+  },
   // ZOMATO / QUICK COMMERCE TEARDOWN
   {
     title: "Zepto was founded in 2021 by two 19-year-old Stanford dropouts.",
@@ -643,7 +667,9 @@ export function PMTeardowns() {
             <div className="text-sm text-muted-foreground">Brands & Series</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold">89</div>
+            <div className="text-2xl font-bold">
+              {posts.length > 0 ? Math.max(...posts.map(p => p.reactions)) : 0}
+            </div>
             <div className="text-sm text-muted-foreground">Top Post Reactions</div>
           </div>
         </div>
@@ -787,7 +813,7 @@ export function PMTeardowns() {
         {/* Footer */}
         <div className="text-center">
           <p className="text-muted-foreground mb-6">
-            New teardown every week · 58 posts published
+            New teardown every week · {posts.length} posts published
           </p>
           <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
             <a href="https://www.linkedin.com/in/harsh-sharma-406044299" target="_blank" rel="noopener noreferrer">
