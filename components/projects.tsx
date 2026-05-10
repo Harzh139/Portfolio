@@ -1,29 +1,4 @@
-import Link from "next/link"
-
-const caseStudies = [
-  {
-    title: "🍃 Swiggy Instamart — Competitive Analysis",
-    tags: [
-      { name: "Competitor Analysis", color: "bg-amber-500/10 text-amber-500 border-amber-500/20" },
-      { name: "Secondary research", color: "bg-pink-500/10 text-pink-500 border-pink-500/20" },
-      { name: "Product Analysis", color: "bg-orange-500/10 text-orange-500 border-orange-500/20" },
-    ],
-    prdUrl: "/prd/swiggy-case-study",
-    image: "/swiggy_blinkit_case.png",
-  },
-  {
-    title: "💳 Kuvera x CRED — Conversion Problem",
-    tags: [
-      { name: "Product Strategy", color: "bg-purple-500/10 text-purple-500 border-purple-500/20" },
-      { name: "Fintech", color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20" },
-      { name: "Growth", color: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" },
-    ],
-    prdUrl: "/prd/kuvera-case-study",
-    image: "/kuvera_case.png",
-  },
-]
-
-const technicalProjects = [
+const liveProducts = [
   {
     title: "⚡ CodeMiles: AI-Native Agentic Coding",
     tags: [
@@ -31,7 +6,7 @@ const technicalProjects = [
       { name: "Dev Tools", color: "bg-purple-500/10 text-purple-500 border-purple-500/20" },
       { name: "GitHub API", color: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" },
     ],
-    prdUrl: "https://lnkd.in/dc_hhqMR",
+    link: "https://code-miles-i5cj.vercel.app/repo",
     image: "/codemiles_preview.png",
   },
   {
@@ -41,17 +16,18 @@ const technicalProjects = [
       { name: "Product Scope", color: "bg-green-500/10 text-green-500 border-green-500/20" },
       { name: "MVP", color: "bg-orange-500/10 text-orange-500 border-orange-500/20" },
     ],
-    prdUrl: "/prd/docmentor",
+    link: "https://docchatbot-6.onrender.com/",
     image: "/proj_doc_1772354529508.png",
   },
   {
-    title: "📄 Resume ATS Reviewer",
+    title: "📄 ATS Resume Tailor",
+    description: "AI-powered resume optimizer that rewrites your resume to match any job description and compiles it into a recruiter-ready PDF using Gemini AI + LaTeX",
     tags: [
-      { name: "AI Tool", color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20" },
-      { name: "User Flow", color: "bg-amber-500/10 text-amber-500 border-amber-500/20" },
-      { name: "Discord", color: "bg-indigo-500/10 text-indigo-500 border-indigo-500/20" },
+      { name: "AI TOOL", color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20" },
+      { name: "GEMINI AI", color: "bg-amber-500/10 text-amber-500 border-amber-500/20" },
+      { name: "LATEX", color: "bg-indigo-500/10 text-indigo-500 border-indigo-500/20" },
     ],
-    prdUrl: "/prd/resume-ats-reviewer-prd",
+    link: "https://resume-magic-wand-66.lovable.app/",
     image: "/proj_agent_1772354545148.png",
   },
 ]
@@ -66,38 +42,18 @@ export function Projects() {
       </div>
 
       <div className="mx-auto max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20">
-          
-          {/* Case Studies Column */}
-          <div className="flex flex-col gap-12">
-            <div className="flex items-center gap-6">
-              <h2 className="text-xs font-mono text-accent tracking-[0.3em] uppercase whitespace-nowrap">
-                Case Studies
-              </h2>
-              <div className="flex-1 h-px bg-gradient-to-r from-border/60 to-transparent" />
-            </div>
-            <div className="flex flex-col gap-8">
-              {caseStudies.map((project) => (
-                <ProjectCard key={project.title} project={project} />
-              ))}
-            </div>
+        <div className="flex flex-col gap-12">
+          <div className="flex items-center gap-6">
+            <h2 className="text-xs font-mono text-accent tracking-[0.3em] uppercase whitespace-nowrap">
+              My Live Products
+            </h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-border/60 to-transparent" />
           </div>
-
-          {/* Technical Projects Column */}
-          <div className="flex flex-col gap-12">
-            <div className="flex items-center gap-6">
-              <h2 className="text-xs font-mono text-accent tracking-[0.3em] uppercase whitespace-nowrap">
-                Technical Projects
-              </h2>
-              <div className="flex-1 h-px bg-gradient-to-r from-border/60 to-transparent" />
-            </div>
-            <div className="flex flex-col gap-8">
-              {technicalProjects.map((project) => (
-                <ProjectCard key={project.title} project={project} />
-              ))}
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {liveProducts.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
           </div>
-
         </div>
       </div>
     </section>
@@ -105,12 +61,15 @@ export function Projects() {
 }
 
 function ProjectCard({ project }: { project: any }) {
-  const isExternal = project.prdUrl.startsWith('http')
-  
-  const CardContent = (
-    <div className="relative h-full flex flex-col">
+  return (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative flex flex-col h-full bg-card/20 border border-white/10 rounded-xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_50px_rgba(var(--color-accent),0.1)]"
+    >
       {/* Image Container */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-xl">
+      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-xl shrink-0">
         <img
           src={project.image}
           alt={project.title}
@@ -135,7 +94,13 @@ function ProjectCard({ project }: { project: any }) {
           {project.title}
         </h3>
 
-        <div className="flex flex-wrap gap-2.5">
+        {project.description && (
+          <p className="text-sm text-muted-foreground line-clamp-3">
+            {project.description}
+          </p>
+        )}
+
+        <div className="flex flex-wrap gap-2.5 mt-auto">
           {project.tags.map((tag: any) => (
             <span
               key={tag.name}
@@ -149,30 +114,6 @@ function ProjectCard({ project }: { project: any }) {
       
       {/* Bottom Glow */}
       <div className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    </div>
-  )
-
-  const commonClasses = "group relative flex flex-col bg-card/20 border border-white/10 rounded-xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_50px_rgba(var(--color-accent),0.1)]"
-
-  if (isExternal) {
-    return (
-      <a
-        href={project.prdUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={commonClasses}
-      >
-        {CardContent}
-      </a>
-    )
-  }
-
-  return (
-    <Link
-      href={project.prdUrl}
-      className={commonClasses}
-    >
-      {CardContent}
-    </Link>
+    </a>
   )
 }
