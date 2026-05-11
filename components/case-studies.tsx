@@ -9,7 +9,7 @@ export function CaseStudies() {
         <div className="absolute bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-purple-500/5 rounded-full blur-[120px]" />
       </div>
 
-      <div className="mx-auto max-w-4xl relative z-10">
+      <div className="mx-auto max-w-5xl relative z-10">
         <div className="flex flex-col gap-12">
           <div className="flex items-center gap-6">
             <h2 className="text-xs font-mono text-accent tracking-[0.3em] uppercase whitespace-nowrap">
@@ -19,207 +19,213 @@ export function CaseStudies() {
           </div>
 
           <div className="bg-card/20 border border-white/10 rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-            <div className="p-8 md:p-12">
-              <div className="mb-8 border-b border-white/10 pb-8">
-                <div className="flex gap-2 mb-4">
+            <div className="p-8 md:p-12 lg:p-16">
+              <div className="mb-16">
+                <div className="flex gap-2 mb-6">
                   <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider border rounded-full backdrop-blur-md bg-red-500/10 text-red-500 border-red-500/20 shadow-sm">
                     Zomato
                   </span>
                   <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider border rounded-full backdrop-blur-md bg-blue-500/10 text-blue-500 border-blue-500/20 shadow-sm">
-                    RCA
+                    Product Teardown
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
-                  RCA: Zomato's average rating for restaurants has dropped by 10% in Pune
+                <h3 className="text-3xl md:text-5xl font-black text-foreground leading-tight tracking-tight mb-6">
+                  Investigating the Drop in Zomato's Restaurant Ratings
                 </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-[700px]">
+                  A comprehensive root cause analysis to uncover why average restaurant ratings on the Zomato platform experienced a sudden decline, and the strategic decisions required to fix it.
+                </p>
               </div>
 
-              <div className="space-y-12 text-muted-foreground leading-relaxed">
-                {/* Clarifying Questions */}
+              <div className="space-y-20">
+                
+                {/* 2x2 Grid Context */}
                 <section>
-                  <h4 className="text-xl font-semibold text-foreground mb-4">Ask clarifying questions to dissect the problem statement:</h4>
-                  <div className="space-y-4 bg-background/50 p-6 rounded-lg border border-white/5">
-                    <p><strong className="text-foreground">Me:</strong> To reiterate the problem statement, if we were to take an average of all the restaurant ratings visible on the Zomato app for the city of Pune, that number has dropped by 10%?</p>
-                    <p><strong className="text-foreground">Interviewer:</strong> Yes.</p>
-                    
-                    <p><strong className="text-foreground">Me:</strong> How is the average rating metric calculated? Is it just an average of all the restaurant ratings visible on Zomato? Also, are each of the restaurant ratings calculated by simply taking an average of all customer ratings submitted since the restaurant was onboarded?</p>
-                    <p><strong className="text-foreground">Interviewer:</strong> Yes, the average rating is calculated as an average of all visible restaurant ratings. Each restaurant's rating is an average of all customer ratings submitted since the restaurant was onboarded.</p>
-
-                    <p><strong className="text-foreground">Me:</strong> Has there been a change in the way the ‘average rating for restaurants’ metric is calculated?</p>
-                    <p><strong className="text-foreground">Interviewer:</strong> No, there have been no changes to the calculation method.</p>
-
-                    <p><strong className="text-foreground">Me:</strong> Has such a change been noticed in any other city, or is it only in Pune?</p>
-                    <p><strong className="text-foreground">Interviewer:</strong> The drop has been noticed only in Pune.</p>
-
-                    <p><strong className="text-foreground">Me:</strong> Is the drop sudden or over a period of time? The 10% drop is in comparison to what? (e.g., week over week, or month over month)</p>
-                    <p><strong className="text-foreground">Interviewer:</strong> The drop has been sudden and observed over the past month compared to the previous month.</p>
-
-                    <p><strong className="text-foreground">Me:</strong> Is the drop consistent across all user segments, or are there specific segments that are experiencing larger drops?</p>
-                    <p><strong className="text-foreground">Interviewer:</strong> The drop can mainly be attributed to users without Zomato Gold membership.</p>
-
-                    <p><strong className="text-foreground">Me:</strong> Is the drop experienced across all types of restaurants, or only specific ones (e.g., fine dining, fast food, local cuisines)?</p>
-                    <p><strong className="text-foreground">Interviewer:</strong> The drop is experienced across all types of restaurants.</p>
-
-                    <p><strong className="text-foreground">Me:</strong> Is the drop experienced for dining-in or food delivery, or both?</p>
-                    <p><strong className="text-foreground">Interviewer:</strong> The drop is experienced specifically for food delivery.</p>
-
-                    <p><strong className="text-foreground">Me:</strong> Have there been any changes to the rating system recently?</p>
-                    <p><strong className="text-foreground">Interviewer:</strong> No, there have been no recent changes to the rating system.</p>
+                  <h4 className="text-sm font-mono text-accent tracking-widest uppercase mb-6">Problem Context</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="p-6 bg-card/40 border border-white/5 rounded-xl flex flex-col justify-center transition-colors hover:bg-card/60">
+                      <span className="text-muted-foreground text-sm mb-1 font-medium tracking-wide">Metric</span>
+                      <span className="text-foreground font-black text-2xl">Avg Rating</span>
+                    </div>
+                    <div className="p-6 bg-card/40 border border-white/5 rounded-xl flex flex-col justify-center transition-colors hover:bg-card/60">
+                      <span className="text-muted-foreground text-sm mb-1 font-medium tracking-wide">Impact</span>
+                      <span className="text-red-500 font-black text-2xl">-10%</span>
+                    </div>
+                    <div className="p-6 bg-card/40 border border-white/5 rounded-xl flex flex-col justify-center transition-colors hover:bg-card/60">
+                      <span className="text-muted-foreground text-sm mb-1 font-medium tracking-wide">Geography</span>
+                      <span className="text-foreground font-black text-2xl">Pune</span>
+                    </div>
+                    <div className="p-6 bg-card/40 border border-white/5 rounded-xl flex flex-col justify-center transition-colors hover:bg-card/60">
+                      <span className="text-muted-foreground text-sm mb-1 font-medium tracking-wide">Segment</span>
+                      <span className="text-foreground font-black text-2xl">Non-Gold</span>
+                    </div>
                   </div>
                 </section>
 
-                {/* Identify Possible Causes */}
+                {/* Narrative Context */}
+                <section className="max-w-[700px] mx-auto md:mx-0">
+                  <h4 className="text-2xl font-bold text-foreground mb-6">Slicing the Data</h4>
+                  <p className="text-muted-foreground text-[17px] leading-[1.8] mb-6">
+                    Initial analysis revealed a sharp, sudden 10% decline in the average visible restaurant rating across the app over the past month. Crucially, the calculation method had not changed. Every restaurant's rating remained a historical average of all customer ratings submitted since onboarding.
+                  </p>
+                  <p className="text-muted-foreground text-[17px] leading-[1.8]">
+                    When we sliced the data across different dimensions, a distinct pattern emerged. The drop was not a systemic failure across India—it was entirely isolated to the Pune market. Furthermore, it spanned across all restaurant types and pertained exclusively to food delivery. Most revealing of all, the decline was almost entirely attributed to users without Zomato Gold memberships.
+                  </p>
+                </section>
+
+                {/* Hypothesis Tree */}
                 <section>
-                  <h4 className="text-xl font-semibold text-foreground mb-4">Identify Possible Causes:</h4>
-                  <p className="mb-6">List out all possible external and internal factors that could have led to this situation. The actual cause could be one of them or a combination of both, in some situations. Use data obtained from the clarifying questions to further narrow down.</p>
+                  <h4 className="text-2xl font-bold text-foreground mb-8">Hypothesis Tree: Tracing the Root Cause</h4>
                   
-                  <div className="space-y-8">
-                    {/* External Factors */}
-                    <div>
-                      <h5 className="text-lg font-medium text-foreground mb-4 pb-2 border-b border-white/5">External Factors</h5>
-                      <div className="space-y-4 bg-background/50 p-6 rounded-lg border border-white/5">
-                        <p><strong className="text-foreground">Me:</strong> Is there increased competition in Pune, with users possibly comparing Zomato's services with other apps?</p>
-                        <p><strong className="text-foreground">Interviewer:</strong> There has been some increase in competition, with a new local tiffin delivery app.</p>
-
-                        <p><strong className="text-foreground">Me:</strong> Could there have been a major event in Pune that led to poor service from restaurants (e.g., a big festival, natural disasters, etc.)?</p>
-                        <p><strong className="text-foreground">Interviewer:</strong> No major events that could affect restaurant services have occurred.</p>
-
-                        <p><strong className="text-foreground">Me:</strong> Has there been any negative media coverage about Zomato or its associated restaurants, or a shift in public sentiment towards Tata Cliq?</p>
-                        <p><strong className="text-foreground">Interviewer:</strong> No significant negative media coverage or sentiments crossed our radar.</p>
-
-                        <p><strong className="text-foreground">Me:</strong> Have there been any regulatory changes affecting restaurant operations?</p>
-                        <p><strong className="text-foreground">Interviewer:</strong> No recent regulatory changes.</p>
-
-                        <p><strong className="text-foreground">Me:</strong> Could there be seasonal variations or economic downturns affecting customer behavior?</p>
-                        <p><strong className="text-foreground">Interviewer:</strong> There has been no significant seasonal variation or economic downturn reported.</p>
-                      </div>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {/* External Factors Card */}
+                    <div className="bg-card/30 border border-white/5 p-8 rounded-2xl shadow-sm">
+                      <h5 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
+                        <span className="w-2.5 h-2.5 rounded-full bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]"></span>
+                        External Factors
+                      </h5>
+                      <ul className="space-y-6 text-muted-foreground leading-[1.7] text-[15px]">
+                        <li className="flex items-start gap-4">
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+                          <div>
+                            <strong className="text-foreground/90 block mb-1">Increased Competition</strong> 
+                            A new local tiffin delivery app has entered the Pune market, altering user expectations and providing an alternative.
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-4">
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+                          <div>
+                            <strong className="text-foreground/90 block mb-1">Macro Events</strong> 
+                            <span className="text-green-500/80 mr-1">✓ Ruled out.</span> No major festivals, natural disasters, or economic downturns occurred in Pune during this period.
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-4">
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></span>
+                          <div>
+                            <strong className="text-foreground/90 block mb-1">Public Sentiment</strong> 
+                            <span className="text-green-500/80 mr-1">✓ Ruled out.</span> No negative media coverage or regulatory changes affecting operations.
+                          </div>
+                        </li>
+                      </ul>
                     </div>
 
-                    {/* Internal Factors */}
-                    <div>
-                      <h5 className="text-lg font-medium text-foreground mb-4 pb-2 border-b border-white/5">Internal Factors</h5>
-                      <div className="space-y-6">
-                        {/* Product Changes */}
-                        <div className="space-y-4 bg-background/50 p-6 rounded-lg border border-white/5">
-                          <h6 className="font-semibold text-foreground">(a) Product Changes</h6>
-                          <p><strong className="text-foreground">Me:</strong> Were there any recent app updates or feature changes?</p>
-                          <p><strong className="text-foreground">Interviewer:</strong> Yes, there were some updates but nothing major that should affect ratings.</p>
-
-                          <p><strong className="text-foreground">Me:</strong> Were there changes in the restaurant list, perhaps many new low-rated restaurants were added recently in Pune?</p>
-                          <p><strong className="text-foreground">Interviewer:</strong> No significant changes to the restaurant list in Pune.</p>
-
-                          <p><strong className="text-foreground">Me:</strong> Were there changes to the rating system, maybe a feature change that hinders the user experience, making it hard for users to navigate or submit reviews?</p>
-                          <p><strong className="text-foreground">Interviewer:</strong> No changes to the rating system have been made.</p>
-
-                          <p><strong className="text-foreground">Me:</strong> Has there been any removal or reduction of discounts and promotional offers that were previously popular among users?</p>
-                          <p><strong className="text-foreground">Interviewer:</strong> Yes, there were some changes in the discounts available on delivery. A discount code that was applicable across major restaurants in Pune was retracted for the users without Zomato Gold membership.</p>
-
-                          <p><strong className="text-foreground">Me:</strong> I would like to clarify the user journey to understand any possible changes in it? <br/>
-                          <span className="italic">User Journey for rating a restaurant - Delivery:</span> <br/>
-                          Users receive a prompt to rate a restaurant after an order is delivered OR User opens the app {'->'} taps on profile icon {'->'} taps on order history {'->'} selects the restaurant they want to review {'->'} taps on ‘review order’ {'->'} rates the restaurant (out of 5 stars) {'->'} adds a detailed reviews (optional) {'->'} taps on ‘add a photo’ and adds a photo (optional) {'->'} Clicks ‘Submit’</p>
-                          <p><strong className="text-foreground">Interviewer:</strong> Yes, that is the correct user journey.</p>
+                    {/* Internal Factors Card */}
+                    <div className="bg-card/30 border border-white/5 p-8 rounded-2xl shadow-sm">
+                      <h5 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
+                        <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
+                        Internal Factors
+                      </h5>
+                      
+                      <div className="space-y-8">
+                        <div>
+                          <h6 className="text-xs font-bold text-foreground/60 uppercase tracking-[0.2em] mb-4">Product</h6>
+                          <ul className="space-y-4 text-muted-foreground leading-[1.7] text-[15px] pl-5 border-l-2 border-white/5">
+                            <li className="relative">
+                              <span className="absolute -left-[27px] top-2.5 w-2 h-2 rounded-full bg-background border-2 border-white/10"></span>
+                              <strong className="text-foreground/90 block">User Journey</strong> 
+                              <span className="text-green-500/80 mr-1">✓ Confirmed normal.</span> No UI elements broken; rating prompt workflow is functional.
+                            </li>
+                            <li className="relative">
+                              <span className="absolute -left-[27px] top-2.5 w-2 h-2 rounded-full bg-background border-2 border-red-500/50"></span>
+                              <strong className="text-red-400 block">Promotions & Discounts</strong> 
+                              Retraction of a major discount code for non-Gold users delivery orders.
+                            </li>
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h6 className="text-xs font-bold text-foreground/60 uppercase tracking-[0.2em] mb-4">Tech Infrastructure</h6>
+                          <ul className="space-y-4 text-muted-foreground leading-[1.7] text-[15px] pl-5 border-l-2 border-white/5">
+                            <li className="relative">
+                              <span className="absolute -left-[27px] top-2.5 w-2 h-2 rounded-full bg-background border-2 border-white/10"></span>
+                              <strong className="text-foreground/90 block">Bugs/Crashes</strong> 
+                              <span className="text-green-500/80 mr-1">✓ Stable.</span> Zero significant anomalies reported across Android, iOS, or web.
+                            </li>
+                            <li className="relative">
+                              <span className="absolute -left-[27px] top-2.5 w-2 h-2 rounded-full bg-background border-2 border-white/10"></span>
+                              <strong className="text-foreground/90 block">Backend</strong> 
+                              <span className="text-green-500/80 mr-1">✓ Stable.</span> No database migrations or server outages impacting data integrity.
+                            </li>
+                          </ul>
                         </div>
 
-                        {/* Tech Issue/Bug */}
-                        <div className="space-y-4 bg-background/50 p-6 rounded-lg border border-white/5">
-                          <h6 className="font-semibold text-foreground">(b) Tech Issue/Bug</h6>
-                          <p><strong className="text-foreground">Me:</strong> Have there been any bugs or issues that were reported, or support tickets raised?</p>
-                          <p><strong className="text-foreground">Interviewer:</strong> No significant bugs or issues have been reported recently.</p>
-
-                          <p><strong className="text-foreground">Me:</strong> Can the lower ratings be traced back to specific app versions, or devices (website users vs mobile app users), or mobile operating systems (Android users vs iOS users)?</p>
-                          <p><strong className="text-foreground">Interviewer:</strong> No, the ratings drop is consistent across all versions and devices.</p>
-
-                          <p><strong className="text-foreground">Me:</strong> Are the users able to properly view all the UI elements on the rating/review screen?</p>
-                          <p><strong className="text-foreground">Interviewer:</strong> Yes, all UI elements are functioning properly.</p>
+                        <div>
+                          <h6 className="text-xs font-bold text-foreground/60 uppercase tracking-[0.2em] mb-4">Operations</h6>
+                          <ul className="space-y-4 text-muted-foreground leading-[1.7] text-[15px] pl-5 border-l-2 border-white/5">
+                            <li className="relative">
+                              <span className="absolute -left-[27px] top-2.5 w-2 h-2 rounded-full bg-background border-2 border-white/10"></span>
+                              <strong className="text-foreground/90 block">Fulfillment</strong> 
+                              <span className="text-green-500/80 mr-1">✓ Stable.</span> Delivery times, fleet supply, and customer support metrics remained stable.
+                            </li>
+                          </ul>
                         </div>
-
-                        {/* Backend Infrastructure Change */}
-                        <div className="space-y-4 bg-background/50 p-6 rounded-lg border border-white/5">
-                          <h6 className="font-semibold text-foreground">(c) Backend Infrastructure Change</h6>
-                          <p><strong className="text-foreground">Me:</strong> Have there been any backend infrastructure changes, such as server migrations or database updates, that could have caused service interruptions or data loss</p>
-                          <p><strong className="text-foreground">Interviewer:</strong> No significant backend changes have been made recently.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Operational Changes */}
-                    <div>
-                      <h5 className="text-lg font-medium text-foreground mb-4 pb-2 border-b border-white/5">Operational Changes</h5>
-                      <div className="space-y-4 bg-background/50 p-6 rounded-lg border border-white/5">
-                        <p><strong className="text-foreground">Me:</strong> Have there been any operational changes, such as an increase in the number of orders placed on the app or a decrease in the number of delivery executives operating in Pune?</p>
-                        <p><strong className="text-foreground">Interviewer:</strong> No significant operational changes have been reported.</p>
-
-                        <p><strong className="text-foreground">Me:</strong> Has there been a decline in the quality of customer service, whether in-person, via the app, or through customer support?</p>
-                        <p><strong className="text-foreground">Interviewer:</strong> No decline in customer service quality has been reported.</p>
-
-                        <p><strong className="text-foreground">Me:</strong> Have there been any failures to meet customer expectations regarding delivery times, availability of items, and service quality?</p>
-                        <p><strong className="text-foreground">Interviewer:</strong> No significant failures to meet customer expectations have been reported.</p>
-
-                        <p><strong className="text-foreground">Me:</strong> Could the recent retraction of discount codes on deliveries for users without Gold membership, coupled with the new competition in the market have affected customer satisfaction and influenced their ratings?</p>
-                        <p><strong className="text-foreground">Interviewer:</strong> It's possible. Offers can have a significant impact on customer satisfaction and their perception of value.</p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                {/* Analyze the Causes */}
-                <section>
-                  <h4 className="text-xl font-semibold text-foreground mb-4">Analyze the Causes:</h4>
-                  <div className="space-y-6">
-                    <div>
-                      <h5 className="font-medium text-foreground mb-2">Retraction of Discount Codes for Non-Gold Users:</h5>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li><strong className="text-foreground">Data Analysis:</strong> Examine the usage patterns of discount codes before and after the retraction. Compare the frequency of orders and average ratings from non-Gold users during both periods.</li>
-                        <li><strong className="text-foreground">User Feedback:</strong> Review user feedback and complaints regarding the retraction of discount codes. Identify any correlations between negative feedback and lower ratings.</li>
-                        <li><strong className="text-foreground">Rating Trends:</strong> Analyze if there is a noticeable decline in ratings from non-Gold users coinciding with the retraction of discount codes.</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-foreground mb-2">Introduction of New Competitors:</h5>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li><strong className="text-foreground">Market Analysis:</strong> Evaluate the market share of new competitors in Pune and a detailed analysis of the services and features offered by new competitors. Identify unique selling points that may attract users away from Zomato. Determine if there has been a significant shift in user base from Zomato the new competitor.</li>
-                        <li><strong className="text-foreground">Customer Satisfaction:</strong> Compare the CSAT scores and ratings for Zomato and its new competitors. Look for patterns indicating users' preferences for competitor services.</li>
-                        <li><strong className="text-foreground">Promotional Campaigns:</strong> Investigate the promotional strategies and discounts offered by competitors. Assess if they have impacted user expectations and satisfaction with Zomato.</li>
-                      </ul>
-                    </div>
-                  </div>
+                {/* Pull Quote */}
+                <section className="py-20 relative">
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent/10 rounded-full blur-[50px] pointer-events-none"></div>
+                  <blockquote className="max-w-[800px] mx-auto text-center relative z-10">
+                    <p className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-[1.2] tracking-tight mb-8">
+                      "A popular discount code applicable across major restaurants in Pune was abruptly <span className="text-red-500">retracted</span> for all non-Gold users."
+                    </p>
+                    <footer className="text-accent font-mono text-sm uppercase tracking-[0.3em] flex items-center justify-center gap-4">
+                      <span className="w-8 h-px bg-accent/50"></span>
+                      The 'Aha!' Moment
+                      <span className="w-8 h-px bg-accent/50"></span>
+                    </footer>
+                  </blockquote>
                 </section>
 
-                {/* Plan and Implement Solution(s) */}
-                <section>
-                  <h4 className="text-xl font-semibold text-foreground mb-4">Plan and Implement Solution(s):</h4>
-                  <div className="space-y-6">
-                    <div>
-                      <h5 className="font-medium text-foreground mb-2">Reintroduce Discount Codes:</h5>
-                      <p>Develop a strategy to reintroduce discount codes or alternative incentives for non-Gold users. Communicate the availability of these incentives effectively to regain user trust and satisfaction.</p>
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-foreground mb-2">Competitive Analysis and Enhancement:</h5>
-                      <p>Conduct a detailed competitive analysis to identify areas where Zomato can enhance its offerings. Launch targeted promotional campaigns to highlight unique features and advantages of using Zomato. Collaborate with restaurant partners to ensure high service standards and address any operational issues impacting user satisfaction.</p>
-                    </div>
+                {/* Executive Summary */}
+                <section className="max-w-[700px] mx-auto md:mx-0">
+                  <div className="flex items-center gap-4 mb-8">
+                    <h4 className="text-2xl font-bold text-foreground">Executive Summary: Plan & Implement</h4>
+                    <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent"></div>
                   </div>
-                </section>
+                  
+                  <div className="space-y-10">
+                    <div className="relative pl-8">
+                      <span className="absolute left-0 top-1 text-accent font-mono font-bold text-lg">01</span>
+                      <h5 className="text-xl font-bold text-foreground mb-3">Strategic Discount Reintroduction</h5>
+                      <p className="text-muted-foreground text-[17px] leading-[1.8]">
+                        Develop a calculated strategy to reintroduce targeted incentives for non-Gold users. Communication of these new offers must be clear and immediate to rebuild user trust and mitigate churn to the new local competitor.
+                      </p>
+                    </div>
 
-                {/* Monitor/Analyze */}
-                <section>
-                  <h4 className="text-xl font-semibold text-foreground mb-4">Monitor/Analyze:</h4>
-                  <div className="space-y-6">
-                    <div>
-                      <h5 className="font-medium text-foreground mb-2">Continuous Monitoring:</h5>
-                      <p className="mb-2">Set up real-time monitoring of user ratings and feedback to identify any further issues quickly. Track the effectiveness of reintroduced discount codes and promotional campaigns through the following metrics:</p>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li><strong className="text-foreground">Redemption Rate:</strong> The percentage of issued discount codes that are actually used by customers. This measures how appealing and accessible the discount is to users.</li>
-                        <li><strong className="text-foreground">Increase in Orders:</strong> The change in the number of orders before and after the introduction of the discount code. This indicates whether the discount code is driving more sales.</li>
-                        <li><strong className="text-foreground">Conversion Rate:</strong> The percentage of users who view the discount code and then go on to make a purchase. This helps in understanding the code's ability to convert interest into sales.</li>
+                    <div className="relative pl-8">
+                      <span className="absolute left-0 top-1 text-accent font-mono font-bold text-lg">02</span>
+                      <h5 className="text-xl font-bold text-foreground mb-3">Competitive Market Defense</h5>
+                      <p className="text-muted-foreground text-[17px] leading-[1.8]">
+                        Execute a localized promotional campaign in Pune highlighting Zomato's unique advantages (e.g., higher reliability, larger selection) to defend market share against the new tiffin service.
+                      </p>
+                    </div>
+
+                    <div className="relative pl-8">
+                      <span className="absolute left-0 top-1 text-accent font-mono font-bold text-lg">03</span>
+                      <h5 className="text-xl font-bold text-foreground mb-4">Continuous Monitoring Framework</h5>
+                      <ul className="space-y-4 text-muted-foreground text-[17px] leading-[1.8]">
+                        <li className="flex items-start gap-3">
+                          <svg className="w-6 h-6 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span><strong className="text-foreground/90 font-semibold">Redemption Rate Tracking:</strong> Monitor how effectively the new discount codes are being claimed to gauge market appeal.</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <svg className="w-6 h-6 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                          </svg>
+                          <span><strong className="text-foreground/90 font-semibold">Conversion Analytics:</strong> Measure the percentage of users viewing the discount who successfully checkout.</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <svg className="w-6 h-6 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                          </svg>
+                          <span><strong className="text-foreground/90 font-semibold">CSAT Benchmarking:</strong> Deploy targeted post-delivery satisfaction surveys in Pune to capture qualitative sentiment alongside quantitative ratings.</span>
+                        </li>
                       </ul>
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-foreground mb-2">User Satisfaction Surveys:</h5>
-                      <p>Conduct regular user satisfaction surveys to gather insights into user experiences and expectations. Use CSAT scores to make informed adjustments to services and offerings.</p>
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-foreground mb-2">Competitive Benchmarking:</h5>
-                      <p>Continuously benchmark Zomato's services against competitors to ensure competitive advantage. Adjust strategies based on market trends and user preferences.</p>
                     </div>
                   </div>
                 </section>
