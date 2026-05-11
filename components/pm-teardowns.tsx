@@ -725,19 +725,21 @@ export function PMTeardowns() {
                     <div className="flex items-center gap-4">
                       {brandDomains[brand.name] ? (
                         Array.isArray(brandDomains[brand.name]) ? (
-                          <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex shrink-0 border border-border relative">
-                            <div className="w-1/2 h-full relative overflow-hidden bg-white">
+                          <div className="flex -space-x-3 shrink-0 items-center">
+                            <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border-2 border-background shadow-sm relative z-10 shrink-0">
                               <img 
                                 src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name][0]}&sz=128`} 
-                                className="absolute w-10 h-10 max-w-none top-1/2 -translate-y-1/2 left-1 object-contain"
+                                className="w-full h-full object-contain rounded-full bg-white"
                                 alt={`${brand.name} logo 1`}
+                                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                               />
                             </div>
-                            <div className="w-1/2 h-full relative overflow-hidden bg-white border-l border-border/30">
+                            <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border-2 border-background shadow-sm relative z-0 shrink-0">
                               <img 
                                 src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name][1]}&sz=128`} 
-                                className="absolute w-10 h-10 max-w-none top-1/2 -translate-y-1/2 right-1 object-contain"
+                                className="w-full h-full object-contain rounded-full bg-white"
                                 alt={`${brand.name} logo 2`}
+                                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                               />
                             </div>
                           </div>
