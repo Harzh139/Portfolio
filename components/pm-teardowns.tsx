@@ -23,7 +23,7 @@ const posts: Post[] = [
     title: "Some creators are making 2–3x more money on Spotify than YouTube.",
     date: "2026-05-11",
     category: "PM Teardown",
-    brand: "Spotify Vs YouTube",
+    brand: "Spotify Vs YouTube?",
     url: "https://www.linkedin.com/posts/harsh-sharma-406044299_creatoreconomy-spotify-productmanagement-share-7459218979383828480-GkTT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
     reactions: 34,
     comments: 6,
@@ -34,7 +34,7 @@ const posts: Post[] = [
     title: "Wait, is Spotify actually coming for YouTube? The answer surprised me.",
     date: "2026-05-11",
     category: "PM Teardown",
-    brand: "Spotify Vs YouTube",
+    brand: "Spotify Vs YouTube?",
     url: "https://www.linkedin.com/posts/harsh-sharma-406044299_productmanagement-spotify-productstrategy-share-7459218167387746304-vuXF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
     reactions: 28,
     comments: 4,
@@ -610,7 +610,7 @@ const categoryColors = {
   'Learning': 'bg-violet-500'
 }
 
-const brandDomains: Record<string, string> = {
+const brandDomains: Record<string, string | string[]> = {
   'Zomato': 'zomato.com',
   'Zomato / Zepto': 'zeptonow.com',
   'Blinkit / Zomato': 'blinkit.com',
@@ -623,7 +623,7 @@ const brandDomains: Record<string, string> = {
   'Meesho / Flipkart': 'meesho.com',
   'Meesho': 'meesho.com',
   'Spotify': 'spotify.com',
-  'Spotify Vs YouTube': 'spotify.com',
+  'Spotify Vs YouTube?': ['spotify.com', 'youtube.com'],
   'Red Bull': 'redbull.com',
   'PUBG / BGMI': 'krafton.com',
   'Snapchat': 'snapchat.com',
@@ -724,16 +724,35 @@ export function PMTeardowns() {
                   <CardHeader className="pb-3 relative z-10">
                     <div className="flex items-center gap-4">
                       {brandDomains[brand.name] ? (
-                        <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-border shrink-0">
-                          <img 
-                            src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name]}&sz=128`} 
-                            alt={`${brand.name} logo`}
-                            className="w-full h-full object-contain rounded-full bg-white"
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).style.display = 'none';
-                            }}
-                          />
-                        </div>
+                        Array.isArray(brandDomains[brand.name]) ? (
+                          <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex shrink-0 border border-border relative">
+                            <div className="w-1/2 h-full relative overflow-hidden bg-white">
+                              <img 
+                                src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name][0]}&sz=128`} 
+                                className="absolute w-10 h-10 max-w-none top-1/2 -translate-y-1/2 left-1 object-contain"
+                                alt={`${brand.name} logo 1`}
+                              />
+                            </div>
+                            <div className="w-1/2 h-full relative overflow-hidden bg-white border-l border-border/30">
+                              <img 
+                                src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name][1]}&sz=128`} 
+                                className="absolute w-10 h-10 max-w-none top-1/2 -translate-y-1/2 right-1 object-contain"
+                                alt={`${brand.name} logo 2`}
+                              />
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-border shrink-0">
+                            <img 
+                              src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name]}&sz=128`} 
+                              alt={`${brand.name} logo`}
+                              className="w-full h-full object-contain rounded-full bg-white"
+                              onError={(e) => {
+                                (e.target as HTMLImageElement).style.display = 'none';
+                              }}
+                            />
+                          </div>
+                        )
                       ) : (
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl border border-border shrink-0">
                           {brand.name.charAt(0)}
