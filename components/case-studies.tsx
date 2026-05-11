@@ -1,6 +1,12 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 
 export function CaseStudies() {
+  const [selectedStudy, setSelectedStudy] = useState<string | null>(null)
+
   return (
     <section id="case-studies" className="py-32 px-6 bg-background relative overflow-hidden">
       {/* Decorative background elements */}
@@ -18,9 +24,62 @@ export function CaseStudies() {
             <div className="flex-1 h-px bg-gradient-to-r from-border/60 to-transparent" />
           </div>
 
-          <div className="bg-card/20 border border-white/10 rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-            <div className="p-8 md:p-12 lg:p-16">
-              <div className="mb-16">
+          {!selectedStudy ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <Card 
+                className="bg-card/50 border-border backdrop-blur-sm hover:bg-accent/50 transition-colors cursor-pointer flex flex-col p-2 group relative overflow-hidden h-full"
+                onClick={() => setSelectedStudy('zomato')}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-colors" />
+                <CardHeader className="pb-3 relative z-10">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-border shrink-0">
+                      <img 
+                        src={`https://www.google.com/s2/favicons?domain=zomato.com&sz=128`} 
+                        alt="Zomato logo"
+                        className="w-full h-full object-contain rounded-full bg-white"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
+                    </div>
+                    <h3 className="text-foreground font-semibold text-xl leading-tight group-hover:text-primary transition-colors">
+                      Zomato Ratings Drop
+                    </h3>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0 flex flex-col flex-grow justify-end relative z-10">
+                  <div className="mt-auto">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex gap-4 text-sm text-muted-foreground font-medium">
+                        <span>📝 1 Case Study</span>
+                        <span className="text-blue-500 dark:text-blue-400">🔍 RCA</span>
+                      </div>
+                    </div>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full pointer-events-none"
+                    >
+                      View Full Case Study →
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ) : (
+            <div className="bg-card/20 border border-white/10 rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+              <div className="p-8 md:p-12 lg:p-16">
+                <div className="mb-10 flex items-center justify-between">
+                  <Button 
+                    onClick={() => setSelectedStudy(null)}
+                    variant="outline"
+                    className="hover:bg-accent/10"
+                  >
+                    ← Back to Gallery
+                  </Button>
+                </div>
+                <div className="mb-16">
                 <div className="flex gap-2 mb-6">
                   <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider border rounded-full backdrop-blur-md bg-red-500/10 text-red-500 border-red-500/20 shadow-sm">
                     Zomato
@@ -233,6 +292,7 @@ export function CaseStudies() {
               </div>
             </div>
           </div>
+          )}
         </div>
       </div>
     </section>
