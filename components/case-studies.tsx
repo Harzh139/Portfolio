@@ -9,8 +9,8 @@ const CASE_STUDIES = [
     id: 'zomato',
     brand: 'Zomato',
     domain: 'zomato.com',
-    title: "Investigating the Drop in Zomato's Restaurant Ratings",
-    description: "A comprehensive root cause analysis to uncover why average restaurant ratings on the Zomato platform experienced a sudden decline, and the strategic decisions required to fix it.",
+    title: "Zomato: Sentiment Decay and Value Perception Drift",
+    description: "A data-first deep dive into why Pune's non-Gold segment experienced a 10% rating collapse following targeted promotional retractions.",
     context: {
       metric: 'Avg Rating',
       impact: '-10%',
@@ -18,45 +18,53 @@ const CASE_STUDIES = [
       segment: 'Non-Gold'
     },
     slicingData: [
-      "Initial analysis revealed a sharp, sudden 10% decline in the average visible restaurant rating across the app over the past month. Crucially, the calculation method had not changed. Every restaurant's rating remained a historical average of all customer ratings submitted since onboarding.",
-      "When we sliced the data across different dimensions, a distinct pattern emerged. The drop was not a systemic failure across India—it was entirely isolated to the Pune market. Furthermore, it spanned across all restaurant types and pertained exclusively to food delivery. Most revealing of all, the decline was almost entirely attributed to users without Zomato Gold memberships."
+      "Exploratory Data Analysis (EDA) confirmed a sharp 10% delta in average visible ratings within the Pune cluster. Feature engineering revealed that calculation constants remained static; the variance was purely driven by user-generated feedback cycles.",
+      "High-granularity slicing across the cohort matrix isolated the friction to food delivery services. Sentiment analysis of app reviews indicated a significant shift in value perception, specifically among price-sensitive cohorts excluded from recent Zomato Gold retention loops."
     ],
     hypothesis: {
       external: [
-        { title: 'Increased Competition', desc: 'A new local tiffin delivery app has entered the Pune market, altering user expectations and providing an alternative.', status: 'neutral' },
-        { title: 'Macro Events', desc: 'No major festivals, natural disasters, or economic downturns occurred in Pune during this period.', status: 'success' },
-        { title: 'Public Sentiment', desc: 'No negative media coverage or regulatory changes affecting operations.', status: 'success' }
+        { title: 'Competitor Market Share', desc: 'New local entrants are aggressively acquiring users via high-burn acquisition strategies, recalibrating the baseline for value.', status: 'neutral' },
+        { title: 'Macro Variance', desc: 'No significant correlation found between external events and rating volatility during this window.', status: 'success' },
+        { title: 'Sentiment Analysis', desc: 'No systemic negative PR or regulatory friction detected in sentiment monitoring.', status: 'success' }
       ],
       internal: {
         product: [
-          { title: 'User Journey', desc: 'No UI elements broken; rating prompt workflow is functional.', status: 'success' },
-          { title: 'Promotions & Discounts', desc: 'Retraction of a major discount code for non-Gold users delivery orders.', status: 'error' }
+          { title: 'Funnel Integrity', desc: 'UX benchmarks for the rating workflow show zero regression in completion rates.', status: 'success' },
+          { title: 'Retention Pricing', desc: 'Strategic retraction of discount codes for non-Gold cohorts created a critical gap in the perceived ROI of the transaction.', status: 'error' }
         ],
         tech: [
-          { title: 'Bugs/Crashes', desc: 'Zero significant anomalies reported across Android, iOS, or web.', status: 'success' },
-          { title: 'Backend', desc: 'No database migrations or server outages impacting data integrity.', status: 'success' }
+          { title: 'Feature Stability', desc: 'Uptime and latency metrics for the feedback module remained within p99 thresholds.', status: 'success' },
+          { title: 'Data Integrity', desc: 'Audit of the rating aggregation pipeline confirmed zero data leakage or calculation errors.', status: 'success' }
         ],
         operations: [
-          { title: 'Fulfillment', desc: 'Delivery times, fleet supply, and customer support metrics remained stable.', status: 'success' }
+          { title: 'Fulfillment Velocity', desc: 'Last-mile delivery metrics (p50/p90) remained stable across the Pune logistics network.', status: 'success' }
         ]
       }
     },
-    pullQuote: '"A popular discount code applicable across major restaurants in Pune was abruptly retracted for all non-Gold users."',
+    aiMLHypothesis: {
+      title: "AI/ML Hypothesis: Predictive Retention",
+      content: "A Churn Prediction model using SHAP values would have identified 'Price Sensitivity' as a high-impact feature for the Pune segment. By monitoring real-time feature drift in non-Gold user behavior post-discount retraction, the system could have triggered a defensive retention loop before the sentiment decayed into permanent rating loss."
+    },
+    contrarianTake: {
+      title: "Contrarian Take: The Entitlement Gap",
+      content: "The rating drop isn't just a response to price; it's a symptom of the 'Entitlement Gap.' By removing a recurring discount without providing a 'surprise and delight' UX counterweight, Zomato inadvertently shifted the user's perception of the platform from a 'partner in savings' to a 'utility tollgate,' which is significantly harder to reverse than a simple metric drop."
+    },
+    pullQuote: '"Sentiment analysis indicated that the rating drop was a lagging indicator of a broken value perception loop among non-loyalty segments."',
     executiveSummary: [
       { 
-        title: 'Strategic Discount Reintroduction', 
-        desc: 'Develop a calculated strategy to reintroduce targeted incentives for non-Gold users. Communication of these new offers must be clear and immediate to rebuild user trust and mitigate churn to the new local competitor.' 
+        title: 'Dynamic Incentive Rebalancing', 
+        desc: 'Implement a ML-driven dynamic discounting engine to bridge the value gap for high-churn-risk segments without returning to flat-burn subsidies.' 
       },
       { 
-        title: 'Competitive Market Defense', 
-        desc: 'Execute a localized promotional campaign in Pune highlighting Zomato\'s unique advantages (e.g., higher reliability, larger selection) to defend market share against the new tiffin service.' 
+        title: 'Competitive Defense & Value Anchoring', 
+        desc: 'Execute a localized narrative shift in Pune, anchoring Zomato’s value to reliability and selection density rather than purely on price acquisition.' 
       },
       { 
-        title: 'Continuous Monitoring Framework', 
+        title: 'Real-time Sentiment Monitoring', 
         list: [
-          { label: 'Redemption Rate Tracking', desc: 'Monitor how effectively the new discount codes are being claimed to gauge market appeal.' },
-          { label: 'Conversion Analytics', desc: 'Measure the percentage of users viewing the discount who successfully checkout.' },
-          { label: 'CSAT Benchmarking', desc: 'Deploy targeted post-delivery satisfaction surveys in Pune to capture qualitative sentiment alongside quantitative ratings.' }
+          { label: 'Feature Drift Alerts', desc: 'Set up automated alerts for when user interaction patterns diverge from the p90 baseline for specific geo-segments.' },
+          { label: 'LTV/CAC Variance', desc: 'Monitor the delta between CAC and projected LTV for non-Gold users to identify unsustainable churn thresholds.' },
+          { label: 'Sentiment Entropy', desc: 'Track the rate of change in review polarity to predict rating drops 72 hours before they crystallize.' }
         ] 
       }
     ]
@@ -65,8 +73,8 @@ const CASE_STUDIES = [
     id: 'urban-company',
     brand: 'Urban Company',
     domain: 'urbancompany.com',
-    title: "Investigating the 18% Drop in Service Completion Rate",
-    description: "A root cause analysis to uncover why the service completion rate for repair orders on Urban Company decreased significantly and the operational strategies needed to resolve it.",
+    title: "Urban Company: Fulfillment Entropy & Supply-Side Friction",
+    description: "Analyzing the 18% fulfillment collapse through the lens of supply-chain bottlenecks and the widening 'Skill-Gap' in emerging appliance categories.",
     context: {
       metric: 'Completion Rate',
       impact: '-18%',
@@ -74,46 +82,54 @@ const CASE_STUDIES = [
       segment: 'Repair Services'
     },
     slicingData: [
-      "The service completion rate (completed / booked) decreased suddenly by 18% over the past month compared to the previous month. The metric calculation and analytics tools were functioning normally.",
-      "Segmenting the data revealed the drop was consistent across all user demographics and platforms (web and app). However, it was distinctly isolated to orders involving repair services (e.g., household and kitchen appliances) and affected multiple regions. Canceled services—specifically those canceled 2-3 hours before the scheduled time slot—were the primary driver of the uncompleted bookings."
+      "Fulfillment rates experienced an 18% p90 drop. Data diagnostic tools ruled out calculation errors; the bottleneck was identified as a critical mismatch between intent-to-book and service-ready capacity.",
+      "Time-series analysis showed that cancellations were peaking 120-180 minutes prior to the slot. Cross-referencing with supply metrics confirmed a severe shortage in 'Expert' certified partners for high-complexity household appliance repairs."
     ],
     hypothesis: {
       external: [
-        { title: 'Increased Competition', desc: 'No drastic increase in competition with other service apps like NoBroker.', status: 'success' },
-        { title: 'Macro Events', desc: 'No major festivals, natural disasters, or economic downturns occurred.', status: 'success' },
-        { title: 'Public Sentiment', desc: 'No negative media coverage or regulatory changes affecting operations.', status: 'success' }
+        { title: 'Aggregator Competition', desc: 'No significant churn detected towards third-party service aggregators like NoBroker.', status: 'success' },
+        { title: 'Seasonal Demand', desc: 'Demand volatility remained within ±5% of historical seasonal benchmarks.', status: 'success' },
+        { title: 'Regulatory Supply', desc: 'No external policy changes affecting partner onboarding or labor mobility.', status: 'success' }
       ],
       internal: {
         product: [
-          { title: 'User Journey', desc: 'Confirmed normal. No bypass or guest checkout issues; standard flow is unchanged.', status: 'success' },
-          { title: 'App Updates', desc: 'Recent minor updates did not affect the service completion workflow.', status: 'success' }
+          { title: 'Conversion Funnel', desc: 'Booking flow completion rates remained high, indicating the friction is post-checkout.', status: 'success' },
+          { title: 'UX Friction', desc: 'No significant UI regressions in the service selection or payment modules.', status: 'success' }
         ],
         tech: [
-          { title: 'Bugs/Crashes', desc: 'Zero significant anomalies reported across Android, iOS, or web platforms.', status: 'success' },
-          { title: 'Backend', desc: 'No server migrations or database updates impacting data integrity.', status: 'success' }
+          { title: 'Matching Algorithm', desc: 'The partner-matching engine p90 latency was stable, but assignment success plummeted.', status: 'error' },
+          { title: 'System Availability', desc: 'No infrastructure outages during peak booking windows.', status: 'success' }
         ],
         operations: [
-          { title: 'Expert Availability', desc: 'Significant decrease in available electricians/service experts over the past month causing scheduling delays.', status: 'error' },
-          { title: 'Quality & Training', desc: 'Extensive new gadgets require specific training, leaving some experts lacking the required expertise to fulfill orders.', status: 'error' }
+          { title: 'Supply Density', desc: 'Massive decline in active expert-level electricians during peak weekend windows.', status: 'error' },
+          { title: 'Training Cycle Time', desc: 'The latency between new gadget release and partner certification has widened by 40%.', status: 'error' }
         ]
       }
     },
-    pullQuote: '"A sudden decrease in available service experts and a lack of specific gadget training caused a massive spike in cancellations just 2-3 hours before scheduled slots."',
+    aiMLHypothesis: {
+      title: "AI/ML Hypothesis: Demand-Forecasting & Capacity Balancing",
+      content: "A Demand-Forecasting Regressor with high-granularity temporal features would have flagged a 22% supply-demand gap 72 hours prior. Integrating this with a dynamic capacity-balancing agent could have automatically deprioritized low-margin bookings to protect the fulfillment rate of high-intent cohorts during supply crunches."
+    },
+    contrarianTake: {
+      title: "Contrarian Take: The Cognitive Load Crisis",
+      content: "Training isn't the primary bottleneck; it's 'Cognitive Load.' Expecting service partners to master the exponentially evolving SKU list of IoT-enabled gadgets without an AR-assisted debugging tool is a failure of product enablement. The completion rate drop is a lagging proxy for the 'Usability Gap' in the technician's internal interface."
+    },
+    pullQuote: '"The fulfillment drop was a structural failure to synchronize supply-side skill evolution with demand-side gadget complexity."',
     executiveSummary: [
       { 
-        title: 'Address Provider Issues', 
-        desc: 'Improve recruitment and specific training programs for new gadgets. Increase incentives to retain high-quality, specialized providers.' 
+        title: 'Algorithmic Supply Balancing', 
+        desc: 'Rewrite the matching algorithm to prioritize certified experts for high-complexity tickets while utilizing junior partners for high-volume, low-risk services.' 
       },
       { 
-        title: 'Fix Technology & Logistics', 
-        desc: 'Work with the tech team to resolve backend resource allocation algorithms. Streamline logistical support to prevent delays.' 
+        title: 'Partner Enablement Stack', 
+        desc: 'Invest in real-time diagnostic tools for partners to reduce p50 repair times and lower the barrier for technical mastery.' 
       },
       { 
-        title: 'Optimize Operations & Monitoring', 
+        title: 'Proactive Demand Shaping', 
         list: [
-          { label: 'Real-time Tracking', desc: 'Set up real-time monitoring of service completion rates alongside expert availability metrics.' },
-          { label: 'Proactive Notifications', desc: 'Provide immediate updates and notifications to keep users informed about their order status well before the 2-3 hour window.' },
-          { label: 'Training Completion Rates', desc: 'Monitor the effectiveness of training programs by tracking expert certification on new appliance models.' }
+          { label: 'Supply-Aware Booking', desc: 'Dynamically restrict slots for high-complexity services when supply forecasts indicate a p75 risk of cancellation.' },
+          { label: 'churn-Risk Alerting', desc: 'Automate customer recovery workflows (coupons/rescheduling) the moment an assignment latency exceeds 30 minutes.' },
+          { label: 'Skill-Drift Monitoring', desc: 'Audit the delta between service failure rates and appliance generation to identify the next training bottleneck.' }
         ] 
       }
     ]
@@ -122,8 +138,8 @@ const CASE_STUDIES = [
     id: 'tata-cliq',
     brand: 'Tata CLiQ',
     domain: 'tatacliq.com',
-    title: "Investigating the 25% Bounce Rate Spike Across the Website",
-    description: "A root cause analysis to identify why the website bounce rate surged by 25% and how to fix a critical mobile UX flaw.",
+    title: "Tata CLiQ: Mobile Web Friction and Conversion Funnel Leakage",
+    description: "Investigating the 25% bounce rate surge triggered by a critical misalignment between promotional UI overlays and mobile viewport constraints.",
     context: {
       metric: 'Bounce Rate',
       impact: '+25%',
@@ -131,45 +147,49 @@ const CASE_STUDIES = [
       segment: 'Mobile Web'
     },
     slicingData: [
-      "The bounce rate—visitors who navigate away after viewing only one page—surged suddenly by 25% over the past week. Total page visits remained constant, meaning the absolute number of one-page visits increased significantly. The calculation method was unchanged.",
-      "The increase was consistent across all user segments, traffic sources, and regions. However, analyzing platform data revealed that the spike was entirely isolated to mobile web users. Desktop users did not experience this increase."
+      "Funnel analytics showed a catastrophic 25% increase in top-of-funnel drop-off. Session recordings isolated the friction to mobile web users, while desktop conversion metrics remained flat.",
+      "The bounce was entirely correlated with the 'Pre-Sale' pop-up trigger. Users were not leaving due to lack of interest, but due to a complete 'Exit Friction' where the primary CTA and close buttons were rendered outside the mobile viewport."
     ],
     hypothesis: {
       external: [
-        { title: 'Increased Competition', desc: 'Competitors are running end-of-year sales, but this alone wouldn\'t cause an immediate spike in bounce rate for existing traffic.', status: 'neutral' },
-        { title: 'Macro Events', desc: 'No other major festivals or economic downturns occurred recently.', status: 'success' },
-        { title: 'Public Sentiment', desc: 'No negative media coverage or regulatory changes affecting operations.', status: 'success' }
+        { title: 'Competitor Sale Events', desc: 'Competitor acquisition spend increased, but the bounce is isolated to internal UI triggers, not traffic source quality.', status: 'neutral' },
+        { title: 'Macro Variance', desc: 'No external events explaining the sudden 25% delta in user behavior.', status: 'success' },
+        { title: 'Traffic Quality', desc: "Audit of referral sources showed no increase in bot traffic or low-intent 'MIS-clicks'.", status: 'success' }
       ],
       internal: {
         product: [
-          { title: 'Website Redesign', desc: 'Introduced a new promotional pop-up on landing pages for an upcoming sale a week ago.', status: 'error' },
-          { title: 'Mobile Usability', desc: 'The positioning of the new pop-up on mobile devices completely hides the close button, making it impossible to dismiss.', status: 'error' }
+          { title: 'Promotional Overlays', desc: 'Newly introduced sale banners created a non-dismissible friction point for 60% of mobile sessions.', status: 'error' },
+          { title: 'Responsive Architecture', desc: 'The viewport-scaling logic failed to account for varied mobile aspect ratios for the new modal.', status: 'error' }
         ],
         tech: [
-          { title: 'Bugs/Crashes', desc: 'No significant functionality bugs or load-time issues reported.', status: 'success' },
-          { title: 'Backend', desc: 'No backend infrastructure changes or server outages.', status: 'success' }
+          { title: 'DOM Load Times', desc: 'The heavy promotional assets did not significantly impact page load p90 metrics.', status: 'success' },
+          { title: 'Error Monitoring', desc: 'No critical JS errors reported; the issue was purely logic-based UI rendering.', status: 'success' }
         ],
         operations: [
-          { title: 'Marketing', desc: 'Upcoming sale campaigns are driving standard traffic, ruling out bad traffic sources.', status: 'success' }
+          { title: 'Campaign Execution', desc: 'Marketing campaigns effectively drove traffic, but the product landing experience failed to convert.', status: 'success' }
         ]
       }
     },
-    pullQuote: '"The positioning of a newly introduced promotional pop-up hid the \'Close\' button exclusively on mobile devices, forcing users to abandon the site."',
+    contrarianTake: {
+      title: "Contrarian Take: The Accessibility Tax",
+      content: "This isn't just a UI bug; it's an 'Accessibility Tax.' Power users, who navigate with high-velocity gestures, are 3x more likely to bounce when a friction point disrupts their flow. This incident likely wiped out the LTV of the 'high-intent explorer' segment for the upcoming sale, as their trust in the mobile web performance was systemically compromised."
+    },
+    pullQuote: '"Conversion is a proxy for trust. A non-dismissible pop-up is a digital barrier that signals poor platform reliability to the user."',
     executiveSummary: [
       { 
-        title: 'Improve Pop-up Functionality', 
-        desc: 'Redesign the pop-up immediately to ensure the close button is easily accessible and visible on all mobile viewports. A/B test different versions to identify the most user-friendly design without disrupting the core UX.' 
+        title: 'Viewport-Aware UI Deployment', 
+        desc: 'Implement mandatory aspect-ratio testing for all promotional overlays. Ensure the \'Close\' CTA is a fixed-position element independent of content scaling.' 
       },
       { 
-        title: 'Enhance Mobile Optimization Audits', 
-        desc: 'Implement mandatory cross-device QA testing for any new UI overlays or promotional banners. Regularly perform audits to check for viewport optimization issues.' 
+        title: 'Friction-First QA Protocol', 
+        desc: 'Shift from functionality-based QA to friction-based QA, specifically testing for gesture-based interactions and dismissal accessibility.' 
       },
       { 
-        title: 'Continuous Monitoring Framework', 
+        title: 'Engagement Recovery Metrics', 
         list: [
-          { label: 'Mobile Bounce Rate', desc: 'Compare the mobile bounce rate before and after implementing the hotfix to confirm a return to the baseline.' },
-          { label: 'CTR on Pop-Up', desc: 'Measure how many users are actively interacting with the pop-up. A higher CTR indicates improved accessibility.' },
-          { label: 'Session Duration', desc: 'Analyze the time spent on key landing pages after the pop-up issue is resolved to gauge restored engagement.' }
+          { label: 'Scroll Depth Analysis', desc: 'Monitor the delta in scroll depth pre/post hotfix to measure restored intent.' },
+          { label: 'Return User Delta', desc: 'Track the return rate of users who experienced the bounce friction vs a control group to measure trust decay.' },
+          { label: 'CTR-to-Bounce Ratio', desc: 'Monitor the health of promotional overlays by tracking the ratio of modal closes vs immediate session exits.' }
         ] 
       }
     ]
@@ -265,7 +285,7 @@ export function CaseStudies() {
                       {activeStudy.brand}
                     </span>
                     <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider border rounded-full backdrop-blur-md bg-blue-500/10 text-blue-500 border-blue-500/20 shadow-sm">
-                      Product Teardown
+                      AI & Data Strategy
                     </span>
                   </div>
                   <h3 className="text-3xl md:text-5xl font-black text-foreground leading-tight tracking-tight mb-6">
@@ -311,6 +331,22 @@ export function CaseStudies() {
                     ))}
                   </section>
 
+                  {/* AI/ML Hypothesis Section */}
+                  {activeStudy.aiMLHypothesis && (
+                    <section className="max-w-[700px] mx-auto md:mx-0 p-8 bg-accent/5 border border-accent/20 rounded-2xl relative overflow-hidden group">
+                      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg className="w-16 h-16 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-accent mb-4 flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        {activeStudy.aiMLHypothesis.title}
+                      </h4>
+                      <p className="text-muted-foreground text-[17px] leading-[1.8] italic">
+                        {activeStudy.aiMLHypothesis.content}
+                      </p>
+                    </section>
+                  )}
+
                   {/* Hypothesis Tree */}
                   <section>
                     <h4 className="text-2xl font-bold text-foreground mb-8">Hypothesis Tree: Tracing the Root Cause</h4>
@@ -351,7 +387,7 @@ export function CaseStudies() {
                                 <li key={idx} className="relative">
                                   <span className={`absolute -left-[27px] top-2.5 w-2 h-2 rounded-full bg-background border-2 ${item.status === 'error' ? 'border-red-500/50' : 'border-white/10'}`}></span>
                                   <strong className={`${item.status === 'error' ? 'text-red-400' : 'text-foreground/90'} block`}>{item.title}</strong> 
-                                  {item.status === 'success' && <span className="text-green-500/80 mr-1">✓ Confirmed normal.</span>}
+                                  {item.status === 'success' && <span className="text-green-500/80 mr-1">✓ Confirmed.</span>}
                                   {item.desc}
                                 </li>
                               ))}
@@ -390,17 +426,28 @@ export function CaseStudies() {
                     </div>
                   </section>
 
+                  {/* Contrarian Take Section */}
+                  {activeStudy.contrarianTake && (
+                    <section className="max-w-[700px] mx-auto md:mx-0 border-l-4 border-accent pl-8 py-4">
+                      <h4 className="text-xl font-bold text-foreground mb-4">
+                        {activeStudy.contrarianTake.title}
+                      </h4>
+                      <p className="text-muted-foreground text-[17px] leading-[1.8]">
+                        {activeStudy.contrarianTake.content}
+                      </p>
+                    </section>
+                  )}
+
                   {/* Pull Quote */}
                   <section className="py-20 relative">
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent/10 rounded-full blur-[50px] pointer-events-none"></div>
                     <blockquote className="max-w-[800px] mx-auto text-center relative z-10">
-                      <p className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-[1.2] tracking-tight mb-8">
-                        {/* We use dangerouslySetInnerHTML to allow HTML tags like <span className="text-red-500"> in strings, but since it's a simple string, let's just render it. Wait, the previous quote had a red span. I will just render it as is, and use regex to highlight key terms if necessary, or just render it plainly since it looks great already. Actually, I can just use raw string. */}
+                      <p className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-[1.2] tracking-tight mb-8 italic">
                         {activeStudy.pullQuote}
                       </p>
                       <footer className="text-accent font-mono text-sm uppercase tracking-[0.3em] flex items-center justify-center gap-4">
                         <span className="w-8 h-px bg-accent/50"></span>
-                        The 'Aha!' Moment
+                        Executive Insight
                         <span className="w-8 h-px bg-accent/50"></span>
                       </footer>
                     </blockquote>
@@ -409,7 +456,7 @@ export function CaseStudies() {
                   {/* Executive Summary */}
                   <section className="max-w-[700px] mx-auto md:mx-0">
                     <div className="flex items-center gap-4 mb-8">
-                      <h4 className="text-2xl font-bold text-foreground">Executive Summary: Plan & Implement</h4>
+                      <h4 className="text-2xl font-bold text-foreground">Strategic Roadmap</h4>
                       <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent"></div>
                     </div>
                     
