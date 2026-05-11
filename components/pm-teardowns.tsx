@@ -18,6 +18,28 @@ interface Post {
 }
 
 const posts: Post[] = [
+  // SPOTIFY VS YOUTUBE TEARDOWN
+  {
+    title: "Some creators are making 2–3x more money on Spotify than YouTube.",
+    date: "2026-05-11",
+    category: "PM Teardown",
+    brand: "Spotify Vs YouTube",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_creatoreconomy-spotify-productmanagement-share-7459218979383828480-GkTT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 34,
+    comments: 6,
+    hook: "Spotify pays based on Premium subscriber watch time not ad impressions. So instead of chasing millions of free-tier eyeballs, you get paid by a smaller, higher-intent audience.",
+    isTopPost: true
+  },
+  {
+    title: "Wait, is Spotify actually coming for YouTube? The answer surprised me.",
+    date: "2026-05-11",
+    category: "PM Teardown",
+    brand: "Spotify Vs YouTube",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_productmanagement-spotify-productstrategy-share-7459218167387746304-vuXF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 28,
+    comments: 4,
+    hook: "Spotify now has 500,000+ video shows. 390 million users have already watched video on the app. But here's the part everyone gets wrong: This is NOT a YouTube attack."
+  },
   // GENERAL INSIGHTS
   {
     title: "Most platforms solved “saving content.” Very few solved: “finding it again.”",
@@ -601,6 +623,7 @@ const brandDomains: Record<string, string> = {
   'Meesho / Flipkart': 'meesho.com',
   'Meesho': 'meesho.com',
   'Spotify': 'spotify.com',
+  'Spotify Vs YouTube': 'spotify.com',
   'Red Bull': 'redbull.com',
   'PUBG / BGMI': 'krafton.com',
   'Snapchat': 'snapchat.com',
