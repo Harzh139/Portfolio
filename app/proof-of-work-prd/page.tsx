@@ -120,6 +120,29 @@ export default function ProofOfWorkPRD() {
             </div>
           </section>
 
+          {/* Section: Edge Cases */}
+          <section>
+            <h2 className="text-xs font-mono text-gray-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
+              <span className="w-8 h-px bg-white/20"></span>
+              Edge Cases
+            </h2>
+            <div className="p-8 bg-white/5 border border-white/10 rounded-2xl">
+              <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
+                <Database size={20} className="text-accent" />
+                The 'Private Repo' Visibility Gap
+              </h4>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                How do we verify Proof-of-Work for candidates whose best contributions are locked in private enterprise repositories?
+              </p>
+              <div className="pl-6 border-l-2 border-accent">
+                <h5 className="text-white font-bold mb-2 text-sm">Solution: Secure OAuth Metadata Scraper</h5>
+                <p className="text-gray-400 text-sm">
+                  Implement a one-time secure sync that fetches aggregate metadata (commit frequency, languages used, line-count deltas) without cloning or exposing the underlying source code. This allows for 'Contribution Volume' verification while maintaining strict IP security for the candidate's employer.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* Section: Technical Trade-offs */}
           <section>
             <h2 className="text-xs font-mono text-gray-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">

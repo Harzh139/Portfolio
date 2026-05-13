@@ -100,6 +100,82 @@ export default function SecondBrainPRD() {
             </div>
           </section>
 
+          {/* Section: User Stories (Checklist) */}
+          <section>
+            <h2 className="text-xs font-mono text-gray-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
+              <span className="w-8 h-px bg-white/20"></span>
+              User Stories
+            </h2>
+            <div className="space-y-4">
+              {[
+                { story: "As a creator, I want to filter my saved clips by 'color palette' (e.g., 'warm/sunset' vs. 'cool/teal') to match my project's visual theme.", checked: true },
+                { story: "As a creator, I want to search for 'high-energy transitions' or 'cinematic slow-mo' to quickly find b-roll that fits a specific edit style.", checked: true },
+                { story: "As a creator, I want to search for content based on 'audio tone' (e.g., 'lo-fi beats' vs. 'aggressive narration') to sync with my soundtrack.", checked: true }
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+                  <div className="mt-1 w-5 h-5 rounded border border-accent flex items-center justify-center shrink-0">
+                    <div className="w-2.5 h-2.5 bg-accent rounded-sm"></div>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed">{item.story}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section: Technical Constraints (Terminal Style) */}
+          <section>
+            <h2 className="text-xs font-mono text-gray-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
+              <span className="w-8 h-px bg-white/20"></span>
+              Technical Constraints
+            </h2>
+            <div className="bg-[#1a1a1a] rounded-xl border border-white/10 overflow-hidden font-mono text-xs">
+              <div className="bg-white/5 px-4 py-2 border-b border-white/10 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-red-500/50"></div>
+                <div className="w-2 h-2 rounded-full bg-yellow-500/50"></div>
+                <div className="w-2 h-2 rounded-full bg-green-500/50"></div>
+                <span className="ml-2 text-gray-500">architecture_v1.sh</span>
+              </div>
+              <div className="p-6 space-y-4">
+                <div className="text-gray-500"># Hybrid Model Architecture</div>
+                <div className="flex gap-4">
+                  <span className="text-accent">PRIVACY:</span>
+                  <span className="text-gray-300">Run lightweight on-device VLMs (MobileCLIP) for local frame analysis.</span>
+                </div>
+                <div className="flex gap-4">
+                  <span className="text-accent">PERFORMANCE:</span>
+                  <span className="text-gray-300">Push vectorized embeddings to Cloud Vector DBs (Pinecone/Milvus) for sub-100ms search latency.</span>
+                </div>
+                <div className="flex gap-4">
+                  <span className="text-accent">COST:</span>
+                  <span className="text-gray-300">Trigger multimodal re-indexing only on 'New Save' events to minimize API token burn.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section: Edge Cases */}
+          <section>
+            <h2 className="text-xs font-mono text-gray-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
+              <span className="w-8 h-px bg-white/20"></span>
+              Edge Cases
+            </h2>
+            <div className="p-8 bg-white/5 border border-white/10 rounded-2xl">
+              <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
+                <Scale size={20} className="text-accent" />
+                The Semantic Failure Fallback
+              </h4>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                What happens when natural language queries yield zero high-confidence matches?
+              </p>
+              <div className="pl-6 border-l-2 border-accent">
+                <h5 className="text-white font-bold mb-2 text-sm">Solution: Manual Discovery Loop</h5>
+                <p className="text-gray-400 text-sm">
+                  Implement a "Similar to this" recommendation engine. If the user selects a low-confidence match, the system triggers a k-nearest neighbor (k-NN) search to surfaced visually similar assets that might have been indexed incorrectly.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* Section: The Trade-off Matrix */}
           <section>
             <h2 className="text-xs font-mono text-gray-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
