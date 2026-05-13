@@ -5,6 +5,7 @@ import { Projects } from "@/components/projects"
 import { Skills } from "@/components/skills"
 import { PMTeardowns } from "@/components/pm-teardowns"
 import { CaseStudies } from "@/components/case-studies"
+import { Guesstimates } from "@/components/guesstimates"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { FadeIn } from "@/components/fade-in"
@@ -19,6 +20,7 @@ export default function Home() {
         <FadeIn><Projects /></FadeIn>
         <FadeIn><Skills /></FadeIn>
         <FadeIn><CaseStudies /></FadeIn>
+        <FadeIn><Guesstimates /></FadeIn>
         <FadeIn><PMTeardowns /></FadeIn>
         <FadeIn><Contact /></FadeIn>
       </main>
