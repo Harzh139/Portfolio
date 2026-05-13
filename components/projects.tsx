@@ -1,3 +1,9 @@
+"use client"
+
+import { ArrowDown, Github, Linkedin, Mail, Phone, FileText, ExternalLink, ArrowRight } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+
 const liveProducts = [
   {
     title: "⚡ CodeMiles: AI-Native Agentic Coding",
@@ -30,6 +36,32 @@ const liveProducts = [
     link: "https://resume-magic-wand-66.lovable.app/",
     image: "/proj_agent_1772354545148.png",
   },
+  {
+    title: "🔗 Proof-of-Work Hiring",
+    description: "Solving the signal-to-noise crisis in recruiting. A reverse-marketplace where talent discovery is driven by 'Proof-of-Work' (GitHub, deployments, velocity) rather than keywords. Core Insight: In a high-noise environment, trust is built through observable behavior, not static claims.",
+    featured: "Featured Strategy",
+    tags: [
+      { name: "Marketplace Design", color: "bg-purple-500/10 text-purple-500 border-purple-500/20" },
+      { name: "Product Strategy", color: "bg-blue-500/10 text-blue-500 border-blue-500/20" },
+      { name: "AI Ethics", color: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" },
+    ],
+    link: "#/case-study/proof-of-work",
+    image: "/proof_of_work_hiring_thumbnail_1778666161704.png",
+    isCaseStudy: true
+  },
+  {
+    title: "🧠 Second Brain for Creators",
+    description: "An AI-native retrieval layer for content creators. Uses multimodal LLMs to parse visual style and 'vibe', transforming passive warehouses into active discovery tools. \"Platforms have solved saving, but not finding.\"",
+    tags: [
+      { name: "Product Design", color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20" },
+      { name: "Generative AI", color: "bg-amber-500/10 text-amber-500 border-amber-500/20" },
+      { name: "Multimodal LLMs", color: "bg-indigo-500/10 text-indigo-500 border-indigo-500/20" },
+    ],
+    link: "#/case-study/second-brain",
+    image: "/second_brain_creators_thumbnail_1778666184293.png",
+    isCaseStudy: true,
+    metrics: "↓ Time-to-Retrieve | ↑ Content Output"
+  },
 ]
 
 export function Projects() {
@@ -45,7 +77,7 @@ export function Projects() {
         <div className="flex flex-col gap-12">
           <div className="flex items-center gap-6">
             <h2 className="text-xs font-mono text-accent tracking-[0.3em] uppercase whitespace-nowrap">
-              My Live Products
+              My Live Products & Strategies
             </h2>
             <div className="flex-1 h-px bg-gradient-to-r from-border/60 to-transparent" />
           </div>
@@ -62,12 +94,7 @@ export function Projects() {
 
 function ProjectCard({ project }: { project: any }) {
   return (
-    <a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative flex flex-col h-full bg-card/20 border border-white/10 rounded-xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_50px_rgba(var(--color-accent),0.1)]"
-    >
+    <div className="group relative flex flex-col h-full bg-card/20 border border-white/10 rounded-xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_50px_rgba(var(--color-accent),0.1)]">
       {/* Image Container */}
       <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-xl shrink-0">
         <img
@@ -79,28 +106,41 @@ function ProjectCard({ project }: { project: any }) {
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
         <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         
-        {/* Floating Arrow */}
-        <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-background/80 backdrop-blur-md border border-white/10 flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
+        {/* Featured Badge */}
+        {project.featured && (
+          <div className="absolute top-4 left-4 z-20">
+            <span className="px-3 py-1 text-[10px] font-black uppercase tracking-widest bg-accent text-background rounded-sm shadow-lg">
+              {project.featured}
+            </span>
+          </div>
+        )}
+
+        {/* Floating Icon */}
+        <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-md border border-white/10 flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
+          {project.isCaseStudy ? <FileText size={18} className="text-accent" /> : <ExternalLink size={18} className="text-accent" />}
         </div>
       </div>
 
       {/* Content */}
-      <div className="flex flex-col gap-5 p-7 flex-1 bg-card/30 backdrop-blur-sm group-hover:bg-card/50 transition-colors duration-500 rounded-b-xl border-t border-white/5">
-        <h3 className="text-lg font-bold text-foreground leading-tight tracking-tight group-hover:text-accent transition-colors duration-300">
-          {project.title}
-        </h3>
+      <div className="flex flex-col gap-4 p-7 flex-1 bg-card/30 backdrop-blur-sm group-hover:bg-card/50 transition-colors duration-500 rounded-b-xl border-t border-white/5">
+        <div className="space-y-2">
+          <h3 className="text-lg font-bold text-foreground leading-tight tracking-tight group-hover:text-accent transition-colors duration-300">
+            {project.title}
+          </h3>
+          {project.metrics && (
+            <div className="text-[10px] font-mono text-accent/80 font-bold tracking-wider uppercase">
+              {project.metrics}
+            </div>
+          )}
+        </div>
 
         {project.description && (
-          <p className="text-sm text-muted-foreground line-clamp-3">
+          <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
             {project.description}
           </p>
         )}
 
-        <div className="flex flex-wrap gap-2.5 mt-auto">
+        <div className="flex flex-wrap gap-2 mt-auto pb-4">
           {project.tags.map((tag: any) => (
             <span
               key={tag.name}
@@ -110,10 +150,26 @@ function ProjectCard({ project }: { project: any }) {
             </span>
           ))}
         </div>
+
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2"
+        >
+          <Button 
+            variant={project.isCaseStudy ? "outline" : "default"} 
+            size="sm" 
+            className={`w-full group/btn transition-all duration-300 ${project.isCaseStudy ? 'hover:bg-accent hover:text-background border-accent/20' : ''}`}
+          >
+            {project.isCaseStudy ? "View Case Study" : "Visit Project"}
+            <ArrowRight size={14} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
+          </Button>
+        </a>
       </div>
       
       {/* Bottom Glow */}
       <div className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    </a>
+    </div>
   )
 }
