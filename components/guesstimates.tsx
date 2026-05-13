@@ -61,7 +61,7 @@ export function Guesstimates() {
                   </h3>
                 </CardHeader>
 
-                <CardContent className="px-8 pb-8 pt-0 relative z-10 flex flex-col gap-8">
+                <CardContent className="px-8 pb-8 pt-0 relative z-10 flex flex-col gap-10">
                   <div className="space-y-3">
                     <h4 className="text-[10px] font-mono text-accent tracking-[0.2em] uppercase opacity-70">Problem</h4>
                     <p className="text-lg text-foreground font-medium leading-relaxed">
@@ -91,7 +91,7 @@ export function Guesstimates() {
 
                   <div className="mt-auto pt-8 border-t border-white/5">
                     <h4 className="text-[10px] font-mono text-accent tracking-[0.2em] uppercase mb-3 opacity-70">The Result</h4>
-                    <div className="text-4xl font-black text-foreground tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent group-hover:from-accent group-hover:to-accent/70 transition-all duration-500">
+                    <div className="text-4xl font-black text-accent tracking-tighter transition-all duration-500">
                       {item.result}
                     </div>
                   </div>
