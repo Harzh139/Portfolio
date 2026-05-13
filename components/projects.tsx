@@ -51,20 +51,20 @@ const liveProducts = [
       { name: "Product Strategy", color: "bg-blue-500/10 text-blue-500 border-blue-500/20" },
       { name: "AI Ethics", color: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" },
     ],
-    link: "#/case-study/proof-of-work",
+    link: "/proof-of-work-prd",
     image: "/proof_of_work_hiring_thumbnail_1778666161704.png",
     isCaseStudy: true
   },
   {
     title: "Second Brain for Creators",
     icon: Brain,
-    description: "Multimodal AI retrieval layer for content creators. Uses vision-language models to parse 'vibe' and visual style, transforming passive clip warehouses into active creative discovery tools.",
+    description: "An AI-native retrieval layer for content creators. Uses multimodal LLMs to parse visual style and 'vibe', transforming passive warehouses into active discovery tools. \"Platforms have solved saving, but not finding.\"",
     tags: [
       { name: "Product Design", color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20" },
       { name: "Generative AI", color: "bg-amber-500/10 text-amber-500 border-amber-500/20" },
       { name: "Multimodal LLMs", color: "bg-indigo-500/10 text-indigo-500 border-indigo-500/20" },
     ],
-    link: "#/case-study/second-brain",
+    link: "/second-brain-prd",
     image: "/second_brain_creators_thumbnail_1778666184293.png",
     isCaseStudy: true,
     metrics: "↓ Time-to-Retrieve | ↑ Content Output"
