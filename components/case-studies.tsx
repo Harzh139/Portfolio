@@ -1,10 +1,78 @@
 "use client"
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
 const CASE_STUDIES = [
+  {
+    id: 'irctc',
+    brand: 'IRCTC',
+    domain: 'irctc.co.in',
+    customLogo: '/irctc_logo.png',
+    title: "The IRCTC Paradox: Scaling vs. Monopoly",
+    description: "India built UPI (18B txns/month, 99.9% uptime), Aadhaar (1.4B biometric records), and CoWIN (2B vaccine doses). Yet IRCTC crashes every Tatkal morning. A monopoly has no reason to fix itself.",
+    tags: ['Product Strategy', 'Scalability', 'UX RCA'],
+    context: {
+      metric: 'Server Uptime',
+      impact: 'Crash @ 10:01 AM',
+      geography: 'Pan-India',
+      segment: 'Tatkal Bookings'
+    },
+    slicingData: [
+      "On April 17, 2026 — Downdetector complaints started at 9:48 AM, 12 minutes before Tatkal even opened. By 10:01 AM, servers showed 'currently unreachable.' By 10:09 AM, all tickets showed REGRET. Thousands of users had money deducted with no ticket.",
+      "IRCTC's official response: 'Please try logging out and force closing the application.' The same response. Every time. For 15 years. SwaRail, launched in May 2025 as a 'SuperApp,' consolidated 4-5 railway apps into one — but didn't touch the server infrastructure, didn't fix the bot problem, and didn't fix the queue-less stampede model."
+    ],
+    hypothesis: {
+      external: [
+        { title: 'India\'s Tech Capability', desc: 'UPI processes 18 billion transactions/month at 99.9% uptime. Aadhaar handles 1.4 billion biometric authentications. CoWIN tracked 2 billion vaccine doses. The engineering talent and infrastructure exist.', status: 'success' },
+        { title: 'Competitive Pressure', desc: 'IRCTC operates as a government-backed monopoly with zero competition in the railway booking space. No market force compels infrastructure investment.', status: 'error' },
+        { title: 'Bot & Tout Ecosystem', desc: 'Automated bots solve CAPTCHAs in milliseconds while legitimate users fail them. The CAPTCHA protects IRCTC from building something better, not users from bots.', status: 'error' }
+      ],
+      internal: {
+        product: [
+          { title: 'Queue-less Stampede Model', desc: 'Everyone hits at 10:00 AM. Fastest connection wins. Bots win. No virtual queue, no random position assignment, no per-user booking window. Ticketmaster, BookMyShow, and Supreme all solved this.', status: 'error' },
+          { title: 'Dead-End UX', desc: '"No tickets available" is a full stop. No connecting routes, no alternate class suggestions, no next-available-date recommendations. Every "no" is a dead end instead of a "here\'s what you can do instead."', status: 'error' }
+        ],
+        tech: [
+          { title: 'Server Infrastructure', desc: 'SwaRail gave a new coat of paint to a building with a broken foundation. UI improvements on top of infrastructure problems are not product improvements — they\'re UX debt accumulating on technical debt.', status: 'error' },
+          { title: 'Payment Resolution', desc: 'Money deducted, no ticket, refund in 5-7 working days. UPI already supports hold-and-release technically. This is an accountability problem, not a technical one.', status: 'error' }
+        ],
+        operations: [
+          { title: 'CAPTCHA System', desc: 'Humans fail it. Bots solve it in milliseconds. Behavioral biometrics (typing speed, mouse movement, scroll behavior) would flag inhuman patterns. Banks already do this.', status: 'error' },
+          { title: '24 Years of Unused Data', desc: 'IRCTC has 24 years of booking data — more training data than most AI companies dream of. A waitlist prediction model ("WL 45 → 73% chance of confirmation") is not a research problem. It\'s a product decision.', status: 'error' }
+        ]
+      }
+    },
+    aiMLHypothesis: {
+      title: "AI/ML Hypothesis: Waitlist Prediction & Demand Forecasting",
+      content: "With 24 years of historical booking data, IRCTC could deploy a time-series forecasting model to predict cancellation probability per route per date. A gradient-boosted model using features like route popularity, season, day-of-week, and historical cancellation rates could give users real-time confirmation probability (e.g., 'WL 45 → 73% chance'). Combined with an AI alternative routing engine, every 'no tickets' dead-end becomes a multi-modal suggestion system — connecting routes, alternate classes, and next-available dates."
+    },
+    contrarianTake: {
+      title: "Contrarian Take: The Monopoly Paradox",
+      content: "The question was never 'can IRCTC be fixed?' India proved with UPI, Aadhaar, and CoWIN that it can build world-class digital infrastructure at population scale. The question is: does a monopoly have any reason to fix itself? Honest answer — not until it has to. IRCTC's failures are not technical limitations; they're organizational incentive misalignment. Every Tatkal crash is a feature of monopoly, not a bug of engineering."
+    },
+    pullQuote: '"UI improvements on top of infrastructure problems are not product improvements. They\'re user experience debt accumulating on top of technical debt."',
+    executiveSummary: [
+      { 
+        title: 'Virtual Queue System', 
+        desc: 'Kill the stampede. Random position assigned at 10:00 AM. 3-minute booking window per user. Ticketmaster, BookMyShow, and Supreme already do this. This is not a hard problem — it\'s a political one.' 
+      },
+      { 
+        title: 'Behavioral Biometrics', 
+        desc: 'Kill the CAPTCHA. Track typing speed, mouse movement, scroll behavior. Flag inhuman booking patterns. Banks already do this. The CAPTCHA isn\'t protecting users — it\'s protecting IRCTC from building something better.' 
+      },
+      { 
+        title: 'Infrastructure & Intelligence Layer', 
+        list: [
+          { label: '60-Min Payment Resolution', desc: 'Payment gateway holds funds until ticket confirms. If it fails — release in 60 minutes automatically. UPI already supports this technically.' },
+          { label: 'AI Alternative Routing', desc: 'No direct train? Show connecting routes. No AC? Show Sleeper + upgrade waitlist. No tickets today? Show next 3 available dates.' },
+          { label: 'ML Waitlist Prediction', desc: '"WL 45 → 73% chance of confirmation based on historical cancellations." 24 years of booking data. A product decision, not a research problem.' }
+        ] 
+      }
+    ]
+  },
   {
     id: 'zomato',
     brand: 'Zomato',
@@ -231,7 +299,7 @@ export function CaseStudies() {
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-border shrink-0">
                         <img 
-                          src={`https://www.google.com/s2/favicons?domain=${study.domain}&sz=128`} 
+                          src={(study as any).customLogo || `https://www.google.com/s2/favicons?domain=${study.domain}&sz=128`} 
                           alt={`${study.brand} logo`}
                           className="w-full h-full object-contain rounded-full bg-white"
                           onError={(e) => {
@@ -248,6 +316,15 @@ export function CaseStudies() {
                     <div className="mb-4 text-sm text-muted-foreground line-clamp-2">
                       {study.title}
                     </div>
+                    {(study as any).tags && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {(study as any).tags.map((tag: string, tIdx: number) => (
+                          <span key={tIdx} className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                     <div className="mt-auto">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex gap-4 text-sm text-muted-foreground font-medium">
@@ -280,13 +357,18 @@ export function CaseStudies() {
                   </Button>
                 </div>
                 <div className="mb-16">
-                  <div className="flex gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider border rounded-full backdrop-blur-md bg-red-500/10 text-red-500 border-red-500/20 shadow-sm">
                       {activeStudy.brand}
                     </span>
                     <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider border rounded-full backdrop-blur-md bg-blue-500/10 text-blue-500 border-blue-500/20 shadow-sm">
                       AI & Data Strategy
                     </span>
+                    {(activeStudy as any).tags && (activeStudy as any).tags.map((tag: string, tIdx: number) => (
+                      <span key={tIdx} className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider border rounded-full backdrop-blur-md bg-accent/10 text-accent border-accent/20 shadow-sm">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                   <h3 className="text-3xl md:text-5xl font-black text-foreground leading-tight tracking-tight mb-6">
                     {activeStudy.title}
@@ -294,6 +376,14 @@ export function CaseStudies() {
                   <p className="text-lg text-muted-foreground leading-relaxed max-w-[700px]">
                     {activeStudy.description}
                   </p>
+                  {activeStudy.id === 'irctc' && (
+                    <Link 
+                      href="/irctc-teardown" 
+                      className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-accent text-accent-foreground font-bold rounded-full hover:opacity-90 transition-opacity text-sm"
+                    >
+                      View Product Deep Dive →
+                    </Link>
+                  )}
                 </div>
 
                 <div className="space-y-20">
