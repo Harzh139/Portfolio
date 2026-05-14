@@ -40,6 +40,16 @@ const posts: Post[] = [
     comments: 0,
     hook: "Tatkal opens at 10:00 AM. April 17, 2026: 9:48 AM Downdetector complaints start. 10:01 AM servers showing 'currently unreachable.' 10:09 AM all tickets showing REGRET. SwaRail didn't touch the server infrastructure. UI improvements on top of infrastructure problems are not product improvements."
   },
+  {
+    title: "What if IRCTC woke up tomorrow and found a competitor?",
+    date: "2026-05-14",
+    category: "PM Teardown",
+    brand: "IRCTC",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_what-if-irctc-woke-up-tomorrow-and-found-a-competitor-ugcPost-7460560691712942080-CSjU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 0,
+    comments: 0,
+    hook: "India built UPI — 18 billion transactions/month, 99.9% uptime. Built Aadhaar — 1.4 billion biometric records. Built CoWIN — 2 billion vaccine doses tracked. So why does IRCTC still crash every Tatkal morning? Because a monopoly has no reason to fix itself. 5 fixes a PM would ship if IRCTC had to compete tomorrow."
+  },
   // SPOTIFY VS YOUTUBE TEARDOWN
   {
     title: "Some creators are making 2–3x more money on Spotify than YouTube.",
