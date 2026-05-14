@@ -646,6 +646,11 @@ const brandDomains: Record<string, string | string[]> = {
   'IRCTC': 'irctc.co.in',
 }
 
+// Custom logo overrides for brands where Google favicon doesn't work well
+const brandLogos: Record<string, string> = {
+  'IRCTC': '/irctc_logo.png',
+}
+
 export function PMTeardowns() {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null)
@@ -736,7 +741,18 @@ export function PMTeardowns() {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-colors" />
                   <CardHeader className="pb-3 relative z-10">
                     <div className="flex items-center gap-4">
-                      {brandDomains[brand.name] ? (
+                      {brandLogos[brand.name] ? (
+                        <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-border shrink-0">
+                          <img 
+                            src={brandLogos[brand.name]} 
+                            alt={`${brand.name} logo`}
+                            className="w-full h-full object-contain rounded-full bg-white"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      ) : brandDomains[brand.name] ? (
                         Array.isArray(brandDomains[brand.name]) ? (
                           <div className="flex -space-x-3 shrink-0 items-center">
                             <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border-2 border-background shadow-sm relative z-10 shrink-0">
