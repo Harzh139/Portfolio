@@ -30,6 +30,16 @@ const posts: Post[] = [
     hook: "IRCTC books 14.33 lakh tickets every single day. Processes $4 billion in transactions annually. Has 10 crore registered users. It also crashes every Tatkal morning. Has a CAPTCHA nobody can solve. And responds to complaints by saying 'please clear your cache.'",
     isTopPost: true
   },
+  {
+    title: "Broken by Design: The Tatkal Problem and SwaRail",
+    date: "2026-05-14",
+    category: "PM Teardown",
+    brand: "IRCTC",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_broken-by-design-the-tatkal-problem-and-swarail-ugcPost-7460559736195751937-6ZrG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 0,
+    comments: 0,
+    hook: "Tatkal opens at 10:00 AM. April 17, 2026: 9:48 AM Downdetector complaints start. 10:01 AM servers showing 'currently unreachable.' 10:09 AM all tickets showing REGRET. SwaRail didn't touch the server infrastructure. UI improvements on top of infrastructure problems are not product improvements."
+  },
   // SPOTIFY VS YOUTUBE TEARDOWN
   {
     title: "Some creators are making 2–3x more money on Spotify than YouTube.",
