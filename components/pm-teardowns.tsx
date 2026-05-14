@@ -18,6 +18,18 @@ interface Post {
 }
 
 const posts: Post[] = [
+  // IRCTC TEARDOWN
+  {
+    title: "IRCTC: India's most profitable broken product.",
+    date: "2026-05-14",
+    category: "PM Teardown",
+    brand: "IRCTC",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_irctc-indias-most-profitable-broken-product-ugcPost-7460555099682045952-_RzR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 184,
+    comments: 32,
+    hook: "IRCTC books 14.33 lakh tickets every single day. Processes $4 billion in transactions annually. Has 10 crore registered users. It also crashes every Tatkal morning. Has a CAPTCHA nobody can solve. And responds to complaints by saying 'please clear your cache.'",
+    isTopPost: true
+  },
   // SPOTIFY VS YOUTUBE TEARDOWN
   {
     title: "Some creators are making 2–3x more money on Spotify than YouTube.",
@@ -631,6 +643,7 @@ const brandDomains: Record<string, string | string[]> = {
   'Instagram': 'instagram.com',
   'LinkedIn': 'linkedin.com',
   'GitHub': 'github.com',
+  'IRCTC': 'irctc.co.in',
 }
 
 export function PMTeardowns() {
