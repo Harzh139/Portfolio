@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ArrowLeft, FileText, Target, Users, Zap, BarChart3, Scale } from 'lucide-react'
+import { ArrowLeft, FileText, Target, Users, Zap, BarChart3, Scale, Database } from 'lucide-react'
 
 export default function ProofOfWorkPRD() {
   return (
