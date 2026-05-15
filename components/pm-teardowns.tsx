@@ -50,6 +50,18 @@ const posts: Post[] = [
     comments: 0,
     hook: "India built UPI — 18 billion transactions/month, 99.9% uptime. Built Aadhaar — 1.4 billion biometric records. Built CoWIN — 2 billion vaccine doses tracked. So why does IRCTC still crash every Tatkal morning? Because a monopoly has no reason to fix itself. 5 fixes a PM would ship if IRCTC had to compete tomorrow."
   },
+  // SPOTIFY — DANIEL EK TEARDOWN
+  {
+    title: "20 years ago a 23-year-old who ran a piracy company built the world's most used music product.",
+    date: "2026-05-15",
+    category: "PM Teardown",
+    brand: "Spotify",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_a-23-year-old-who-used-to-run-a-piracy-company-built-the-w-ugcPost-7460940664751665152-oQXU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 0,
+    comments: 0,
+    hook: "Daniel Ek didn't fight piracy. He out-built it. 70% of every rupee Spotify earns goes to music labels. Forever. It took 2 years of negotiation before a single song could legally play. Labels received 18% equity just for licensing. Went public at $29B — still unprofitable. Lost €532M in 2023. Laid off 1,500 people in one day. Yet users never left. 2024: €15.6B revenue. €1.14B first ever annual profit. 675M MAUs. That's not a business story — that's a product story.",
+    isTopPost: true
+  },
   // SPOTIFY VS YOUTUBE TEARDOWN
   {
     title: "Some creators are making 2–3x more money on Spotify than YouTube.",
