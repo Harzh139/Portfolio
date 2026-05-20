@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
@@ -18,6 +19,40 @@ interface Post {
 }
 
 const posts: Post[] = [
+  // TRUECALLER TEARDOWN SERIES
+  {
+    title: "Part 1: Crowdsourced Identity: The Invisible Data Moat",
+    date: "2026-05-20",
+    category: "PM Teardown",
+    brand: "Truecaller",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_nobody-uses-it-heres-how-id-fix-it-in-ugcPost-7462134297987112960-BTyx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 184,
+    comments: 32,
+    hook: "How Truecaller built an un-replicable 16-year time barrier via crowdsourced phone books (500M MAU, 350M in India, 41% EBITDA margins). PM Insight: 'You cannot replicate a time barrier with capital.'",
+    isTopPost: true
+  },
+  {
+    title: "Part 2: The Dependency Trap: When an Algorithm Cost 30% Revenue",
+    date: "2026-05-20",
+    category: "PM Teardown",
+    brand: "Truecaller",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_can-truecaller-survive-when-its-core-feature-becomes-free-ugcPost-7462024845887766528-hIdU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 142,
+    comments: 24,
+    hook: "Analyzing the August 2025 Google ad algorithm shift that dropped Truecaller's ad traffic by one-third instantly. Core structural flaw: 'Building an unbeatable moat against competitors, but zero protection against infrastructure dependencies.'",
+    isTopPost: true
+  },
+  {
+    title: "Part 3: Ecosystem Absorption: Surviving the Default OS Feature Threat",
+    date: "2026-05-20",
+    category: "PM Teardown",
+    brand: "Truecaller",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_can-truecaller-survive-when-its-core-feature-becomes-free-ugcPost-7462024845887766528-hIdU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 165,
+    comments: 29,
+    hook: "How Truecaller pivots as its core utility becomes free and native in 2026 via India's CNAP, Apple iOS native caller ID, and Google Android spam detection. Their shift from 'Utility App' to 'Trust Infrastructure' (AI call screening, Family Protection, B2B verified identity).",
+    isTopPost: true
+  },
   // IRCTC TEARDOWN
   {
     title: "IRCTC: India's most profitable broken product.",
@@ -83,6 +118,17 @@ const posts: Post[] = [
     reactions: 28,
     comments: 4,
     hook: "Spotify now has 500,000+ video shows. 390 million users have already watched video on the app. But here's the part everyone gets wrong: This is NOT a YouTube attack."
+  },
+  {
+    title: "Part 3: Nobody Uses It. Here's How I'd Fix It in 1 Feature.",
+    date: "2026-05-20",
+    category: "PM Teardown",
+    brand: "Spotify Vs YouTube?",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_nobody-uses-it-heres-how-id-fix-it-in-ugcPost-7462134297987112960-BTyx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 42,
+    comments: 8,
+    hook: "Analyzing why the vast majority of Spotify's premium users ignore the podcast tab, framing it as a UX layout/habit friction issue, and proposing a single strategic product feature to bridge the audio-to-video consumption gap.",
+    isTopPost: true
   },
   // GENERAL INSIGHTS
   {
@@ -676,11 +722,13 @@ const brandDomains: Record<string, string | string[]> = {
   'LinkedIn': 'linkedin.com',
   'GitHub': 'github.com',
   'IRCTC': 'irctc.co.in',
+  'Truecaller': 'truecaller.com',
 }
 
 // Custom logo overrides for brands where Google favicon doesn't work well
 const brandLogos: Record<string, string> = {
   'IRCTC': '/irctc_logo.png',
+  'Truecaller': '/truecaller_logo.svg',
 }
 
 export function PMTeardowns() {
@@ -830,9 +878,15 @@ export function PMTeardowns() {
                     <div className="mt-auto">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex gap-4 text-sm text-muted-foreground">
-                          <span>📝 {brand.posts.length} Posts</span>
-                          <span className="text-yellow-500 dark:text-yellow-400">👍 {brand.totalReactions}</span>
-                          <span className="text-blue-500 dark:text-blue-400">💬 {brand.totalComments}</span>
+                          {brand.name === 'Truecaller' ? (
+                            <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 500M+ Users | Moat Analysis</span>
+                          ) : (
+                            <>
+                              <span>📝 {brand.posts.length} Posts</span>
+                              <span className="text-yellow-500 dark:text-yellow-400">👍 {brand.totalReactions}</span>
+                              <span className="text-blue-500 dark:text-blue-400">💬 {brand.totalComments}</span>
+                            </>
+                          )}
                         </div>
                       </div>
                       <Button 
@@ -859,6 +913,22 @@ export function PMTeardowns() {
               </Button>
               <h3 className="text-2xl font-bold text-foreground">{selectedBrand}</h3>
             </div>
+
+            {selectedBrand === 'Truecaller' && (
+              <div className="mb-8 p-6 bg-blue-500/10 border border-blue-500/20 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div className="flex-1">
+                  <h4 className="text-lg font-bold text-foreground">Truecaller: Moat Analysis & Ecosystem Absorption</h4>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Read the complete structured case study covering crowdsourced identity moats, algorithm dependency traps, and default OS integration threats.
+                  </p>
+                </div>
+                <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white font-semibold shrink-0">
+                  <Link href="/truecaller-teardown">
+                    View Case Study Deep Dive →
+                  </Link>
+                </Button>
+              </div>
+            )}
 
             {/* Posts Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
