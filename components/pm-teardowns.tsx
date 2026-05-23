@@ -252,6 +252,28 @@ const posts: Post[] = [
   },
   // NETFLIX TEARDOWN
   {
+    title: "[Deep Dive] Netflix LLM Platform: The Operational Reality of AI at Scale",
+    date: "2026-05-23",
+    category: "PM Teardown",
+    brand: "Netflix",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_productmanagement-ai-machinelearning-activity-7463198131845742594-dyW_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 168,
+    comments: 32,
+    hook: "\"Experimentation should be constrained by imagination, not operational complexity.\" Shifting the AI product narrative from building smarter models to engineering distributed infrastructure, handling tokenizer silent failures, and maximizing pipeline throughput.\n\nKey Takeaways: Tokenization alignment, system behavior testing over binary bug-tracking, 4.7x sequence packing throughput gains.",
+    isTopPost: true
+  },
+  {
+    title: "[Deep Dive] Netflix Switchboard: Deconstructing Monolithic ML Abstractions",
+    date: "2026-05-23",
+    category: "PM Teardown",
+    brand: "Netflix",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_productmanagement-netflix-activity-7463491409178931200-_YJ4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 142,
+    comments: 24,
+    hook: "Scaling an ML platform from V1 to V2 requires shifting from a unified, high-risk middleware execution model (Switchboard rules) to decoupled failure isolation (Lightbulb + Envoy) without degrading the core developer experience.\n\nKey Takeaways: Failure domain isolation, p99 latency path management, intelligent API gateway routing.",
+    isTopPost: true
+  },
+  {
     title: "Netflix India — 1/3",
     date: "2026-04-20",
     category: "PM Teardown",
@@ -277,6 +299,18 @@ const posts: Post[] = [
     url: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7453713000000000000",
     reactions: 2,
     comments: 4
+  },
+  // RAVE TEARDOWN
+  {
+    title: "[Teardown] The Rave Paradox: Moats vs. Windows",
+    date: "2026-05-23",
+    category: "PM Teardown",
+    brand: "Rave",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_50-million-downloads-11-employees-zero-activity-7463838148486160384-m6HR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 185,
+    comments: 34,
+    hook: "Building a product in the alignment gap of incumbent incentives (like Netflix/Disney killing watch parties to force individual subscriptions) is a brilliant growth window, but it's not a sustainable moat without deep, native switching costs.\n\nKey Takeaways: Incentive mapping, platform dependency risk, defensive lock-in strategy.",
+    isTopPost: true
   },
   // CRED TEARDOWN
   {
@@ -708,6 +742,7 @@ const brandDomains: Record<string, string | string[]> = {
   'UPI / Google Pay': 'pay.google.com',
   'UPI / PhonePe': 'phonepe.com',
   'Netflix': 'netflix.com',
+  'Rave': 'rave.io',
   'CRED': 'cred.club',
   'Snapdeal': 'snapdeal.com',
   'Meesho / Flipkart': 'meesho.com',
