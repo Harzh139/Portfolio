@@ -53,6 +53,40 @@ const posts: Post[] = [
     hook: "How Truecaller pivots as its core utility becomes free and native in 2026 via India's CNAP, Apple iOS native caller ID, and Google Android spam detection. Their shift from 'Utility App' to 'Trust Infrastructure' (AI call screening, Family Protection, B2B verified identity).",
     isTopPost: true
   },
+  // INDIAMART TEARDOWN SERIES
+  {
+    title: "The Ugliest Website With India's Most Unbreakable Moat",
+    date: "2026-05-27",
+    category: "PM Teardown",
+    brand: "IndiaMart",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_the-ugliest-website-with-indias-most-unbreakable-ugcPost-7464917821672538112--lOo/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 0,
+    comments: 0,
+    hook: "An analysis of how a 1996-era UI handles 60% of India's B2B market through sheer, compounding network effects that money and modern design cannot easily disrupt.",
+    isTopPost: true
+  },
+  {
+    title: "IndiaMart vs ChatGPT: When Your Moat Meets Its Match",
+    date: "2026-05-27",
+    category: "PM Teardown",
+    brand: "IndiaMart",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_indiamart-vs-chatgpt-when-your-moat-meets-ugcPost-7464919425599750145-cff6/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 0,
+    comments: 0,
+    hook: "A teardown of the recent Calcutta High Court legal battle with OpenAI, exploring the financial realities of flat user growth and the vulnerability of a discovery moat to conversational AI layers.",
+    isTopPost: true
+  },
+  {
+    title: "Future-Proof IndiaMart Against AI: 5 Product Decisions I'd Ship",
+    date: "2026-05-27",
+    category: "PM Teardown",
+    brand: "IndiaMart",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_future-proof-indiamart-against-ai-ugcPost-7464921270472638464-3v03/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 0,
+    comments: 0,
+    hook: "Strategic product initiatives to turn a defense play into an offensive moat—including building a conversational procurement agent, a dynamic verified trust score, and monetizing intent data as an AI API layer.",
+    isTopPost: true
+  },
   // IRCTC TEARDOWN
   {
     title: "IRCTC: India's most profitable broken product.",
@@ -758,6 +792,7 @@ const brandDomains: Record<string, string | string[]> = {
   'GitHub': 'github.com',
   'IRCTC': 'irctc.co.in',
   'Truecaller': 'truecaller.com',
+  'IndiaMart': 'indiamart.com',
 }
 
 // Custom logo overrides for brands where Google favicon doesn't work well
@@ -915,6 +950,8 @@ export function PMTeardowns() {
                         <div className="flex gap-4 text-sm text-muted-foreground">
                           {brand.name === 'Truecaller' ? (
                             <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 500M+ Users | Moat Analysis</span>
+                          ) : brand.name === 'IndiaMart' ? (
+                            <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 130M+ Users | Moat & AI Threat Analysis</span>
                           ) : (
                             <>
                               <span>📝 {brand.posts.length} Posts</span>
