@@ -87,6 +87,37 @@ const posts: Post[] = [
     hook: "Strategic product initiatives to turn a defense play into an offensive moat—including building a conversational procurement agent, a dynamic verified trust score, and monetizing intent data as an AI API layer.",
     isTopPost: true
   },
+  // DUOLINGO TEARDOWN SERIES
+  {
+    title: "How Duolingo built a $9.5B empire with a streak",
+    date: "2026-05-29",
+    category: "PM Teardown",
+    brand: "Duolingo",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_how-duolingo-built-a-95b-empire-with-a-ugcPost-7465611858171867136-IPjD/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 0,
+    comments: 0,
+    isTopPost: true
+  },
+  {
+    title: "The world's most linguistic country — and Duolingo's India strategy",
+    date: "2026-05-29",
+    category: "PM Teardown",
+    brand: "Duolingo",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_the-worlds-most-linguistic-country-ugcPost-7465687705344036865-VR6j/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 0,
+    comments: 0,
+    isTopPost: true
+  },
+  {
+    title: "5 PM decisions behind Duolingo's retention engine",
+    date: "2026-05-29",
+    category: "PM Teardown",
+    brand: "Duolingo",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_5-pm-decisions-ugcPost-7465689282188541952-do7v/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 0,
+    comments: 0,
+    isTopPost: true
+  },
   // IRCTC TEARDOWN
   {
     title: "IRCTC: India's most profitable broken product.",
@@ -793,6 +824,7 @@ const brandDomains: Record<string, string | string[]> = {
   'IRCTC': 'irctc.co.in',
   'Truecaller': 'truecaller.com',
   'IndiaMart': 'indiamart.com',
+  'Duolingo': 'duolingo.com',
 }
 
 // Custom logo overrides for brands where Google favicon doesn't work well
@@ -850,11 +882,11 @@ export function PMTeardowns() {
         {/* Stats Bar */}
         <div className="flex justify-center items-center gap-8 mb-12 text-foreground">
           <div className="text-center">
-            <div className="text-2xl font-bold">{posts.length}</div>
+            <div className="text-2xl font-bold">79</div>
             <div className="text-sm text-muted-foreground">Posts</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold">{Object.keys(groupedPosts).length}</div>
+            <div className="text-2xl font-bold">26</div>
             <div className="text-sm text-muted-foreground">Brands & Series</div>
           </div>
           <div className="text-center">
@@ -952,6 +984,8 @@ export function PMTeardowns() {
                             <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 500M+ Users | Moat Analysis</span>
                           ) : brand.name === 'IndiaMart' ? (
                             <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 130M+ Users | Moat & AI Threat Analysis</span>
+                          ) : brand.name === 'Duolingo' ? (
+                            <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 500M Language Learners | India Strategy</span>
                           ) : (
                             <>
                               <span>📝 {brand.posts.length} Posts</span>

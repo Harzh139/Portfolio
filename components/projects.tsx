@@ -69,6 +69,23 @@ const liveProducts = [
     isCaseStudy: true,
     metrics: "↓ Time-to-Retrieve | ↑ Content Output"
   },
+  {
+    title: "Pulse by PhonePe",
+    subtitle: "The 3-Second Window",
+    icon: Brain,
+    description: "Solving PhonePe's retention crisis by transforming the post-payment success screen into a habit-forming discovery layer — powered by real transaction data no competitor can replicate.",
+    featured: "Featured Strategy",
+    darkOverlay: true,
+    tags: [
+      { name: "Retention Strategy", color: "bg-purple-500/10 text-purple-500 border-purple-500/20" },
+      { name: "Fintech", color: "bg-blue-500/10 text-blue-500 border-blue-500/20" },
+      { name: "Product Design", color: "bg-cyan-500/10 text-cyan-500 border-cyan-500/20" },
+      { name: "UPI", color: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" },
+    ],
+    link: "/phonepe-pulse-prd",
+    image: "https://www.google.com/s2/favicons?domain=phonepe.com&sz=128",
+    isCaseStudy: true
+  },
 ]
 
 export function Projects() {
@@ -140,6 +157,11 @@ function ProjectCard({ project }: { project: any }) {
               {project.title}
             </h3>
           </div>
+          {project.subtitle && (
+            <div className="text-[11px] font-mono text-muted-foreground font-semibold tracking-wide">
+              {project.subtitle}
+            </div>
+          )}
           {project.metrics && (
             <div className="text-[10px] font-mono text-accent/80 font-bold tracking-wider uppercase">
               {project.metrics}
