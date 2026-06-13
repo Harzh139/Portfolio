@@ -984,11 +984,18 @@ const brandDomains: Record<string, string | string[]> = {
 const brandLogos: Record<string, string> = {
   'IRCTC': '/irctc_logo.png',
   'Truecaller': '/truecaller_logo.svg',
+  'Duolingo': '/duolingo_logo.svg',
+  'Khatabook': '/khatabook_logo.png',
 }
 
 export function PMTeardowns() {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null)
+
+  const totalUniqueBrands = Object.keys(posts.reduce((acc, p) => {
+    acc[p.brand || 'General Insights'] = true
+    return acc
+  }, {} as Record<string, boolean>)).length
 
   const filteredPostsByCategory = selectedCategory === 'All' 
     ? posts 
@@ -1035,11 +1042,11 @@ export function PMTeardowns() {
         {/* Stats Bar */}
         <div className="flex justify-center items-center gap-8 mb-12 text-foreground">
           <div className="text-center">
-            <div className="text-2xl font-bold">79</div>
+            <div className="text-2xl font-bold">{posts.length}</div>
             <div className="text-sm text-muted-foreground">Posts</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold">26</div>
+            <div className="text-2xl font-bold">{totalUniqueBrands}</div>
             <div className="text-sm text-muted-foreground">Brands & Series</div>
           </div>
           <div className="text-center">
