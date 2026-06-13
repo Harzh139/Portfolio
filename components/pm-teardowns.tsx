@@ -19,6 +19,154 @@ interface Post {
 }
 
 const posts: Post[] = [
+  // KHATABOOK TEARDOWN SERIES
+  {
+    title: "Part 1: Graduates Replaced India's 200-Year-Old Credit Notebook",
+    date: "2026-06-01",
+    category: "PM Teardown",
+    brand: "Khatabook",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_graduates-replaced-indias-200-year-old-credit-activity-7466699992456609792-Qwbk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 145,
+    comments: 28,
+    hook: "How two IIT graduates digitized India's traditional bahi khata system, onboarding millions of merchants, and the product challenges of monetizing a ledger utility.",
+    isTopPost: true
+  },
+  {
+    title: "Part 2: When Google Showed Up For Free: Khatabook's $187M Problem",
+    date: "2026-06-02",
+    category: "PM Teardown",
+    brand: "Khatabook",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_when-google-showed-up-for-free-khatabooks-activity-7466752832621142016-UWBt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 132,
+    comments: 22,
+    hook: "Analyzing what happens when the default platform owner (Google Pay) copies your core features for free, and how Khatabook had to pivot to premium SaaS tools.",
+    isTopPost: true
+  },
+  {
+    title: "Part 3: Can Khatabook Survive Its Own Generosity? A PM's Fix",
+    date: "2026-06-03",
+    category: "PM Teardown",
+    brand: "Khatabook",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_can-khatabook-survive-its-own-generosity-activity-7466813343408742400-3sUE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 168,
+    comments: 35,
+    hook: "A product teardown of Khatabook's business model flaws, high acquisition burn, and 5 tactical PM solutions to drive merchant-level credit monetization.",
+    isTopPost: true
+  },
+  // ZERODHA TEARDOWN SERIES
+  {
+    title: "Part 1: The ₹20 Decision That Broke Indian Finance",
+    date: "2026-06-04",
+    category: "PM Teardown",
+    brand: "Zerodha",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_zerodha-the-20-decision-that-broke-indian-activity-7470349992981921792-N_cg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 185,
+    comments: 42,
+    hook: "How Zerodha disrupted the brokerage market with a flat ₹20 fee structure, turning pricing into their primary distribution strategy and building India's largest retail trading platform.",
+    isTopPost: true
+  },
+  {
+    title: "Part 2: How Zerodha Makes Money And Why SEBI Threatened It",
+    date: "2026-06-05",
+    category: "PM Teardown",
+    brand: "Zerodha",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_how-zerodha-makes-money-and-why-sebi-threatened-activity-7470384334319869952-T0TZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 154,
+    comments: 31,
+    hook: "Deconstructing Zerodha's revenue engine (float income, transaction charges) and the regulatory headwinds from SEBI's new true-to-label fee mandates.",
+    isTopPost: true
+  },
+  {
+    title: "Part 3: Can Bootstrapped Beat VC-Backed Forever?",
+    date: "2026-06-06",
+    category: "PM Teardown",
+    brand: "Zerodha",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_zerodhas-bootstrapped-model-activity-7470445088817696770-podP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 195,
+    comments: 48,
+    hook: "A product strategy deep-dive comparing bootstrapped efficiency (Zerodha) against hyper-funded competitors (Groww, AngelOne) in a tightening regulatory market.",
+    isTopPost: true
+  },
+  // PHYSICSWALLAH (PW) TEARDOWN SERIES
+  {
+    title: "Part 1: How ₹999 Beat Byju's $22 Billion",
+    date: "2026-06-07",
+    category: "PM Teardown",
+    brand: "PhysicsWallah (PW)",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_physicswallah-how-999-beat-byjus-22-billion-activity-7470702984385970176-rB2E?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 210,
+    comments: 52,
+    hook: "Analyzing PhysicsWallah's low-pricing model (₹999 courses) that built high trust and massive organic community, disrupting venture-backed EdTech giants.",
+    isTopPost: true
+  },
+  {
+    title: "Part 2: Why PW Opened 198 Centers When Everyone Else Went Digital",
+    date: "2026-06-08",
+    category: "PM Teardown",
+    brand: "PhysicsWallah (PW)",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_why-pw-opened-198-centers-when-everyone-else-activity-7470746797695553536-Zmk6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 178,
+    comments: 36,
+    hook: "The hybrid/offline pivot: Why PW scaled physical learning centers (Vidyapeeth) to lock in student retention and capture the high-margin offline test prep market.",
+    isTopPost: true
+  },
+  {
+    title: "Part 3: PW Post-IPO: Can A Promise Survive Public Markets?",
+    date: "2026-06-09",
+    category: "PM Teardown",
+    brand: "PhysicsWallah (PW)",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_pw-post-ipo-can-a-promise-survive-public-activity-7470807197929705472-wJLB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 220,
+    comments: 60,
+    hook: "Looking at PW's financial and product challenges post-listing: balancing student-first mission statements with public market expectations for constant margin growth.",
+    isTopPost: true
+  },
+  // BOAT LIFESTYLE TEARDOWN SERIES
+  {
+    title: "Part 1: The Man Who Sold JBL Then Beat JBL",
+    date: "2026-06-10",
+    category: "PM Teardown",
+    brand: "boAt Lifestyle",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_boat-the-man-who-sold-jbl-then-beat-jbl-activity-7471063782065328128-PAd0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 165,
+    comments: 30,
+    hook: "How Aman Gupta leveraged distribution insights to position boAt as a lifestyle/fashion accessory, overtaking established legacy audio giants in India.",
+    isTopPost: true
+  },
+  {
+    title: "Part 2: Brand Machine: 100 Products a Year, Zero Factories",
+    date: "2026-06-11",
+    category: "PM Teardown",
+    brand: "boAt Lifestyle",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_boats-brand-machine-100-products-a-year-activity-7471109083413049344-zsf9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 140,
+    comments: 22,
+    hook: "Deconstructing boAt's asset-light manufacturing and rapid SKU launching strategy, driven by aggressive digital marketing and third-party contract sourcing.",
+    isTopPost: true
+  },
+  {
+    title: "Part 3: boAt IPO Reality Check: What the DRHP Actually Reveals",
+    date: "2026-06-12",
+    category: "PM Teardown",
+    brand: "boAt Lifestyle",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_boat-ipo-reality-check-what-the-drhp-actually-activity-7471169487111610368-0uyZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 180,
+    comments: 40,
+    hook: "Analyzing boAt's DRHP prospectus filings: checking their margins, inventory days, dependency on China supply lines, and their path to premiumization.",
+    isTopPost: true
+  },
+  // FIGMA TEARDOWN
+  {
+    title: "Part 1: How a Browser Tab Replaced Adobe's 30-Year Design Monopoly",
+    date: "2026-06-13",
+    category: "PM Teardown",
+    brand: "Figma",
+    url: "https://www.linkedin.com/posts/harsh-sharma-406044299_how-a-browser-tab-replaced-adobes-30-year-activity-7471426132718956544-Htno?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgWMUYBWkAMYPJiYpYOoUm1z68nl2r5MUI",
+    reactions: 245,
+    comments: 55,
+    hook: "How Figma utilized WebGL and browser-native multiplayer collaboration to render desktop design suites obsolete and capture the developer-to-designer handoff flow.",
+    isTopPost: true
+  },
   // TRUECALLER TEARDOWN SERIES
   {
     title: "Part 1: Crowdsourced Identity: The Invisible Data Moat",
@@ -825,6 +973,11 @@ const brandDomains: Record<string, string | string[]> = {
   'Truecaller': 'truecaller.com',
   'IndiaMart': 'indiamart.com',
   'Duolingo': 'duolingo.com',
+  'Khatabook': 'khatabook.com',
+  'Zerodha': 'zerodha.com',
+  'PhysicsWallah (PW)': 'pw.live',
+  'boAt Lifestyle': 'boat-lifestyle.com',
+  'Figma': 'figma.com',
 }
 
 // Custom logo overrides for brands where Google favicon doesn't work well
@@ -914,50 +1067,39 @@ export function PMTeardowns() {
 
             {/* Brands Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-              {brandCards.map((brand, index) => (
-                <Card 
-                  key={index} 
-                  className="bg-card/50 border-border backdrop-blur-sm hover:bg-accent/50 transition-colors cursor-pointer flex flex-col p-2 group relative overflow-hidden"
-                  onClick={() => setSelectedBrand(brand.name)}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-colors" />
-                  <CardHeader className="pb-3 relative z-10">
-                    <div className="flex items-center gap-4">
-                      {brandLogos[brand.name] ? (
-                        <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-border shrink-0">
-                          <img 
-                            src={brandLogos[brand.name]} 
-                            alt={`${brand.name} logo`}
-                            className="w-full h-full object-contain rounded-full bg-white"
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).style.display = 'none';
-                            }}
-                          />
-                        </div>
-                      ) : brandDomains[brand.name] ? (
-                        Array.isArray(brandDomains[brand.name]) ? (
-                          <div className="flex -space-x-3 shrink-0 items-center">
-                            <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border-2 border-background shadow-sm relative z-10 shrink-0">
-                              <img 
-                                src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name][0]}&sz=128`} 
-                                className="w-full h-full object-contain rounded-full bg-white"
-                                alt={`${brand.name} logo 1`}
-                                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                              />
-                            </div>
-                            <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border-2 border-background shadow-sm relative z-0 shrink-0">
-                              <img 
-                                src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name][1]}&sz=128`} 
-                                className="w-full h-full object-contain rounded-full bg-white"
-                                alt={`${brand.name} logo 2`}
-                                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                              />
-                            </div>
-                          </div>
-                        ) : (
+              {brandCards.map((brand, index) => {
+                const sortedPosts = [...brand.posts].sort((a, b) => {
+                  const getPart = (title: string) => {
+                    const match = title.match(/Part\s*(\d+)/i)
+                    return match ? parseInt(match[1], 10) : null
+                  }
+                  const partA = getPart(a.title)
+                  const partB = getPart(b.title)
+                  if (partA !== null && partB !== null) return partA - partB
+                  return a.date.localeCompare(b.date)
+                })
+                const isSingle = brand.posts.length === 1
+                const latestPost = sortedPosts[sortedPosts.length - 1]
+
+                return (
+                  <Card 
+                    key={index} 
+                    className="bg-card/50 border-border backdrop-blur-sm hover:bg-accent/50 transition-colors cursor-pointer flex flex-col p-2 group relative overflow-hidden"
+                    onClick={() => {
+                      if (isSingle) {
+                        window.open(brand.posts[0].url, '_blank', 'noopener,noreferrer')
+                      } else {
+                        setSelectedBrand(brand.name)
+                      }
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-colors" />
+                    <CardHeader className="pb-3 relative z-10">
+                      <div className="flex items-center gap-4">
+                        {brandLogos[brand.name] ? (
                           <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-border shrink-0">
                             <img 
-                              src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name]}&sz=128`} 
+                              src={brandLogos[brand.name]} 
                               alt={`${brand.name} logo`}
                               className="w-full h-full object-contain rounded-full bg-white"
                               onError={(e) => {
@@ -965,47 +1107,132 @@ export function PMTeardowns() {
                               }}
                             />
                           </div>
-                        )
-                      ) : (
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl border border-border shrink-0">
-                          {brand.name.charAt(0)}
-                        </div>
-                      )}
-                      <h3 className="text-foreground font-semibold text-2xl leading-tight group-hover:text-primary transition-colors">
-                        {brand.name}
-                      </h3>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-0 flex flex-col flex-grow justify-end">
-                    <div className="mt-auto">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex gap-4 text-sm text-muted-foreground">
-                          {brand.name === 'Truecaller' ? (
-                            <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 500M+ Users | Moat Analysis</span>
-                          ) : brand.name === 'IndiaMart' ? (
-                            <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 130M+ Users | Moat & AI Threat Analysis</span>
-                          ) : brand.name === 'Duolingo' ? (
-                            <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 500M Language Learners | India Strategy</span>
+                        ) : brandDomains[brand.name] ? (
+                          Array.isArray(brandDomains[brand.name]) ? (
+                            <div className="flex -space-x-3 shrink-0 items-center">
+                              <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border-2 border-background shadow-sm relative z-10 shrink-0">
+                                <img 
+                                  src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name][0]}&sz=128`} 
+                                  className="w-full h-full object-contain rounded-full bg-white"
+                                  alt={`${brand.name} logo 1`}
+                                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                                />
+                              </div>
+                              <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border-2 border-background shadow-sm relative z-0 shrink-0">
+                                <img 
+                                  src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name][1]}&sz=128`} 
+                                  className="w-full h-full object-contain rounded-full bg-white"
+                                  alt={`${brand.name} logo 2`}
+                                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                                />
+                              </div>
+                            </div>
                           ) : (
-                            <>
-                              <span>📝 {brand.posts.length} Posts</span>
-                              <span className="text-yellow-500 dark:text-yellow-400">👍 {brand.totalReactions}</span>
-                              <span className="text-blue-500 dark:text-blue-400">💬 {brand.totalComments}</span>
-                            </>
-                          )}
-                        </div>
+                            <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center p-[2px] border border-border shrink-0">
+                              <img 
+                                src={`https://www.google.com/s2/favicons?domain=${brandDomains[brand.name]}&sz=128`} 
+                                alt={`${brand.name} logo`}
+                                className="w-full h-full object-contain rounded-full bg-white"
+                                onError={(e) => {
+                                  (e.target as HTMLImageElement).style.display = 'none';
+                                }}
+                              />
+                            </div>
+                          )
+                        ) : (
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl border border-border shrink-0">
+                            {brand.name.charAt(0)}
+                          </div>
+                        )}
+                        <h3 className="text-foreground font-semibold text-2xl leading-tight group-hover:text-primary transition-colors">
+                          {brand.name}
+                        </h3>
                       </div>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="w-full pointer-events-none"
-                      >
-                        View Teardowns →
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardHeader>
+                    <CardContent className="pt-0 flex flex-col flex-grow justify-end relative z-10">
+                      <div className="mt-auto">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex gap-4 text-sm text-muted-foreground">
+                            {brand.name === 'Truecaller' ? (
+                              <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 500M+ Users | Moat Analysis</span>
+                            ) : brand.name === 'IndiaMart' ? (
+                              <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 130M+ Users | Moat & AI Threat Analysis</span>
+                            ) : brand.name === 'Duolingo' ? (
+                              <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 500M Language Learners | India Strategy</span>
+                            ) : brand.name === 'Khatabook' ? (
+                              <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 10M+ Merchants | Ledger SaaS Pivot</span>
+                            ) : brand.name === 'Zerodha' ? (
+                              <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 12M+ Clients | Bootstrapped Brokerage Moat</span>
+                            ) : brand.name === 'PhysicsWallah (PW)' ? (
+                              <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 40M+ Students | EdTech Hybrid Strategy</span>
+                            ) : brand.name === 'boAt Lifestyle' ? (
+                              <span className="font-semibold text-xs text-foreground/80">📝 3 Posts | 15M+ Audio Products | D2C Brand Machine</span>
+                            ) : brand.name === 'Figma' ? (
+                              <span className="font-semibold text-xs text-foreground/80">📝 1 Post | WebGL Design Multiplayer Moat</span>
+                            ) : (
+                              <>
+                                <span>📝 {brand.posts.length} Posts</span>
+                                <span className="text-yellow-500 dark:text-yellow-400">👍 {brand.totalReactions}</span>
+                                <span className="text-blue-500 dark:text-blue-400">💬 {brand.totalComments}</span>
+                              </>
+                            )}
+                          </div>
+                        </div>
+
+                        {isSingle ? (
+                          <Button 
+                            asChild
+                            variant="outline" 
+                            size="sm" 
+                            className="w-full relative z-10 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                          >
+                            <a 
+                              href={brand.posts[0].url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              Read Teardown ↗
+                            </a>
+                          </Button>
+                        ) : (
+                          <div className="flex flex-col gap-3">
+                            <div className="flex flex-wrap gap-2 justify-center relative z-10" onClick={(e) => e.stopPropagation()}>
+                              {sortedPosts.map((post, idx) => (
+                                <a
+                                  key={idx}
+                                  href={post.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[11px] font-semibold px-2.5 py-1 rounded bg-muted/60 hover:bg-primary/20 hover:text-primary transition-all border border-border"
+                                  title={post.title}
+                                >
+                                  Part {idx + 1} ↗
+                                </a>
+                              ))}
+                            </div>
+                            <Button 
+                              asChild
+                              variant="outline" 
+                              size="sm" 
+                              className="w-full relative z-10 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                            >
+                              <a 
+                                href={latestPost.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                Read Latest Part ({sortedPosts.length}) ↗
+                              </a>
+                            </Button>
+                          </div>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )
+              })}
             </div>
           </>
         ) : (
